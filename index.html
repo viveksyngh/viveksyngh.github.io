@@ -4,7 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="mycss.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400italic,400,600,700">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/mycss.css">
   </head>
   <body>
         <header id="banner" class="navbar navbar-default navbar-fixed-top">
@@ -28,7 +30,7 @@
             </nav>
           </div>
         </header>
-        <div id="about" class="container">
+        <div id="about" class="container-fluid">
           <div class="row" id="info-box">
             <div id="intro-text" class="col-md-6 col-md-offset-1">
               <p>
@@ -51,20 +53,118 @@
             </div>
           </div>
         </div>
-        <div id="skills" class="container">
-          <h2 class="text-center">Skills</h2>
-          <div class="row">
-            <div class="col-md-4">
-              <h3 class="h3 text-center">Advanced</h3>
-            </div>
-            <div class="col-md-4">
-              <h3 class="h3 text-center">Intermediate</h3>
-            </div>
-            <div class="col-md-4">
-              <h3 class="h3 text-center">Novice</h3>
+        <div id="skills" class="container-fluid">
+          <div class="skill-wrapper">
+            <h2 class="text-center">Skills</h2>
+            <div class="row" id="skill-box">
+              <div class="col-md-4">
+                <h3 class="h3 text-center text-success">Advanced</h3>
+                <hr class="advanced-hr btn-success"/>
+                  <p class="h4 text-center text-success">CSS</p>
+                  <p class="h4 text-center text-success">Django</p>
+                  <p class="h4 text-center text-success">Git</p>
+                  <p class="h4 text-center text-success">HTML</p>
+                  <p class="h4 text-center text-success">MySQL</p>
+                  <p class="h4 text-center text-success">SQL</p>
+                  <p class="h4 text-center text-success">Python</p>
+                  <p class="h4 text-center text-success"></p>
+              </div>
+              <div class="col-md-4">
+                <h3 class="h3 text-center text-info">Intermediate</h3>
+                <hr class="intermediate-hr btn-info"/>
+                <p class="h4 text-center text-info">Algorithms</p>
+                <p class="h4 text-center text-info">Business Intelligence</p>
+                <p class="h4 text-center text-info">Data Structures</p>
+                <p class="h4 text-center text-info">Flask</p>
+                <p class="h4 text-center text-info">Java</p>
+                <p class="h4 text-center text-info">JavaScript</p>
+                <p class="h4 text-center text-info">Qlikview</p>
+              </div>
+              <div class="col-md-4">
+                <h3 class="h3 text-center text-warning">Novice</h3>
+                <hr class="novice-hr btn-warning"/>
+                <p class="h4 text-center text-warning">Big Data</p>
+                <p class="h4 text-center text-warning">Data Analysis</p>
+                <p class="h4 text-center text-warning">Jquery</p>
+                <p class="h4 text-center text-warning">Hadoop</p>
+                <p class="h4 text-center text-warning">Hive</p>
+                <p class="h4 text-center text-warning">Pig</p>
+                <p class="h4 text-center text-warning">Redis</p>
+              </div>
             </div>
           </div>
         </div>
-
-  </body>
-</html
+        <div id="work" class="container-fluid">
+            <hr class="event-line" />
+            <h5 class="time-1">
+              <span><strong>Dec 2015 - Present</strong></span>
+            </h5>
+            <a href="#" class="timeline-link link-1">
+              <i class="fa fa-circle fa-1x first-circle" ></i>
+            </a>
+            <h5 class="time-2">
+              <span><strong>Nov 2013 - Dec 2015</strong></span>
+            </h5>
+            <a href="#" class="timeline-link link-2">
+              <i class="fa fa-circle fa-1x second-circle" ></i>
+            </a>
+            <div class="row experience-header">
+              <div class="col-md-6">
+                <div class="experience-1">
+                  <h5 class="text-center"><strong>Happay</strong><h5>
+                  <h5 class="text-center"><strong>Backend Developer</strong></h5>
+                </div>
+            </div>
+            <div class="col-md-6">
+              <div class="experience-2">
+                <h5 class="text-center"><strong>Tata Consultancy Services</strong><h4>
+                <h5 class="text-center"><strong>System Engineer</strong></h5>
+              </div>
+            </div>
+          </div>
+          <hr class="exp-line"/>
+          <div class="exp-detail-1 exp-detail hidden">
+            <div class="row">
+              <div class="col-md-4 col-md-offset-2">
+                <span class="h3">Backend Developer<span> <br>
+                <span class="h4">Happay (VA Tech Ventures Pvt. Ltd.)
+              </div>
+              <div class="col-md-5 col-md-offset-1">
+                <img src="img/logo.png" alt="company logo">
+              </div>
+            </div>
+            <br/  >
+            <div class="row">
+              <div class="col-md-7 col-md-offset-2">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="exp-detail-2 exp-detail hidden">
+            <div class="row">
+              <div class="col-md-4 col-md-offset-2">
+                <span class="h3">System Engineer<span> <br>
+                <span class="h4">Tata Consultancy Services</span>
+              </div>
+              <div class="col-md-5 col-md-offset-1">
+                <img src="img/Tata_Consultancy_Services_Logo.svg.png" height="60px" alt="company logo">
+              </div>
+            </div>
+            <br/ >
+            <div class="row">
+              <div class="col-md-7 col-md-offset-2">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script src="js/jquery-2.1.4.js"></script>
+        <script src="js/myjs.js"></script>
+    </body>
+</html>

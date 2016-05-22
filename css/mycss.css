@@ -1,0 +1,194 @@
+
+body {
+  color: #7f8c97;
+  color: white;
+  margin: 0;
+  padding: 0;
+  background-color: #888;
+  font-family:"Ubuntu", serif;
+  font-family: "Open Sans",Arial,Helvetica,sans-serif;
+  font-size: 15px;
+  width: 100%;
+}
+
+#banner {
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background-color: #455a64 !important;
+  box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  border-color: #455a64;
+  z-index: 3;
+}
+
+#banner img{
+  height: 50px;
+  margin: 15px 0;
+}
+
+.nav>li {
+  height: 100%;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+.nav>li a{
+  color: #ffffff;
+  padding: 10px 20px;
+}
+
+.nav>li a:hover{
+  color:#722872;
+  background:#bbb;
+  box-shadow:0px 2px 2px 1px rgba(0, 0, 0, 0.1);
+}
+.navbar-default .navbar-nav>li>a {
+  color: white;
+  margin-top: 15px;
+}
+
+#about {
+  background-color: #03A9F4;
+}
+
+#info-box {
+  margin-top: 200px;
+  margin-bottom: 100px;
+}
+
+.skills {
+  font-weight: 400;
+}
+
+#intro-text {
+  font-size: 16px;
+}
+hr {
+  background-color: white;
+  height: 2px;
+}
+
+.circular {
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  margin-bottom: 50px;
+  margin-left: 80px;
+}
+
+#skills {
+  background-color: #eee;
+  color : #000;
+  height: 600px;
+}
+
+#skill-box {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.skill-wrapper {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.advanced-hr {
+  width: 100%;
+  height: 8px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 0 none;
+}
+
+.intermediate-hr {
+  width: 100%;
+  height: 8px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 0 none;
+}
+
+.novice-hr {
+  width: 100%;
+  height: 8px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 0 none;
+}
+
+#work {
+  background-color: #FF5252;
+  height: 600px;
+}
+.event-line {
+  margin-top: 200px;
+  width: 80%;
+  height: 4px;
+  border-radius: 10px;
+}
+
+.first-circle {
+  position: relative;;
+  top: -58px;
+  left: 300px;
+}
+.second-circle {
+  position: relative;
+  top : -114px;
+  left: 920px;
+}
+
+.time-1{
+  position: relative;
+  top : -60px;
+  left : 250px;
+  width: 200px;
+}
+
+.time-2{
+  position: relative;
+  top : -116px;
+  left : 860px;
+  width: 200px;
+}
+
+#work>a:hover {
+  color: white;
+  text-decoration: none;
+}
+#work>a {
+  text-decoration: none;
+  width : 300px;
+}
+.timeline-link {
+  color: white;
+}
+
+.experience-header {
+  margin-top: -100px;
+}
+
+.exp-detail {
+  margin-left: 100px;
+}
+
+.exp-line {
+  width : 60%;
+  height: 2px;
+}
+
+.hide {
+  display: none;
+}
+
+a.timeline-link .exp-detail-1 {
+  display: none;
+}
+
+#work>a:visited {
+  color: white;
+}
+
+a.timeline-link:hover .exp-detail-1 {
+  display: block;
+}
