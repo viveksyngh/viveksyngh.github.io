@@ -5,8 +5,8 @@ body {
   margin: 0;
   padding: 0;
   background-color: #888;
-  font-family:"Ubuntu", serif;
   font-family: "Open Sans",Arial,Helvetica,sans-serif;
+  font-family:"Ubuntu", serif;
   font-size: 15px;
   width: 100%;
 }
@@ -40,7 +40,7 @@ body {
 
 .nav>li a:hover{
   color:#722872;
-  background:#bbb;
+  background:#ffffff;
   box-shadow:0px 2px 2px 1px rgba(0, 0, 0, 0.1);
 }
 .navbar-default .navbar-nav>li>a {
@@ -50,6 +50,7 @@ body {
 
 #about {
   background-color: #03A9F4;
+  height: 768px;
 }
 
 #info-box {
@@ -80,7 +81,7 @@ hr {
 #skills {
   background-color: #eee;
   color : #000;
-  height: 600px;
+  height: 700px;
 }
 
 #skill-box {
@@ -118,7 +119,7 @@ hr {
 
 #work {
   background-color: #FF5252;
-  height: 600px;
+  height: 700px;
 }
 .event-line {
   margin-top: 200px;
@@ -191,4 +192,27 @@ a.timeline-link .exp-detail-1 {
 
 a.timeline-link:hover .exp-detail-1 {
   display: block;
+}
+
+#education {
+    background-color: #009688;
+    height: 700px;
+}
+
+.edu {
+    display: none;
+}
+
+.active-edu {
+    display: block;
+}
+
+.prev {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.next {
+    background-color: transparent;
+    border-color: transparent;
 }
