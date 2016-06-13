@@ -235,3 +235,7 @@ a.timeline-link:hover .exp-detail-1 {
 .social:default {
     color: white;
 }
+
+.navbar-nav {
+    margin-left: 350px;
+}
