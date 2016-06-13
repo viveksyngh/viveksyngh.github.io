@@ -3,17 +3,29 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400italic,400,600,700">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/mycss.css">
+    <script type="text/javascript">
+        var ypos, image;
+        function parallex() {
+            ypos = window.pageYOffset;
+            console.log(ypos);
+            image = document.getElementById('about');
+            image.style.top = ypos + 4 + 'px';
+            console.log(image.style.top);
+            console.log("Here");
+        }
+        window.addEventListener('scroll', parallex);
+    </script>
   </head>
-  <body>
+  <body data-offset="20">
         <header id="banner" class="navbar navbar-default navbar-fixed-top">
           <div class="container">
             <a href="#top" class="scrollable">
-              <img src="http://qlip.in/sites/default/files/qlip.png" class="navbar-brand" alt="Brand" title="Brand logo">
+              <!--<img src="http://qlip.in/sites/default/files/qlip.png" class="navbar-brand" alt="Brand" title="Brand logo"> -->
             </a>
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
               <span class="sr-only">Toggle navigation</span>
@@ -22,7 +34,7 @@
               <span class="icon-bar"></span>
             </button>
             <nav id="navbar" role="navigation" class="collapse navbar-collapse">
-              <ul class="nav navbar-nav navbar-right">
+              <ul class="nav navbar-nav navbar-center">
                 <li><a href="#about" class="scrollable">About</a></li>
                 <li><a href="#work" class="scrollable">Work</a></li>
                 <li><a href="#education" class="scrollable">Education</a></li>
@@ -126,6 +138,10 @@
           </div>
         </div>
         <div id="education" class="container-fluid">
+            <br>
+            <br>
+            <br>
+            <br>
             <h3 class="text-center">Education</h3>
             <br>
             <div class="row">
@@ -241,10 +257,52 @@
           </div>
         </div>
         <div id="contact">
-            <div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="row" style="margin-right: 0px;">
+                <div class="col-md-4 col-md-offset-2">
+                    <h3>Contact</h3>
+                    <h4>Get in touch with me or just say hello.</h4>
+                    <br>
+                    <h4><i class="fa fa-map-marker fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;Bengaluru Area, India</h4>
+                    <h4><i class="fa fa-phone fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;+91-897-140-0382 </h4>
+                    <h4><i class="fa fa-envelope fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;vivekkmr45@yahoo.in </h4>
+                    <br>
+                    <span>
+                        <a href="https://www.facebook.com/vivekkumar.singh.731" class="social"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="https://in.linkedin.com/in/viveksyngh" class="social"><i class="fa fa-linkedin fa-2x" aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="https://github.com/viveksyngh" class="social"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="https://twitter.com/viveksyngh" class="social"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="https://google.com/+VivekSingh12" class="social"><i class="fa fa-google-plus fa-2x" aria-hidden="true"></i></a>
+                    </span>
+                </div>
+                <div class="col-md-4">
+                    <form>
+                        <fieldset class="form-group">
+                            <label for="exampleInputEmail1">Your name</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter name">
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <label for="exampleInputPassword1">Your email address</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter mail">
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <label for="exampleTextarea">Your message</label>
+                            <textarea class="form-control" id="exampleTextarea" rows="3"  placeholder="Enter message"></textarea>
+                        </fieldset>
+                         <button type="submit" class="btn btn-default btn-block">Submit</button>
+                    </form>
+                </div>
             </div>
         </div>
         <script src="js/jquery-2.1.4.js"></script>
         <script src="js/myjs.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     </body>
 </html>

@@ -1,7 +1,7 @@
 $(document).ready(function() {
     //console.log("hello");
     //console.log("Hi");
-
+    $('body').scrollspy({target: '.navbar-fixed-top'});
     $('.exp-detail-2').addClass('hidden');
     $('.exp-detail-1').removeClass('hidden');
 

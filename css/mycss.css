@@ -29,9 +29,7 @@ body {
 
 .nav>li {
   height: 100%;
-  text-transform: uppercase;
   font-weight: bold;
-  letter-spacing: 2px;
 }
 .nav>li a{
   color: #ffffff;
@@ -51,6 +49,7 @@ body {
 #about {
   background-color: #03A9F4;
   height: 768px;
+  z-index: -1;
 }
 
 #info-box {
@@ -120,6 +119,8 @@ hr {
 #work {
   background-color: #FF5252;
   height: 700px;
+  position: relative;
+  z-index: 1;
 }
 .event-line {
   margin-top: 200px;
@@ -136,7 +137,7 @@ hr {
 .second-circle {
   position: relative;
   top : -114px;
-  left: 920px;
+  left: 940px;
 }
 
 .time-1{
@@ -215,4 +216,22 @@ a.timeline-link:hover .exp-detail-1 {
 .next {
     background-color: transparent;
     border-color: transparent;
+}
+
+#contact {
+    height: 710px;
+    width: 100%;
+    background-color: #607D8B;
+}
+
+.social:visited {
+    color: white;
+}
+
+.social:hover {
+    color: #aaa;
+}
+
+.social:default {
+    color: white;
 }
