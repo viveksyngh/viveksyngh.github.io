@@ -1,308 +1,319 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400italic,400,600,700">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/mycss.css">
-    <script type="text/javascript">
-        var ypos, image;
-        function parallex() {
-            ypos = window.pageYOffset;
-            console.log(ypos);
-            image = document.getElementById('about');
-            image.style.top = ypos + 4 + 'px';
-            console.log(image.style.top);
-            console.log("Here");
-        }
-        window.addEventListener('scroll', parallex);
-    </script>
-  </head>
-  <body data-offset="20">
-        <header id="banner" class="navbar navbar-default navbar-fixed-top">
-          <div class="container">
-            <a href="#top" class="scrollable">
-              <!--<img src="http://qlip.in/sites/default/files/qlip.png" class="navbar-brand" alt="Brand" title="Brand logo"> -->
-            </a>
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <nav id="navbar" role="navigation" class="collapse navbar-collapse">
-              <ul class="nav navbar-nav navbar-center">
-                <li><a href="#about" class="scrollable">About</a></li>
-                <li><a href="#work" class="scrollable">Work</a></li>
-                <li><a href="#education" class="scrollable">Education</a></li>
-                <li><a href="#skills" class="scrollable">Skills</a></li>
-                <li><a href="#contact" class="scrollable">Contact</a></li>
-              </ul>
-            </nav>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Resume - Vivek Singh</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/resume.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+    <a class="navbar-brand js-scroll-trigger" href="#page-top">
+      <span class="d-block d-lg-none">Vivek Singh</span>
+      <span class="d-none d-lg-block">
+        <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/profile.jpg" alt="">
+      </span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#experience">Experience</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#education">Education</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#skills">Skills</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#interests">Interests</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#awards">Awards</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container-fluid p-0">
+
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="about">
+      <div class="w-100">
+        <h1 class="mb-0">Vivek
+          <span class="text-primary">Kumar Singh</span>
+        </h1>
+        <div class="subheading mb-5">Sai Jyothi Residency, Munekollal, Bangalore, IN 560037 · +91-8971400382 ·
+          <a href="mailto:viveksyngh0908@gmail.com">viveksyngh0908@gmail.com</a>
+        </div>
+        <p class="lead mb-5">Software Engineer with more than 5 years of experience in
+          software development. Open source contributor and member @
+          <a href="https://www.openfaas.com">OpenFaaS</a> project.
+          Involved in architecture design and development of projects from
+          scratch. Interested in Scalability, Serverless, Containers,
+          and Machine learning.</p>
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/in/viveksyngh/">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://github.com/viveksyngh">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://twitter.com/viveksyngh">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="https://medium.com/@vivek_syngh">
+            <i class="fab fa-medium"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <hr class="m-0">
+
+    <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="experience">
+      <div class="w-100">
+        <h2 class="mb-5">Experience</h2>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">Senior Web Developer</h3>
+            <div class="subheading mb-3">Intelitec Solutions</div>
+            <p>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day,
+              going forward, a new normal that has evolved from generation X is on the runway heading towards a
+              streamlined cloud solution. User generated content in real-time will have multiple touchpoints for
+              offshoring.</p>
           </div>
-        </header>
-        <div id="about" class="container-fluid">
-          <div class="row" id="info-box">
-            <div id="intro-text" class="col-md-6 col-md-offset-1">
-              <p>
-                The name is Vivek. I am a Backend Developer (Full Stack Developer in process).
-                I have interest in Big Data techlogoies and Machine learning.
-                I love solving complex problems.
-              </p>
-              <p>
-                I’m passionate about what I do, and I love to help people.Nothing is more fulfilling than
-                being part of a team with similar interests, and an organization that values its employees.
-              </p>
-              <hr class="star-bright"/>
-              <span class="skills">A Problem Solver - Pythonista - Backend Developer - Big Data Enthusiast</span>
-            </div>
-            <div class="col-md-5">
-              <!--https://scontent-sit4-1.xx.fbcdn.net/v/t1.0-9/10352988_759023197473296_6498740036821292043_n.jpg?oh=7ddc4ce3a5341c158db034b4cf35a9df&oe=57DC335A-->
-              <!--https://scontent-sit4-1.xx.fbcdn.net/v/t1.0-9/10524565_797029250339357_647287349577624242_n.jpg?oh=9b1f15fa303b8d00d75b43bdc42fc976&oe=57D82554-->
-              <img src="https://scontent-sit4-1.xx.fbcdn.net/v/t1.0-9/10352988_759023197473296_6498740036821292043_n.jpg?oh=7ddc4ce3a5341c158db034b4cf35a9df&oe=57DC335A"
-              class="circular" alt="Profile image">
-            </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary">March 2013 - Present</span>
           </div>
         </div>
-        <div id="work" class="container-fluid">
-            <hr class="event-line" />
-            <h5 class="time-1">
-              <span><strong>Dec 2015 - Present</strong></span>
-            </h5>
-            <a href="#" class="timeline-link link-1">
-              <i class="fa fa-circle fa-1x first-circle" ></i>
-            </a>
-            <h5 class="time-2">
-              <span><strong>Nov 2013 - Dec 2015</strong></span>
-            </h5>
-            <a href="#" class="timeline-link link-2">
-              <i class="fa fa-circle fa-1x second-circle" ></i>
-            </a>
-            <div class="row experience-header">
-              <div class="col-md-6">
-                <div class="experience-1">
-                  <h5 class="text-center"><strong>Happay</strong><h5>
-                  <h5 class="text-center"><strong>Backend Developer</strong></h5>
-                </div>
-            </div>
-            <div class="col-md-6">
-              <div class="experience-2">
-                <h5 class="text-center"><strong>Tata Consultancy Services</strong><h4>
-                <h5 class="text-center"><strong>System Engineer</strong></h5>
-              </div>
-            </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">Web Developer</h3>
+            <div class="subheading mb-3">Intelitec Solutions</div>
+            <p>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the
+              digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information
+              highway will close the loop on focusing solely on the bottom line.</p>
           </div>
-          <hr class="exp-line"/>
-          <div class="exp-detail-1 exp-detail hidden">
-            <div class="row">
-              <div class="col-md-4 col-md-offset-2">
-                <span class="h3">Backend Developer<span> <br>
-                <span class="h4">Happay (VA Tech Ventures Pvt. Ltd.)
-              </div>
-              <div class="col-md-5 col-md-offset-1">
-                <img src="img/logo.png" alt="company logo">
-              </div>
-            </div>
-            <br/  >
-            <div class="row">
-              <div class="col-md-7 col-md-offset-2">
-                <p>
-                    As a Backend Developer my primary task is writing REST API's and working with UI Developer to integrate with frontend.
-                    Desiging reusable and scalable server architecture.I have also worked on different modules of Happay.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="exp-detail-2 exp-detail hidden">
-            <div class="row">
-              <div class="col-md-4 col-md-offset-2">
-                <span class="h3">System Engineer<span> <br>
-                <span class="h4">Tata Consultancy Services</span>
-              </div>
-              <div class="col-md-5 col-md-offset-1">
-                <img src="img/Tata_Consultancy_Services_Logo.svg.png" height="60px" alt="company logo">
-              </div>
-            </div>
-            <br/ >
-            <div class="row">
-              <div class="col-md-7 col-md-offset-2">
-                <p>
-                  I worked for world's six largest pharmaceutical company. I worked independently on finance module of the organisation.
-                  I was reponsible for data analysis and reporting of finanical data.
-                  I also got training on tools like Big Data, Hadoop, Informatica.
-                </p>
-              </div>
-            </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary">December 2011 - March 2013</span>
           </div>
         </div>
-        <div id="education" class="container-fluid">
-            <br>
-            <br>
-            <br>
-            <br>
-            <h3 class="text-center">Education</h3>
-            <br>
-            <div class="row">
-                <div class="col-md-6 col-md-offset-3">
-                    <p class="text-center">See where I spent time studying and gained early
-                        knowledge to prepare for my professional life.
-                    </p>
-                </div>
-            </div>
-            <br>
-            <br>
-            <br>
-            <br>
-            <div class="edu-wrapper">
-                <div class="edu active-edu">
-                    <div class="row">
-                        <div class="col-md-1 col-md-offset-4">
-                            <img src="img/Logo_of_WBUT.jpg" width="60px" height="60px">
-                        </div>
-                        <div class="col-md-4">
-                            <h3>West Bengal University of Technology, Kolkata</h3>
-                            <h5>Information Technology</h5>
-                            <h5>2009-2013</h5>
-                            <br />
-                            <p>I completed my B.Tech in Information Technology with DGPA of 8.73</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="edu">
-                    <div class="row">
-                        <div class="col-md-1 col-md-offset-4">
-                            <img src="img/education-image.png" width="60px" height="60px">
-                        </div>
-                        <div class="col-md-4">
-                            <h3>A. N. College, Patna</h3>
-                            <h5>Higher Secondary</h5>
-                            <h5>2006-2008</h5>
-                            <br />
-                            <p>Completed Higher Secondary from Bihar School Examination Board with 72.34 percentage.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="edu">
-                    <div class="row">
-                        <div class="col-md-1 col-md-offset-4">
-                            <img src="img/education-image.png" width="60px" height="60px">
-                        </div>
-                        <div class="col-md-4">
-                            <h3>Bihar State Examination Baord.</h3>
-                            <h5>Secondary</h5>
-                            <h5>2006</h5>
-                            <br/>
-                            <p>Completed Seconadry(10th) from Bihar School Examination Board.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <br>
-            <br>
-            <div class="row">
-                <div class="col-md-1  col-md-offset-4">
-                    <button class="prev">
-                        <img src="img/prev-dark.png">
-                    </button>
-                </div>
-                <div class="col-md-3 col-md-offset-2">
-                    <button class="next">
-                        <img src="img/next-dark.png">
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div id="skills" class="container-fluid">
-          <div class="skill-wrapper">
-            <h2 class="text-center">Skills</h2>
-            <div class="row" id="skill-box">
-              <div class="col-md-4">
-                <h3 class="h3 text-center text-success">Advanced</h3>
-                <hr class="advanced-hr btn-success"/>
-                  <p class="h4 text-center text-success">CSS</p>
-                  <p class="h4 text-center text-success">Django</p>
-                  <p class="h4 text-center text-success">Git</p>
-                  <p class="h4 text-center text-success">HTML</p>
-                  <p class="h4 text-center text-success">MySQL</p>
-                  <p class="h4 text-center text-success">SQL</p>
-                  <p class="h4 text-center text-success">Python</p>
-                  <p class="h4 text-center text-success"></p>
-              </div>
-              <div class="col-md-4">
-                <h3 class="h3 text-center text-info">Intermediate</h3>
-                <hr class="intermediate-hr btn-info"/>
-                <p class="h4 text-center text-info">Algorithms</p>
-                <p class="h4 text-center text-info">Business Intelligence</p>
-                <p class="h4 text-center text-info">Data Structures</p>
-                <p class="h4 text-center text-info">Flask</p>
-                <p class="h4 text-center text-info">Java</p>
-                <p class="h4 text-center text-info">JavaScript</p>
-                <p class="h4 text-center text-info">Qlikview</p>
-              </div>
-              <div class="col-md-4">
-                <h3 class="h3 text-center text-warning">Novice</h3>
-                <hr class="novice-hr btn-warning"/>
-                <p class="h4 text-center text-warning">Big Data</p>
-                <p class="h4 text-center text-warning">Data Analysis</p>
-                <p class="h4 text-center text-warning">Jquery</p>
-                <p class="h4 text-center text-warning">Hadoop</p>
-                <p class="h4 text-center text-warning">Hive</p>
-                <p class="h4 text-center text-warning">Pig</p>
-                <p class="h4 text-center text-warning">Redis</p>
-              </div>
-            </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">Junior Web Designer</h3>
+            <div class="subheading mb-3">Shout! Media Productions</div>
+            <p>Podcasting operational change management inside of workflows to establish a framework. Taking seamless
+              key performance indicators offline to maximise the long tail. Keeping your eye on the ball while
+              performing a deep dive on the start-up mentality to derive convergence on cross-platform integration.</p>
+          </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary">July 2010 - December 2011</span>
           </div>
         </div>
-        <div id="contact">
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <div class="row" style="margin-right: 0px;">
-                <div class="col-md-4 col-md-offset-2">
-                    <h3>Contact</h3>
-                    <h4>Get in touch with me or just say hello.</h4>
-                    <br>
-                    <h4><i class="fa fa-map-marker fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;Bengaluru Area, India</h4>
-                    <h4><i class="fa fa-phone fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;+91-897-140-0382 </h4>
-                    <h4><i class="fa fa-envelope fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;vivekkmr45@yahoo.in </h4>
-                    <br>
-                    <span>
-                        <a href="https://www.facebook.com/vivekkumar.singh.731" class="social"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="https://in.linkedin.com/in/viveksyngh" class="social"><i class="fa fa-linkedin fa-2x" aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="https://github.com/viveksyngh" class="social"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="https://twitter.com/viveksyngh" class="social"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="https://google.com/+VivekSingh12" class="social"><i class="fa fa-google-plus fa-2x" aria-hidden="true"></i></a>
-                    </span>
-                </div>
-                <div class="col-md-4">
-                    <form>
-                        <fieldset class="form-group">
-                            <label for="exampleInputEmail1">Your name</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter name">
-                        </fieldset>
-                        <fieldset class="form-group">
-                            <label for="exampleInputPassword1">Your email address</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter mail">
-                        </fieldset>
-                        <fieldset class="form-group">
-                            <label for="exampleTextarea">Your message</label>
-                            <textarea class="form-control" id="exampleTextarea" rows="3"  placeholder="Enter message"></textarea>
-                        </fieldset>
-                         <button type="submit" class="btn btn-default btn-block">Submit</button>
-                    </form>
-                </div>
-            </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between">
+          <div class="resume-content">
+            <h3 class="mb-0">Web Design Intern</h3>
+            <div class="subheading mb-3">Shout! Media Productions</div>
+            <p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C
+              users after installed base benefits. Dramatically visualize customer directed convergence without
+              revolutionary ROI.</p>
+          </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary">September 2008 - June 2010</span>
+          </div>
         </div>
-        <script src="js/jquery-2.1.4.js"></script>
-        <script src="js/myjs.js"></script>
-        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    </body>
+
+      </div>
+
+    </section>
+
+    <hr class="m-0">
+
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="education">
+      <div class="w-100">
+        <h2 class="mb-5">Education</h2>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">University of Colorado Boulder</h3>
+            <div class="subheading mb-3">Bachelor of Science</div>
+            <div>Computer Science - Web Development Track</div>
+            <p>GPA: 3.23</p>
+          </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary">August 2006 - May 2010</span>
+          </div>
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between">
+          <div class="resume-content">
+            <h3 class="mb-0">James Buchanan High School</h3>
+            <div class="subheading mb-3">Technology Magnet Program</div>
+            <p>GPA: 3.56</p>
+          </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary">August 2002 - May 2006</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <hr class="m-0">
+
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="skills">
+      <div class="w-100">
+        <h2 class="mb-5">Skills</h2>
+
+        <div class="subheading mb-3">Programming Languages &amp; Tools</div>
+        <ul class="list-inline dev-icons">
+          <li class="list-inline-item">
+            <i class="fab fa-html5"></i>
+          </li>
+          <li class="list-inline-item">
+            <i class="fab fa-css3-alt"></i>
+          </li>
+          <li class="list-inline-item">
+            <i class="fab fa-js-square"></i>
+          </li>
+          <li class="list-inline-item">
+            <i class="fab fa-angular"></i>
+          </li>
+          <li class="list-inline-item">
+            <i class="fab fa-react"></i>
+          </li>
+          <li class="list-inline-item">
+            <i class="fab fa-node-js"></i>
+          </li>
+          <li class="list-inline-item">
+            <i class="fab fa-sass"></i>
+          </li>
+          <li class="list-inline-item">
+            <i class="fab fa-less"></i>
+          </li>
+          <li class="list-inline-item">
+            <i class="fab fa-wordpress"></i>
+          </li>
+          <li class="list-inline-item">
+            <i class="fab fa-gulp"></i>
+          </li>
+          <li class="list-inline-item">
+            <i class="fab fa-grunt"></i>
+          </li>
+          <li class="list-inline-item">
+            <i class="fab fa-npm"></i>
+          </li>
+        </ul>
+
+        <div class="subheading mb-3">Workflow</div>
+        <ul class="fa-ul mb-0">
+          <li>
+            <i class="fa-li fa fa-check"></i>
+            Mobile-First, Responsive Design</li>
+          <li>
+            <i class="fa-li fa fa-check"></i>
+            Cross Browser Testing &amp; Debugging</li>
+          <li>
+            <i class="fa-li fa fa-check"></i>
+            Cross Functional Teams</li>
+          <li>
+            <i class="fa-li fa fa-check"></i>
+            Agile Development &amp; Scrum</li>
+        </ul>
+      </div>
+    </section>
+
+    <hr class="m-0">
+
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="interests">
+      <div class="w-100">
+        <h2 class="mb-5">Interests</h2>
+        <p>Apart from being a web developer, I enjoy most of my time being outdoors. In the winter, I am an avid skier
+          and novice ice climber. During the warmer months here in Colorado, I enjoy mountain biking, free climbing, and
+          kayaking.</p>
+        <p class="mb-0">When forced indoors, I follow a number of sci-fi and fantasy genre movies and television shows,
+          I am an aspiring chef, and I spend a large amount of my free time exploring the latest technology advancements
+          in the front-end web development world.</p>
+      </div>
+    </section>
+
+    <hr class="m-0">
+
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="awards">
+      <div class="w-100">
+        <h2 class="mb-5">Awards &amp; Certifications</h2>
+        <ul class="fa-ul mb-0">
+          <li>
+            <i class="fa-li fa fa-trophy text-warning"></i>
+            Google Analytics Certified Developer</li>
+          <li>
+            <i class="fa-li fa fa-trophy text-warning"></i>
+            Mobile Web Specialist - Google Certification</li>
+          <li>
+            <i class="fa-li fa fa-trophy text-warning"></i>
+            1<sup>st</sup>
+            Place - University of Colorado Boulder - Emerging Tech Competition 2009</li>
+          <li>
+            <i class="fa-li fa fa-trophy text-warning"></i>
+            1<sup>st</sup>
+            Place - University of Colorado Boulder - Adobe Creative Jam 2008 (UI Design Category)</li>
+          <li>
+            <i class="fa-li fa fa-trophy text-warning"></i>
+            2<sup>nd</sup>
+            Place - University of Colorado Boulder - Emerging Tech Competition 2008</li>
+          <li>
+            <i class="fa-li fa fa-trophy text-warning"></i>
+            1<sup>st</sup>
+            Place - James Buchanan High School - Hackathon 2006</li>
+          <li>
+            <i class="fa-li fa fa-trophy text-warning"></i>
+            3<sup>rd</sup>
+            Place - James Buchanan High School - Hackathon 2005</li>
+        </ul>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/resume.min.js"></script>
+
+</body>
+
 </html>
