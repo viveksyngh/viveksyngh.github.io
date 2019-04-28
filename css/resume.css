@@ -36,6 +36,7 @@ h1 {
 
 h2 {
   font-size: 3.5rem;
+  color: #BD5D38;
 }
 
 h3 {
@@ -176,7 +177,7 @@ section.resume-section .resume-item .resume-date {
 }
 
 .bg-primary {
-  background-color: #BD5D38 !important;
+  background-color: #2B2B2B !important;
 }
 
 .text-primary {
