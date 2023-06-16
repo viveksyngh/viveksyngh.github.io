@@ -2,14 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://www.viveksyngh.com/authors/</loc>
-  </url><url>
     <loc>http://www.viveksyngh.com/categories/</loc>
+    <lastmod>2018-08-28T00:10:34-06:00</lastmod>
   </url><url>
-    <loc>http://www.viveksyngh.com/series/</loc>
+    <loc>http://www.viveksyngh.com/tags/cli/</loc>
+    <lastmod>2018-08-28T00:10:34-06:00</lastmod>
+  </url><url>
+    <loc>http://www.viveksyngh.com/tags/golang/</loc>
+    <lastmod>2018-08-28T00:10:34-06:00</lastmod>
+  </url><url>
+    <loc>http://www.viveksyngh.com/categories/golang/</loc>
+    <lastmod>2018-08-28T00:10:34-06:00</lastmod>
+  </url><url>
+    <loc>http://www.viveksyngh.com/posts/</loc>
+    <lastmod>2018-08-28T00:10:34-06:00</lastmod>
   </url><url>
     <loc>http://www.viveksyngh.com/tags/</loc>
+    <lastmod>2018-08-28T00:10:34-06:00</lastmod>
+  </url><url>
+    <loc>http://www.viveksyngh.com/posts/timeout-commands-in-golang/</loc>
+    <lastmod>2018-08-28T00:10:34-06:00</lastmod>
   </url><url>
     <loc>http://www.viveksyngh.com/</loc>
+    <lastmod>2018-08-28T00:10:34-06:00</lastmod>
+  </url><url>
+    <loc>http://www.viveksyngh.com/about/</loc>
+  </url><url>
+    <loc>http://www.viveksyngh.com/authors/</loc>
+  </url><url>
+    <loc>http://www.viveksyngh.com/series/</loc>
   </url>
 </urlset>
