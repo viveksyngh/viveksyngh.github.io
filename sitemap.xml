@@ -3,7 +3,34 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://www.viveksyngh.com/categories/</loc>
-    <lastmod>2019-02-06T00:00:00-06:00</lastmod>
+    <lastmod>2019-10-23T00:00:00-06:00</lastmod>
+  </url><url>
+    <loc>http://www.viveksyngh.com/tags/distributed-systems/</loc>
+    <lastmod>2019-10-23T00:00:00-06:00</lastmod>
+  </url><url>
+    <loc>http://www.viveksyngh.com/categories/distributed-systems/</loc>
+    <lastmod>2019-10-23T00:00:00-06:00</lastmod>
+  </url><url>
+    <loc>http://www.viveksyngh.com/tags/mapreduce/</loc>
+    <lastmod>2019-10-23T00:00:00-06:00</lastmod>
+  </url><url>
+    <loc>http://www.viveksyngh.com/system-design/mapreduce-overview/</loc>
+    <lastmod>2019-10-23T00:00:00-06:00</lastmod>
+  </url><url>
+    <loc>http://www.viveksyngh.com/tags/research-paper/</loc>
+    <lastmod>2019-10-23T00:00:00-06:00</lastmod>
+  </url><url>
+    <loc>http://www.viveksyngh.com/tags/system-design/</loc>
+    <lastmod>2019-10-23T00:00:00-06:00</lastmod>
+  </url><url>
+    <loc>http://www.viveksyngh.com/system-design/</loc>
+    <lastmod>2019-10-23T00:00:00-06:00</lastmod>
+  </url><url>
+    <loc>http://www.viveksyngh.com/tags/</loc>
+    <lastmod>2019-10-23T00:00:00-06:00</lastmod>
+  </url><url>
+    <loc>http://www.viveksyngh.com/</loc>
+    <lastmod>2019-10-23T00:00:00-06:00</lastmod>
   </url><url>
     <loc>http://www.viveksyngh.com/tags/proxy/</loc>
     <lastmod>2019-02-06T00:00:00-06:00</lastmod>
@@ -14,19 +41,7 @@
     <loc>http://www.viveksyngh.com/tags/software-engineering/</loc>
     <lastmod>2019-02-06T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://www.viveksyngh.com/tags/system-design/</loc>
-    <lastmod>2019-02-06T00:00:00-06:00</lastmod>
-  </url><url>
     <loc>http://www.viveksyngh.com/categories/system-design/</loc>
-    <lastmod>2019-02-06T00:00:00-06:00</lastmod>
-  </url><url>
-    <loc>http://www.viveksyngh.com/system-design/</loc>
-    <lastmod>2019-02-06T00:00:00-06:00</lastmod>
-  </url><url>
-    <loc>http://www.viveksyngh.com/tags/</loc>
-    <lastmod>2019-02-06T00:00:00-06:00</lastmod>
-  </url><url>
-    <loc>http://www.viveksyngh.com/</loc>
     <lastmod>2019-02-06T00:00:00-06:00</lastmod>
   </url><url>
     <loc>http://www.viveksyngh.com/system-design/what-is-proxy-server/</loc>

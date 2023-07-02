@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  MapReduce Overview · Vivek Kumar Singh
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Vivek Kumar Singh">
+<meta name="description" content="In this blog, I will be discussing MapReduce programming model and how it works. This blog is based on the original MapReduce research paper MapReduce: Simplified Data Processing on Large Clusters from Google.
+MapReduce is a programming model and an associated implementation for processing and generating large data sets. User specifies a map function that processes a key/value pair to generate a set for intermediate key/value pairs, and a reduce function that merges all intermediate values associated with the same intermediate key.">
+<meta name="keywords" content="blog,developer,personal">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="MapReduce Overview"/>
+<meta name="twitter:description" content="In this blog, I will be discussing MapReduce programming model and how it works. This blog is based on the original MapReduce research paper MapReduce: Simplified Data Processing on Large Clusters from Google.
+MapReduce is a programming model and an associated implementation for processing and generating large data sets. User specifies a map function that processes a key/value pair to generate a set for intermediate key/value pairs, and a reduce function that merges all intermediate values associated with the same intermediate key."/>
+
+<meta property="og:title" content="MapReduce Overview" />
+<meta property="og:description" content="In this blog, I will be discussing MapReduce programming model and how it works. This blog is based on the original MapReduce research paper MapReduce: Simplified Data Processing on Large Clusters from Google.
+MapReduce is a programming model and an associated implementation for processing and generating large data sets. User specifies a map function that processes a key/value pair to generate a set for intermediate key/value pairs, and a reduce function that merges all intermediate values associated with the same intermediate key." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.viveksyngh.com/system-design/mapreduce-overview/" /><meta property="article:section" content="system-design" />
+<meta property="article:published_time" content="2019-10-23T00:00:00-06:00" />
+<meta property="article:modified_time" content="2019-10-23T00:00:00-06:00" />
+
+
+
+
+<link rel="canonical" href="http://www.viveksyngh.com/system-design/mapreduce-overview/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.65236a6d834b26194eed04a2a3b45e44d9194ef9e620253705d4bef03bd7ef81.css" integrity="sha256-ZSNqbYNLJhlO7QSio7ReRNkZTvnmICU3BdS&#43;8DvX74E=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.f6534b0b446b75d9b6ad77a97d43ede2ddaeff1b6e2361fb7198d6f8fcb7f83f.css" integrity="sha256-9lNLC0Rrddm2rXepfUPt4t2u/xtuI2H7cZjW&#43;Py3&#43;D8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      Vivek Kumar Singh
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/system-design/">System Design</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container page">
+  <article>
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="http://www.viveksyngh.com/system-design/mapreduce-overview/">
+          MapReduce Overview
+        </a>
+      </h1>
+    </header>
+
+    <p>In this blog, I will be discussing MapReduce programming model and how it works. This blog is based on the original MapReduce research paper <a href="https://static.googleusercontent.com/media/research.google.com/en//archive/mapreduce-osdi04.pdf"  class="external-link" target="_blank" rel="noopener">MapReduce: Simplified Data Processing on Large Clusters</a> from Google.</p>
+<p>MapReduce is a programming model and an associated implementation for processing and generating large data sets. User specifies a <code>map</code> function that processes a key/value pair to generate a set for intermediate key/value pairs, and a <code>reduce</code> function that merges all intermediate values associated with the same intermediate key.</p>
+<p>MapReduce programs written in these functional styles are automatically parallelized and executed on a large cluster of commodity machines. The runtime system takes care of the details of partitioning input data, scheduling the program’s execution across a set of machines, handling machine failures, and managing the required inter-machine communication. This allows programmers without any experience with parallel and distributed systems to easily utilize the resources of a large distributed system.</p>
+<p>Most computations of a MapReduce task are conceptually straightforward like counting the occurrence of each word in a document, counting URL access frequency in request logs, etc. However, the input data is usually large and computation has to be distributed across hundreds or thousands of machine to finish in a reasonable amount of time.</p>
+<blockquote>
+<p>The model is easy to use, even for programmers without experience with parallel and distributed systems, since it hides messy details of parallelization, fault-tolerance, locality optimization, and load balancing.</p>
+</blockquote>
+<h2 id="programming-model">
+  Programming Model
+  <a class="heading-link" href="#programming-model">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>MapReduce is inspired by the <code>map</code> and <code>reduce</code> primitives present in LISP and many other functional languages. Computation takes a set of key/value pairs as <code>input</code> and produces a set of <code>output</code> key/value pairs.</p>
+<p>The user provides two functions: <code>Map</code> and <code>Reduce</code>.</p>
+<p><strong>Map</strong>: Written by the user which takes an input pair and produces a set of intermediate key/value pairs. The MapReduce library groups together all intermediate values associated with the same intermediate key and passes them to the <code>reduce</code> function.</p>
+<p><strong>Reduce</strong>: <code>Reduce</code> function, also written by the user, accepts an intermediate key and a set of values for that key. It merges these values to form a possibly smaller set of values. Zero or one output value is produced per <code>reduce</code> invocation. The Intermediate values are supplied to the user’s reduce function via an iterator. This allows us to handle lists of values that are too large to fit in memory.</p>
+<p>The structure for the user-defined <code>map</code> and <code>reduce</code> functions are as follows.</p>
+<ol>
+<li>map (k1, v1) → list(k2, v2)</li>
+<li>reduce (k2, list(v2)) → list(v2)</li>
+</ol>
+<p>Map and Reduce function for word count example would look as below.</p>
+<p><img src="../../images/system-design/map-reduce.webp" alt="Map Reduce"></p>
+<p>Also, the user writes code to fill in a <code>MapReduce</code> specification object with the names of the input and output files, and optional tuning parameters.</p>
+<p>Other examples of MapReduce problems are</p>
+<ol>
+<li>Distributed Grep</li>
+<li>Count of URL access frequency</li>
+<li>Reverse Web-Link Graph</li>
+<li>Term Vector Per Host</li>
+<li>Inverted Index</li>
+<li>Distributed Sort</li>
+</ol>
+<h2 id="execution">
+  Execution
+  <a class="heading-link" href="#execution">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>To distribute map operation, partition the input data into a set of M splits so that each can be processed in parallel. Reduce invocations are distributed by partitioning the intermediate key spaces into R (number of reducers) pieces using a partitioning function e.g. <code>(hash(key) mod R)</code>. R and the partitioning function are specified by the user.</p>
+<p><img src="../../images/system-design/map-reduce-1.webp" alt="Map Reduce"></p>
+<p>Numbers in the above diagrams represent the order in which these tasks are executed.</p>
+<ol>
+<li>
+<p>Splits the input file in M chunks and starts many copies of the program on a cluster of machines.</p>
+</li>
+<li>
+<p>Master picks idle workers and assigns each one a <code>map</code> task or a <code>reduce</code> task out of M <code>map</code> tasks and R <code>reduce</code> tasks.</p>
+</li>
+<li>
+<p>Map task worker reads and parses key/value pairs out of input split assigned and passes each key/value pair to user-defined <code>map</code> function. Output key/value pairs by map function are buffered in memory.</p>
+</li>
+<li>
+<p>Buffered pairs are partitioned in R partitions and written to the local disks periodically. Locations of these partitioned are passed to the master, who forwards these locations to reduce workers.</p>
+</li>
+<li>
+<p>Reduce workers are notified by the master. Intermediate data stored on local disks of <code>map</code> workers are read by reduce workers using remote procedure calls and sorted to group same key together.</p>
+</li>
+<li>
+<p>Reduce worker passes each unique intermediate key and set of values to <code>reduce</code> function. The output of the reduce function is appended to the final output file for this reduce partition.</p>
+</li>
+</ol>
+<p>After successful completion, the output of the MapReduce execution is available in the R output files one per reduce task.</p>
+<h2 id="master">
+  Master
+  <a class="heading-link" href="#master">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>One of the copies of the program is special which is called the <code>master</code>. Master keeps several data structures. For each map task and reduce task, it stores the state (<code>idle</code>, <code>in-progress</code>, or <code>completed</code>) and the identity of the worker machine (for non-idle tasks).</p>
+<p>Master propagates locations of intermediate files regions from map tasks to reduce tasks. For each completed map tasks master stores R intermediate file regions produced by the map task. These information’s are sent to master by map tasks on its completion and incrementally pushed to workers with in progress reduce tasks by the master.</p>
+<h2 id="failures">
+  Failures
+  <a class="heading-link" href="#failures">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>How does MapReduce handle the failures? There is two kinds of failures.</p>
+<p><strong>Worker Failures</strong>: Master pings every worker periodically. If no response is received from a worker in a certain amount of time, the master marks the worker as failed. Any map tasks completed by the worker are reset back to their initial idle state and therefore becomes eligible for rescheduling. Completed map tasks are re-executed on a failure because their output is stored on the local disk(s) of the failed machine and is therefore inaccessible. Completed reduce tasks do not need to be re-executed since their output is stored in a global file system.</p>
+<p>When a map task is executed first by worker A and then later executed by worker B (because A failed), all workers executing reduce tasks are notified of the re-execution. Any reduce task that has not already read the data from worker A will read the data from worker B.</p>
+<p><strong>Master Failures</strong>: Master failures are handled by writing periodic checkpoints of the master data structures.</p>
+<h2 id="locality">
+  Locality
+  <a class="heading-link" href="#locality">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>MapReduce frameworks take advantage of a distributed file system like GFS, HDFS, etc. Distributed file system divides each input file into 64 MB blocks and stores several copies of each block on different machines. The MapReduce master takes the location information of the input files into account and attempts to schedule a map task on a machine that contains a replica of the corresponding input data.</p>
+<h2 id="task-granularity">
+  Task Granularity
+  <a class="heading-link" href="#task-granularity">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>MapReduce subdivides the map phase into M pieces and the reduce phase into R pieces, as described above. Ideally, M and R should be much larger than the number of workers machines. Having each worker perform many different tasks improves dynamic load balancing, and also speeds up recovery when a worker fails.</p>
+<p>There are practical bounds on how large M and R can be, since the master must take O(M + R) scheduling decisions and keeps O(M * R) state in memory.</p>
+<h2 id="partitioning-function">
+  Partitioning Function
+  <a class="heading-link" href="#partitioning-function">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>By default, MapReduce provides a default partitioning function which uses hashing (e.g <code>“hash(key) mod R”</code>) where R is provided by the user of MapReduce programs. Default partitioning function tends to result in very well-balanced partitions. However, in some cases, it is useful to partition the data by some other functions of the key. For example, Some cases output keys are URLs and we want to all entries for a single host to end up in the same file. To Support these cases, users of MapReduce library can specify special partitioning functions.</p>
+<h2 id="combiner-function">
+  Combiner Function
+  <a class="heading-link" href="#combiner-function">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>In some cases, there is significant repetition in the intermediate keys produced by each map task, and all of these repetitive keys will be sent over the network to single reduce task then added together by the reduce function to produce one number. To reduce this overhead, users of MapReduce library can specify an optional <code>combiner</code> function which does the partial merging of this data before it is sent over the network.</p>
+<p>The Combiner function is executed on each machine that performs a map task. Typically the same code is used to implement both the combiner and the reduce functions. The only difference between a reduce function and a combiner function is how the MapReduce library handles the output of the function. The output of a reduce function is written to the final output file. The output of a combiner function is written to an intermediate file that will be sent to a reduce task.</p>
+<h2 id="references">
+  References
+  <a class="heading-link" href="#references">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><a href="https://static.googleusercontent.com/media/research.google.com/en//archive/mapreduce-osdi04.pdf"  class="external-link" target="_blank" rel="noopener">https://static.googleusercontent.com/media/research.google.com/en//archive/mapreduce-osdi04.pdf</a></p>
+
+  </article>
+</section>
+
+  
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+    2023
+     Vivek Kumar Singh 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

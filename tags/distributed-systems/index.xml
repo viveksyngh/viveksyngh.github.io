@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>distributed systems on Vivek Kumar Singh</title>
+    <link>http://www.viveksyngh.com/tags/distributed-systems/</link>
+    <description>Recent content in distributed systems on Vivek Kumar Singh</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 23 Oct 2019 00:00:00 -0600</lastBuildDate><atom:link href="http://www.viveksyngh.com/tags/distributed-systems/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MapReduce Overview</title>
+      <link>http://www.viveksyngh.com/system-design/mapreduce-overview/</link>
+      <pubDate>Wed, 23 Oct 2019 00:00:00 -0600</pubDate>
+      
+      <guid>http://www.viveksyngh.com/system-design/mapreduce-overview/</guid>
+      <description>In this blog, I will be discussing MapReduce programming model and how it works. This blog is based on the original MapReduce research paper MapReduce: Simplified Data Processing on Large Clusters from Google.
+MapReduce is a programming model and an associated implementation for processing and generating large data sets. User specifies a map function that processes a key/value pair to generate a set for intermediate key/value pairs, and a reduce function that merges all intermediate values associated with the same intermediate key.</description>
+    </item>
+    
+  </channel>
+</rss>

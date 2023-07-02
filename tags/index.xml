@@ -6,7 +6,43 @@
     <description>Recent content in Tags on Vivek Kumar Singh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 06 Feb 2019 00:00:00 -0600</lastBuildDate><atom:link href="http://www.viveksyngh.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 23 Oct 2019 00:00:00 -0600</lastBuildDate><atom:link href="http://www.viveksyngh.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>distributed systems</title>
+      <link>http://www.viveksyngh.com/tags/distributed-systems/</link>
+      <pubDate>Wed, 23 Oct 2019 00:00:00 -0600</pubDate>
+      
+      <guid>http://www.viveksyngh.com/tags/distributed-systems/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mapreduce</title>
+      <link>http://www.viveksyngh.com/tags/mapreduce/</link>
+      <pubDate>Wed, 23 Oct 2019 00:00:00 -0600</pubDate>
+      
+      <guid>http://www.viveksyngh.com/tags/mapreduce/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>research paper</title>
+      <link>http://www.viveksyngh.com/tags/research-paper/</link>
+      <pubDate>Wed, 23 Oct 2019 00:00:00 -0600</pubDate>
+      
+      <guid>http://www.viveksyngh.com/tags/research-paper/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>system design</title>
+      <link>http://www.viveksyngh.com/tags/system-design/</link>
+      <pubDate>Wed, 23 Oct 2019 00:00:00 -0600</pubDate>
+      
+      <guid>http://www.viveksyngh.com/tags/system-design/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>proxy</title>
       <link>http://www.viveksyngh.com/tags/proxy/</link>
@@ -31,15 +67,6 @@
       <pubDate>Wed, 06 Feb 2019 00:00:00 -0600</pubDate>
       
       <guid>http://www.viveksyngh.com/tags/software-engineering/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>system design</title>
-      <link>http://www.viveksyngh.com/tags/system-design/</link>
-      <pubDate>Wed, 06 Feb 2019 00:00:00 -0600</pubDate>
-      
-      <guid>http://www.viveksyngh.com/tags/system-design/</guid>
       <description></description>
     </item>
     
