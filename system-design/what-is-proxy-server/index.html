@@ -140,7 +140,7 @@ A client connects to the proxy server, requesting for some service (file, connec
       </h1>
     </header>
 
-    <p><img src="../../static/images/system-design/proxy-server.webp" alt="Proxy Server"></p>
+    <p><img src="../../images/system-design/proxy-server.webp" alt="Proxy Server"></p>
 <p>Word <code>proxy</code> defines, someone or something acting on behalf of something else. In computer science proxy means one server acting on behalf of other servers. A proxy server is a server ( or computer system or an application) that acts as an intermediary for requests from clients seeking resources from other servers.</p>
 <p>A client connects to the proxy server, requesting for some service (file, connection, web page) available from a different server and the proxy server evaluates the request as a way simplify and control it’s complexity. Proxies were invented to add structure and encapsulation to distributed systems.</p>
 <blockquote>
@@ -167,7 +167,7 @@ A client connects to the proxy server, requesting for some service (file, connec
   </a>
 </h2>
 <p>Most often when people talk about proxy server they commonly refer to forward proxy. A <em>forward proxy</em> is an internet facing proxy which provides services to a client or group of clients. Often, these clients are part of a common internal network.</p>
-<p><img src="../../static/images/system-design/forward-proxy.webp" alt="Forward Proxy"></p>
+<p><img src="../../images/system-design/forward-proxy.webp" alt="Forward Proxy"></p>
 <p>In example, when one of these client makes connection attempt to <a href="https://www.example.com"  class="external-link" target="_blank" rel="noopener">www.example.com</a> server for a web page, the request has to pass through the forward proxy server first. Depending on the forward proxy settings request can be allowed or denied. If allowed, the request is forwarded to <a href="https://www.example.com"  class="external-link" target="_blank" rel="noopener">www.example.com</a> web server.</p>
 <p>Web server sees that the request was sent by forward proxy server and while sending the response it addresses forward proxy server.When forward proxy receives the response, it recognizes it as the response to the request that went earlier and passes the response to the client who made the request.</p>
 <p>Forward proxies are a single point for access and control, and makes it easier to enforce securities policies. Forward proxies are used by organizations, schools to enforce security, block access to certain contents on the internet for clients in the internal network. Requests may be filtered by several methods, such as a URL or DNS blacklists blacklist, URL regex filtering, MIME filtering, or content keyword filtering.</p>
@@ -178,10 +178,10 @@ A client connects to the proxy server, requesting for some service (file, connec
 </blockquote>
 <p>Some forward proxy softwares (on the server side) are:</p>
 <ul>
-<li><img src="https://www.php-proxy.com/" alt="PHP-Proxy"></li>
-<li><img src="https://www.jmarshall.com/tools/cgiproxy/" alt="Cgi-proxy"></li>
-<li><img src="https://proxy.org/" alt="glype"></li>
-<li><img src="http://www.squid-cache.org/" alt="squid"> (apparently, can also work as a reverse proxy).</li>
+<li><a href="https://www.php-proxy.com/"  class="external-link" target="_blank" rel="noopener">PHP-Proxy</a></li>
+<li><a href="https://www.jmarshall.com/tools/cgiproxy/"  class="external-link" target="_blank" rel="noopener">Cgi-proxy</a></li>
+<li><a href="https://proxy.org/"  class="external-link" target="_blank" rel="noopener">glype</a></li>
+<li><a href="http://www.squid-cache.org/"  class="external-link" target="_blank" rel="noopener">squid</a> (apparently, can also work as a reverse proxy).</li>
 </ul>
 <h2 id="reverse-proxy">
   Reverse Proxy
@@ -192,17 +192,17 @@ A client connects to the proxy server, requesting for some service (file, connec
 </h2>
 <p>A reverse proxy does exact opposite of what forward proxy does. Forward proxy proxies on behalf of clients where reverse proxy proxies on behalf of severs. It is usually an internal-facing proxy used as a front-end to control and protect access to a server on a private network. All traffic coming from the Internet and with a destination of one of the servers goes through the proxy server.</p>
 <p>It appears to clients to be an ordinary server. It accepts requests from external clients on behalf of the servers behind them and forwards the request to one or more servers to handle the request. The response from the proxy server is returned as if it came directly from the origin servers, leaving the client with no information about origin servers.</p>
-<p><img src="../../static/images/system-design/reverse-proxy.jpg" alt="Reverse Proxy"></p>
+<p><img src="../../images/system-design/reverse-proxy.jpg" alt="Reverse Proxy"></p>
 <p>To the client in our example, it is reverse proxy that is providing the services for <a href="https://www.example.com"  class="external-link" target="_blank" rel="noopener">www.example.com</a>. The client is unaware about the web servers behind the proxy which are actually providing the service.</p>
 <blockquote>
 <p>A forward proxy hides the identities of clients, whereas a reverse proxy hides identities of servers.</p>
 </blockquote>
 <p>A reverse proxy is used for the following purpose:</p>
-<p><em>Encryption or SSL Acceleration</em>: When secure web sites are created, the secure sockets layer (SSL) encryption is often not done by the web server itself, but by a reverse proxy that is equipped with SSL acceleration hardware. A reverse proxy provides SSL encryption for an arbitrary number of host removing the need for separate SSL server certificate for each host.</p>
-<p><em>Load Balancing</em>: The reverse proxy can distribute the load to several web servers, each web server serving its own application area.</p>
-<p><em>Serve/cache static content</em>: A reverse proxy can offload the web servers by caching static content like pictures and other static graphical content.</p>
-<p><em>Compression</em>: the proxy server can optimize and compress the content to speed up the load time.</p>
-<p><em>Security</em>: the proxy server is an additional layer of defence and can protect against some OS and Web Server specific attacks.</p>
+<p><strong>Encryption or SSL Acceleration</strong>: When secure web sites are created, the secure sockets layer (SSL) encryption is often not done by the web server itself, but by a reverse proxy that is equipped with SSL acceleration hardware. A reverse proxy provides SSL encryption for an arbitrary number of host removing the need for separate SSL server certificate for each host.</p>
+<p><strong>Load Balancing</strong>: The reverse proxy can distribute the load to several web servers, each web server serving its own application area.</p>
+<p><strong>Serve/cache static content</strong>: A reverse proxy can offload the web servers by caching static content like pictures and other static graphical content.</p>
+<p><strong>Compression</strong>: the proxy server can optimize and compress the content to speed up the load time.</p>
+<p><strong>Security</strong>: the proxy server is an additional layer of defense and can protect against some OS and Web Server specific attacks.</p>
 <p>Reverse proxy softwares for HTTP (server side):</p>
 <ul>
 <li><a href="https://cwiki.apache.org/confluence/display/COCOON/ApacheModProxySsl"  class="external-link" target="_blank" rel="noopener">Apache mod_proxy</a> (can also work as a forward proxy for HTTP)</li>
