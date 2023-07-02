@@ -32,16 +32,46 @@
     <loc>http://www.viveksyngh.com/system-design/what-is-proxy-server/</loc>
     <lastmod>2019-02-06T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://www.viveksyngh.com/tags/cli/</loc>
-    <lastmod>2018-08-28T00:10:34-06:00</lastmod>
+    <loc>http://www.viveksyngh.com/posts/getting-started-with-golang-interfaces/</loc>
+    <lastmod>2018-10-15T00:00:00-06:00</lastmod>
   </url><url>
     <loc>http://www.viveksyngh.com/tags/golang/</loc>
-    <lastmod>2018-08-28T00:10:34-06:00</lastmod>
+    <lastmod>2018-10-15T00:00:00-06:00</lastmod>
   </url><url>
     <loc>http://www.viveksyngh.com/categories/golang/</loc>
-    <lastmod>2018-08-28T00:10:34-06:00</lastmod>
+    <lastmod>2018-10-15T00:00:00-06:00</lastmod>
+  </url><url>
+    <loc>http://www.viveksyngh.com/tags/interface/</loc>
+    <lastmod>2018-10-15T00:00:00-06:00</lastmod>
+  </url><url>
+    <loc>http://www.viveksyngh.com/tags/polymorphism/</loc>
+    <lastmod>2018-10-15T00:00:00-06:00</lastmod>
   </url><url>
     <loc>http://www.viveksyngh.com/posts/</loc>
+    <lastmod>2018-10-15T00:00:00-06:00</lastmod>
+  </url><url>
+    <loc>http://www.viveksyngh.com/tags/programming/</loc>
+    <lastmod>2018-10-15T00:00:00-06:00</lastmod>
+  </url><url>
+    <loc>http://www.viveksyngh.com/posts/object-oriented-programming-and-golang/</loc>
+    <lastmod>2018-09-14T00:00:00-06:00</lastmod>
+  </url><url>
+    <loc>http://www.viveksyngh.com/tags/oops/</loc>
+    <lastmod>2018-09-14T00:00:00-06:00</lastmod>
+  </url><url>
+    <loc>http://www.viveksyngh.com/posts/pass-by-value-and-pass-by-reference-in-go/</loc>
+    <lastmod>2018-09-07T00:00:00-06:00</lastmod>
+  </url><url>
+    <loc>http://www.viveksyngh.com/tags/http/</loc>
+    <lastmod>2018-09-01T00:00:00-06:00</lastmod>
+  </url><url>
+    <loc>http://www.viveksyngh.com/posts/http-response-in-golang/</loc>
+    <lastmod>2018-09-01T00:00:00-06:00</lastmod>
+  </url><url>
+    <loc>http://www.viveksyngh.com/tags/json/</loc>
+    <lastmod>2018-09-01T00:00:00-06:00</lastmod>
+  </url><url>
+    <loc>http://www.viveksyngh.com/tags/cli/</loc>
     <lastmod>2018-08-28T00:10:34-06:00</lastmod>
   </url><url>
     <loc>http://www.viveksyngh.com/posts/timeout-commands-in-golang/</loc>
