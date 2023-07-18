@@ -6,13 +6,40 @@
     <description>Recent content in Tags on Vivek Kumar Singh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 23 Oct 2019 00:00:00 -0600</lastBuildDate><atom:link href="http://www.viveksyngh.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 19 Feb 2023 00:00:00 -0600</lastBuildDate><atom:link href="http://www.viveksyngh.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>cassandra</title>
+      <link>http://www.viveksyngh.com/tags/cassandra/</link>
+      <pubDate>Sun, 19 Feb 2023 00:00:00 -0600</pubDate>
+      
+      <guid>http://www.viveksyngh.com/tags/cassandra/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>distributed systems</title>
       <link>http://www.viveksyngh.com/tags/distributed-systems/</link>
-      <pubDate>Wed, 23 Oct 2019 00:00:00 -0600</pubDate>
+      <pubDate>Sun, 19 Feb 2023 00:00:00 -0600</pubDate>
       
       <guid>http://www.viveksyngh.com/tags/distributed-systems/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dynamo</title>
+      <link>http://www.viveksyngh.com/tags/dynamo/</link>
+      <pubDate>Sun, 19 Feb 2023 00:00:00 -0600</pubDate>
+      
+      <guid>http://www.viveksyngh.com/tags/dynamo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>research paper</title>
+      <link>http://www.viveksyngh.com/tags/research-paper/</link>
+      <pubDate>Sun, 19 Feb 2023 00:00:00 -0600</pubDate>
+      
+      <guid>http://www.viveksyngh.com/tags/research-paper/</guid>
       <description></description>
     </item>
     
@@ -22,15 +49,6 @@
       <pubDate>Wed, 23 Oct 2019 00:00:00 -0600</pubDate>
       
       <guid>http://www.viveksyngh.com/tags/mapreduce/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>research paper</title>
-      <link>http://www.viveksyngh.com/tags/research-paper/</link>
-      <pubDate>Wed, 23 Oct 2019 00:00:00 -0600</pubDate>
-      
-      <guid>http://www.viveksyngh.com/tags/research-paper/</guid>
       <description></description>
     </item>
     
