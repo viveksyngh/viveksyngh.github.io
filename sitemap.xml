@@ -32,6 +32,24 @@
     <loc>http://www.viveksyngh.com/</loc>
     <lastmod>2023-02-19T00:00:00-06:00</lastmod>
   </url><url>
+    <loc>http://www.viveksyngh.com/posts/converting-kubernetes-go-types-to-yaml-and-vice-versa/</loc>
+    <lastmod>2022-11-07T00:00:00-06:00</lastmod>
+  </url><url>
+    <loc>http://www.viveksyngh.com/tags/golang/</loc>
+    <lastmod>2022-11-07T00:00:00-06:00</lastmod>
+  </url><url>
+    <loc>http://www.viveksyngh.com/tags/kubernetes/</loc>
+    <lastmod>2022-11-07T00:00:00-06:00</lastmod>
+  </url><url>
+    <loc>http://www.viveksyngh.com/categories/kubernetes/</loc>
+    <lastmod>2022-11-07T00:00:00-06:00</lastmod>
+  </url><url>
+    <loc>http://www.viveksyngh.com/posts/</loc>
+    <lastmod>2022-11-07T00:00:00-06:00</lastmod>
+  </url><url>
+    <loc>http://www.viveksyngh.com/tags/yaml/</loc>
+    <lastmod>2022-11-07T00:00:00-06:00</lastmod>
+  </url><url>
     <loc>http://www.viveksyngh.com/tags/mapreduce/</loc>
     <lastmod>2019-10-23T00:00:00-06:00</lastmod>
   </url><url>
@@ -62,9 +80,6 @@
     <loc>http://www.viveksyngh.com/posts/getting-started-with-golang-interfaces/</loc>
     <lastmod>2018-10-15T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://www.viveksyngh.com/tags/golang/</loc>
-    <lastmod>2018-10-15T00:00:00-06:00</lastmod>
-  </url><url>
     <loc>http://www.viveksyngh.com/categories/golang/</loc>
     <lastmod>2018-10-15T00:00:00-06:00</lastmod>
   </url><url>
@@ -72,9 +87,6 @@
     <lastmod>2018-10-15T00:00:00-06:00</lastmod>
   </url><url>
     <loc>http://www.viveksyngh.com/tags/polymorphism/</loc>
-    <lastmod>2018-10-15T00:00:00-06:00</lastmod>
-  </url><url>
-    <loc>http://www.viveksyngh.com/posts/</loc>
     <lastmod>2018-10-15T00:00:00-06:00</lastmod>
   </url><url>
     <loc>http://www.viveksyngh.com/tags/programming/</loc>

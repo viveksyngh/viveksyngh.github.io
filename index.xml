@@ -18,6 +18,19 @@ Dynamo addresses the need for an incrementally scalable, highly-available key-va
     </item>
     
     <item>
+      <title>Converting Kubernetes Go Types to YAML and vice versa</title>
+      <link>http://www.viveksyngh.com/posts/converting-kubernetes-go-types-to-yaml-and-vice-versa/</link>
+      <pubDate>Mon, 07 Nov 2022 00:00:00 -0600</pubDate>
+      
+      <guid>http://www.viveksyngh.com/posts/converting-kubernetes-go-types-to-yaml-and-vice-versa/</guid>
+      <description>In this blog post, we will see how we can encode/decode Kubernetes Go API types to/from Kubernetes YAML.
+When we work with Kubernetes Go API types (custom types or core types), we often need to convert the Go API types into YAML manifest or vice versa. For example, A CLI application
+Which output Kubernetes objects in YAML
+Which takes Kubernetes objects YAML as input
+For demonstration purposes, we will be creating a simple application that creates a Kubernetes ConfigMap object and encodes/decodes it.</description>
+    </item>
+    
+    <item>
       <title>MapReduce Overview</title>
       <link>http://www.viveksyngh.com/paper-notes/mapreduce-overview/</link>
       <pubDate>Wed, 23 Oct 2019 00:00:00 -0600</pubDate>
