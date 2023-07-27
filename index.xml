@@ -18,6 +18,16 @@ Dynamo addresses the need for an incrementally scalable, highly-available key-va
     </item>
     
     <item>
+      <title>Merkle Tree and It’s Applications</title>
+      <link>http://www.viveksyngh.com/paper-notes/merkle-tree-and-its-applications/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 -0600</pubDate>
+      
+      <guid>http://www.viveksyngh.com/paper-notes/merkle-tree-and-its-applications/</guid>
+      <description>A Merkle tree, also known as hash tree is a hash based data structure. It is a tree data structure in which each node leaf nodes are cryptographic hash of data blocks for example a file or set of files, and each non-leaf node is cryptographic hash on its children nodes. A hash tree allows efficient and secure verification of the contents of a large data structure.
+Merkle trees are used in distributed systems for efficient data verification.</description>
+    </item>
+    
+    <item>
       <title>Converting Kubernetes Go Types to YAML and vice versa</title>
       <link>http://www.viveksyngh.com/posts/converting-kubernetes-go-types-to-yaml-and-vice-versa/</link>
       <pubDate>Mon, 07 Nov 2022 00:00:00 -0600</pubDate>
