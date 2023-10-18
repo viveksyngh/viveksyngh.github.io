@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>crd on Vivek Kumar Singh</title>
+    <link>http://www.viveksyngh.com/tags/crd/</link>
+    <description>Recent content in crd on Vivek Kumar Singh</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 08 Oct 2022 00:00:00 -0600</lastBuildDate><atom:link href="http://www.viveksyngh.com/tags/crd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kubernetes Operators — Fundamental Concepts</title>
+      <link>http://www.viveksyngh.com/posts/kubernetes-operators-fundamental-concepts/</link>
+      <pubDate>Sat, 08 Oct 2022 00:00:00 -0600</pubDate>
+      
+      <guid>http://www.viveksyngh.com/posts/kubernetes-operators-fundamental-concepts/</guid>
+      <description>In this series of blog posts, I am going to talk about Kubernetes operator patterns, Kubernetes controllers, Custom resources, and many more related topics. We will also build a Kubernetes operator in Go and look at different tools available for building a Kubernetes operator.
+What is Kubernetes? Link to heading From the official documentation of Kubernetes
+Kubernetes is a portable, extensible, open-source platform for managing containerized workloads and services, that facilitates both declarative configuration and automation.</description>
+    </item>
+    
+  </channel>
+</rss>

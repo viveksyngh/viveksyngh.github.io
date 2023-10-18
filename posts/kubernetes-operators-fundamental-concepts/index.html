@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  Kubernetes Operators — Fundamental Concepts · Vivek Kumar Singh
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Vivek Kumar Singh">
+<meta name="description" content="In this series of blog posts, I am going to talk about Kubernetes operator patterns, Kubernetes controllers, Custom resources, and many more related topics. We will also build a Kubernetes operator in Go and look at different tools available for building a Kubernetes operator.
+What is Kubernetes? Link to heading From the official documentation of Kubernetes
+Kubernetes is a portable, extensible, open-source platform for managing containerized workloads and services, that facilitates both declarative configuration and automation.">
+<meta name="keywords" content="blog,developer,personal">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Kubernetes Operators — Fundamental Concepts"/>
+<meta name="twitter:description" content="In this series of blog posts, I am going to talk about Kubernetes operator patterns, Kubernetes controllers, Custom resources, and many more related topics. We will also build a Kubernetes operator in Go and look at different tools available for building a Kubernetes operator.
+What is Kubernetes? Link to heading From the official documentation of Kubernetes
+Kubernetes is a portable, extensible, open-source platform for managing containerized workloads and services, that facilitates both declarative configuration and automation."/>
+
+<meta property="og:title" content="Kubernetes Operators — Fundamental Concepts" />
+<meta property="og:description" content="In this series of blog posts, I am going to talk about Kubernetes operator patterns, Kubernetes controllers, Custom resources, and many more related topics. We will also build a Kubernetes operator in Go and look at different tools available for building a Kubernetes operator.
+What is Kubernetes? Link to heading From the official documentation of Kubernetes
+Kubernetes is a portable, extensible, open-source platform for managing containerized workloads and services, that facilitates both declarative configuration and automation." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.viveksyngh.com/posts/kubernetes-operators-fundamental-concepts/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-10-08T00:00:00-06:00" />
+<meta property="article:modified_time" content="2022-10-08T00:00:00-06:00" />
+
+
+
+
+<link rel="canonical" href="http://www.viveksyngh.com/posts/kubernetes-operators-fundamental-concepts/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.65236a6d834b26194eed04a2a3b45e44d9194ef9e620253705d4bef03bd7ef81.css" integrity="sha256-ZSNqbYNLJhlO7QSio7ReRNkZTvnmICU3BdS&#43;8DvX74E=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.f6534b0b446b75d9b6ad77a97d43ede2ddaeff1b6e2361fb7198d6f8fcb7f83f.css" integrity="sha256-9lNLC0Rrddm2rXepfUPt4t2u/xtuI2H7cZjW&#43;Py3&#43;D8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      Vivek Kumar Singh
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/paper-notes/">Paper Notes</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/system-design/">System Design</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Blogs</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="http://www.viveksyngh.com/posts/kubernetes-operators-fundamental-concepts/">
+              Kubernetes Operators — Fundamental Concepts
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime="2022-10-08T00:00:00-06:00">
+                October 8, 2022
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              11-minute read
+            </span>
+          </div>
+          
+          <div class="categories">
+  <i class="fa fa-folder" aria-hidden="true"></i>
+    <a href="/categories/kubernetes/">Kubernetes</a></div>
+
+          <div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/kubernetes/">kubernetes</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/operators/">operators</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/crd/">crd</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/customresourcedefinition/">customresourcedefinition</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <p>In this series of blog posts, I am going to talk about Kubernetes operator patterns, Kubernetes controllers, Custom resources, and many more related topics. We will also build a Kubernetes operator in Go and look at different tools available for building a Kubernetes operator.</p>
+<h3 id="what-is-kubernetes">
+  What is Kubernetes?
+  <a class="heading-link" href="#what-is-kubernetes">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>From the official documentation of Kubernetes</p>
+<p><em>Kubernetes is a portable, extensible, open-source platform for managing containerized workloads and services, that facilitates both declarative configuration and automation. It has a large, rapidly growing ecosystem. Kubernetes services, support, and tools are widely available.</em></p>
+<p>Some of the important Kubernetes features</p>
+<ul>
+<li>Automated rollouts and rollbacks</li>
+<li>Self Healing</li>
+<li>Service discovery and load balancing</li>
+<li>Designed for extensibility</li>
+</ul>
+<p>&hellip;</p>
+<blockquote>
+<p><em>Kubernetes is designed for extensibility and Kubernetes operators in one of the ways in which Kubernetes functionalities can be extended.</em></p>
+</blockquote>
+<p>Before going into details of Kubernetes operators, let’s have look at features, components, and some of the core concepts of Kubernetes.</p>
+<h3 id="kubernetes-components">
+  Kubernetes Components
+  <a class="heading-link" href="#kubernetes-components">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Kubernetes runs a set of components that makes the Kubernetes control plane.</p>
+<p><img src="../../images/blogs/kubernetes-operators-1.webp" alt="Kubernetes"></p>
+<p>[Source: Kubernetes Docs]</p>
+<h4 id="kube-apiserver">
+  Kube APIServer
+  <a class="heading-link" href="#kube-apiserver">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>The API server is a component of the Kubernetes control plane that exposes the Kubernetes API. The API server is the front end of the Kubernetes control plane.</p>
+<h4 id="kube-controller-manager">
+  Kube Controller Manager
+  <a class="heading-link" href="#kube-controller-manager">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>Control plane component that runs controller processes.
+Logically, each controller is a separate process, but to reduce complexity, they are all compiled into a single binary and run in a single process.
+For example:
+Job Controller
+Pod Controller
+Node Controller
+..</p>
+<h4 id="etcd">
+  Etcd
+  <a class="heading-link" href="#etcd">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>Consistent and Highly available key-value store used backend storage for all cluster data.</p>
+<h4 id="kube-scheduler">
+  Kube Scheduler
+  <a class="heading-link" href="#kube-scheduler">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>Control plane component that watches for newly created Pods with no assigned node, and selects a node for them to run on</p>
+<h4 id="cloud-controller-manager">
+  Cloud Controller Manager
+  <a class="heading-link" href="#cloud-controller-manager">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>A Kubernetes control plane component that embeds cloud-specific control logic.</p>
+<p>The API server is the heart of Kubernetes and every change in the state of the cluster happens through the API server. The API server exposes an HTTP API that lets end users, different parts of your cluster, and external components communicate with one another.</p>
+<p>Kubernetes operator patterns and controllers heavily depend on the API server capabilities, so it is essential for us to familiarize ourselves with some of the basic design principles and concepts of the API server.</p>
+<h3 id="kubernetes-concepts">
+  Kubernetes Concepts
+  <a class="heading-link" href="#kubernetes-concepts">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<h4 id="objects">
+  Objects:
+  <a class="heading-link" href="#objects">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>Kubernetes objects are persistent entities in the Kubernetes system. Kubernetes uses these entities to represent the state of your cluster. To perform any operations with the Kubernetes cluster, we either create/update/delete a Kubernetes object.</p>
+<h4 id="resources">
+  Resources:
+  <a class="heading-link" href="#resources">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>A resource is an endpoint in the Kubernetes API that stores a collection of API objects of a certain kind; for example, the built-in pod&rsquo;s resource contains a collection of Pod objects.</p>
+<p>You can always see the list of available resources in a Kubernetes cluster by running the below command.</p>
+<p><img src="../../images/blogs/kubernetes-operators-2.webp" alt="Kubernetes Resources"></p>
+<h4 id="version">
+  Version:
+  <a class="heading-link" href="#version">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>Kubernetes APIs are versioned. Kubernetes supports multiple API versions, each at a different API path, such as <code>/api/v1</code> or <code>/apis/rbac.authorization.k8s.io/v1beta1</code>. The API server handles the conversion between API versions transparently.</p>
+<p>Different API versions indicate different levels of stability and support.</p>
+<p>For example,</p>
+<ul>
+<li>Alpha</li>
+<li>Beta</li>
+<li>Stable
+Find more about each version <a href="https://kubernetes.io/docs/reference/using-api/#api-versioning"  class="external-link" target="_blank" rel="noopener">here</a></li>
+</ul>
+<h4 id="group">
+  Group:
+  <a class="heading-link" href="#group">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>API groups are used to organize Kubernetes objects of similar interests in modular groups. Group objects can have their own versions and can be enabled/disabled individually. The API group is specified in a REST path and in the <code>apiVersion</code> field of a serialized object.</p>
+<p>API groups also make it easier to extend the Kubernetes API.</p>
+<p>There are several API groups in Kubernetes:</p>
+<ul>
+<li>
+<p>The core (also called legacy) group is found at the REST path <code>/api/v1.</code> The core group is not specified as part of the apiVersion field, for example, <code>apiVersion: v1</code>.</p>
+</li>
+<li>
+<p>The named groups are at the REST path <code>/apis/$GROUP_NAME/$VERSION </code>and use <code>apiVersion: $GROUP_NAME/$VERSION</code> (for example, <code>apiVersion: rbac.authorization.k8s.io/v1</code>).</p>
+</li>
+</ul>
+<p>You can also check the list of available API groups and their versions using <code>kubectl api-versions</code> command.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ kubectl api-versions
+</span></span><span style="display:flex;"><span>acme.cert-manager.io/v1
+</span></span><span style="display:flex;"><span>admissionregistration.k8s.io/v1
+</span></span><span style="display:flex;"><span>admissionregistration.k8s.io/v1beta1
+</span></span><span style="display:flex;"><span>apiextensions.k8s.io/v1
+</span></span><span style="display:flex;"><span>apiextensions.k8s.io/v1beta1
+</span></span><span style="display:flex;"><span>apiregistration.k8s.io/v1
+</span></span><span style="display:flex;"><span>apiregistration.k8s.io/v1beta1
+</span></span><span style="display:flex;"><span>apps/v1
+</span></span><span style="display:flex;"><span>…
+</span></span></code></pre></div><h4 id="kind">
+  Kind:
+  <a class="heading-link" href="#kind">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>Kinds are divided into API groups and are versioned. Each Kubernetes object has a kind. For example, Pod, Node, Deployment, etc. It is specified using <code>kind</code> field of an object.</p>
+<h4 id="desired-and-current-state">
+  Desired and Current State:
+  <a class="heading-link" href="#desired-and-current-state">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>Kubernetes APIs are declarative. You declare the desired state of your resource. The Kubernetes <strong>controller</strong> keeps the current state of Kubernetes objects in sync with your declared desired state. This is in contrast to an imperative API, where you instruct a server what to do.</p>
+<p>Almost every Kubernetes object includes two nested object fields that govern the object’s configuration: the object <code>spec</code> and the object <code>status</code>. For objects that have a <code>spec</code>, you have to set this when you create the object, providing a description of the characteristics you want the resource to have: its <strong>desired state</strong>.</p>
+<p>The status describes the <strong>current state</strong> of the object, supplied and updated by the Kubernetes system and its components. The Kubernetes controllers continually and actively manages every object’s actual state to match the desired state you supplied.</p>
+<p>For example,</p>
+<ul>
+<li>A Pod object has a list of containers in its <code>spec</code> and the Pod controller always tries to match its desired state by running that many containers for the Pod.</li>
+</ul>
+<blockquote>
+<p>ConfigMap, Secret, ServiceAccount etc does not have <code>spec</code> fields.</p>
+</blockquote>
+<h4 id="controllers-and-control-loops">
+  Controllers and Control Loops
+  <a class="heading-link" href="#controllers-and-control-loops">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>Controllers are <em>control loops</em> that watch the state of your cluster, then make or request changes where needed. Each controller tries to move the current cluster state closer to the desired state.</p>
+<p>A <em>control loop</em> is a non-terminating loop that regulates the state of a system.</p>
+<p>Here is one example of a control loop: a thermostat in a room.</p>
+<p>When you set the temperature, that’s telling the thermostat about your desired state. The actual room temperature is the current state. The thermostat acts to bring the current state closer to the desired state, by turning equipment on or off.</p>
+<p>A controller tracks at least one Kubernetes resource type. These objects have a <code>spec</code> field that represents the desired state. The controller(s) for that resource is responsible for making the current state come closer to that desired state.</p>
+<p><img src="../../images/blogs/kubernetes-operators-3.png" alt="Kubernetes Objects"></p>
+<p>[Source: https://iximiuz.com/en/posts/kubernetes-operator-pattern/]</p>
+<p>As a tenet of its design, Kubernetes uses lots of controllers that each manage a particular aspect of the cluster state. Most commonly, a particular control loop (controller) uses one kind of resource as its desired state and has a different kind of resource that manages to make that desired state happen. For example, a controller for Jobs tracks Job objects (to discover new work) and Pod objects (to run the Jobs, and then to see when the work is finished). In this case, something else creates the Jobs, whereas the Job controller creates Pods.</p>
+<p>It’s useful to have simple controllers rather than one, monolithic set of control loops that are interlinked. Controllers can fail, so Kubernetes is designed to allow for that.</p>
+<blockquote>
+<p>There can be several controllers that create or update the same kind of object. Behind the scenes, Kubernetes controllers make sure that they only pay attention to the resources linked to their controlling resource.</p>
+</blockquote>
+<blockquote>
+<p>For example, you can have Deployments and Jobs; these both create Pods. The Job controller does not delete the Pods that your Deployment created, because there is information (labels) the controllers can use to tell those Pods apart.</p>
+</blockquote>
+<h4 id="operators-and-operator-pattern">
+  Operators and Operator pattern
+  <a class="heading-link" href="#operators-and-operator-pattern">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>Operators are software extensions to Kubernetes that make use of <code>custom resources</code> to manage applications and their components. Operators follow Kubernetes principles, notably the <code>control loop</code>.</p>
+<p>The <a href="https://kubernetes.io/docs/concepts/extend-kubernetes/operator/"  class="external-link" target="_blank" rel="noopener">operator pattern</a> aims to capture the key aim of a human operator who is managing a service or set of services. Human operators who look after specific applications and services have deep knowledge of how the system ought to behave, how to deploy it, and how to react if there are problems.</p>
+<p>People who run workloads on Kubernetes often like to use automation to take care of repeatable tasks. The operator pattern captures how you can write code to automate a task beyond what Kubernetes itself provides.</p>
+<p>For example, <a href="https://github.com/k8ssandra/cass-operator"  class="external-link" target="_blank" rel="noopener">Cass Operator</a> handles the lifecycle management of a Cassandra cluster on Kubernetes and automates all human operator tasks involves in managing a Cassandra cluster.</p>
+<h4 id="kubernetes-extensibility">
+  Kubernetes extensibility
+  <a class="heading-link" href="#kubernetes-extensibility">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>One of the major features of Kubernetes is extensibility. Kubernetes is highly configurable and extensible. There are different ways you can extend Kubernetes functionalities. For example,</p>
+<ul>
+<li>Adding a new resource (kind) in Kubernetes API using custom resources and controllers.</li>
+<li>Extend the Kubernetes Scheduler functionality using Scheduler Extensions.</li>
+<li>Network Plugins allow for different implementations of pod networking.</li>
+<li>New types of storage can be supported via Storage Plugins.</li>
+<li>Extend Authentication, Authorization, Dynamic Admission Control, etc using Webhooks extension point of Kubernetes API</li>
+</ul>
+<p><img src="../../images/blogs/kubernetes-operators-4.webp" alt="Kubernetes Extension Point"></p>
+<h4 id="custom-resources">
+  Custom Resources
+  <a class="heading-link" href="#custom-resources">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>A <a href="https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/#custom-resources"  class="external-link" target="_blank" rel="noopener">custom resource</a> is an extension of the Kubernetes API that is not necessarily available in a default Kubernetes installation. It represents a customization of a particular Kubernetes installation. However, many core Kubernetes functions are now built using custom resources, making Kubernetes more modular.</p>
+<p>Custom resources can appear and disappear in a running cluster through dynamic registration, and cluster admins can update custom resources independently of the cluster itself. Once a custom resource is installed, users can create and access its objects using kubectl, just as they do for built-in resources like Pods.</p>
+<p>Custom resources are dynamically registered with a Kubernetes cluster using an API resource called <code>CustomResourceDefinition</code>. The CustomResourceDefinition API resource allows you to define custom resources. Defining a CRD object creates a new custom resource with a name and schema that you specify.</p>
+<p>When you create a new <code>CustomResourceDefinition</code> (CRD), the Kubernetes API Server creates a new RESTful resource path for each version you specify. The custom resource created from a CRD object can be either namespaced or cluster-scoped, as specified in the CRD’s <code>spec.scope</code></p>
+<h4 id="custom-controllers">
+  Custom controllers
+  <a class="heading-link" href="#custom-controllers">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>Custom resources let you store and retrieve structured data. When you combine a custom resource with a <a href="https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/#custom-controllers"  class="external-link" target="_blank" rel="noopener">custom controller</a>, custom resources provide a true <code>declarative</code> API.</p>
+<p>You can deploy and update a custom controller on a running cluster, independently of the cluster’s lifecycle. Custom controllers can work with any kind of resource, but they are especially effective when combined with custom resources. The Operator pattern combines custom resources and custom controllers. You can use custom controllers to encode domain knowledge for specific applications into an extension of the Kubernetes API.</p>
+<p>When you create a custom resource via CRD, you get many common features for your API automatically enabled compared to implementing it outside of the Kubernetes platform.</p>
+<p><img src="../../images/blogs/kubernetes-operators-5.webp" alt="Kubernetes Custom Resources"></p>
+<pre><code>[Common Features of custom resources]
+</code></pre>
+<h4 id="how-to-create-a-new-api-custom-resource-type">
+  How to create a new API Custom Resource Type?
+  <a class="heading-link" href="#how-to-create-a-new-api-custom-resource-type">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>Custom Resource types are created and managed like any other built-in types in Kubernetes. We can define the <em>CustomResourceDefinition</em> object for the custom resource type and apply it to the cluster.</p>
+<p>For example, Custom Resource <code>crontabs</code> , the definition would look something like as below</p>
+<p>Save this to a file <code>crontabs.yaml</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#7ee787">apiVersion</span>:<span style="color:#6e7681"> </span><span style="color:#a5d6ff">apiextensions.k8s.io/v1</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681"></span><span style="color:#7ee787">kind</span>:<span style="color:#6e7681"> </span><span style="color:#a5d6ff">CustomResourceDefinition</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681"></span><span style="color:#7ee787">metadata</span>:<span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">  </span><span style="color:#8b949e;font-style:italic"># name must match the spec fields below, and be in the form: &lt;plural&gt;.&lt;group&gt;</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">  </span><span style="color:#7ee787">name</span>:<span style="color:#6e7681"> </span><span style="color:#a5d6ff">crontabs.stable.example.com</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681"></span><span style="color:#7ee787">spec</span>:<span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">  </span><span style="color:#8b949e;font-style:italic"># group name to use for REST API: /apis/&lt;group&gt;/&lt;version&gt;</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">  </span><span style="color:#7ee787">group</span>:<span style="color:#6e7681"> </span><span style="color:#a5d6ff">stable.example.com</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">  </span><span style="color:#8b949e;font-style:italic"># list of versions supported by this CustomResourceDefinition</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">  </span><span style="color:#7ee787">versions</span>:<span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">    </span>- <span style="color:#7ee787">name</span>:<span style="color:#6e7681"> </span><span style="color:#a5d6ff">v1</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">      </span><span style="color:#8b949e;font-style:italic"># Each version can be enabled/disabled by Served flag.</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">      </span><span style="color:#7ee787">served</span>:<span style="color:#6e7681"> </span><span style="color:#79c0ff">true</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">      </span><span style="color:#8b949e;font-style:italic"># One and only one version must be marked as the storage version.</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">      </span><span style="color:#7ee787">storage</span>:<span style="color:#6e7681"> </span><span style="color:#79c0ff">true</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">      </span><span style="color:#7ee787">schema</span>:<span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">        </span><span style="color:#7ee787">openAPIV3Schema</span>:<span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">          </span><span style="color:#7ee787">type</span>:<span style="color:#6e7681"> </span><span style="color:#a5d6ff">object</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">          </span><span style="color:#7ee787">properties</span>:<span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">            </span><span style="color:#7ee787">spec</span>:<span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">              </span><span style="color:#7ee787">type</span>:<span style="color:#6e7681"> </span><span style="color:#a5d6ff">object</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">              </span><span style="color:#7ee787">properties</span>:<span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">                </span><span style="color:#7ee787">cronSpec</span>:<span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">                  </span><span style="color:#7ee787">type</span>:<span style="color:#6e7681"> </span><span style="color:#a5d6ff">string</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">                </span><span style="color:#7ee787">image</span>:<span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">                  </span><span style="color:#7ee787">type</span>:<span style="color:#6e7681"> </span><span style="color:#a5d6ff">string</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">                </span><span style="color:#7ee787">replicas</span>:<span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">                  </span><span style="color:#7ee787">type</span>:<span style="color:#6e7681"> </span><span style="color:#a5d6ff">integer</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">  </span><span style="color:#8b949e;font-style:italic"># either Namespaced or Cluster</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">  </span><span style="color:#7ee787">scope</span>:<span style="color:#6e7681"> </span><span style="color:#a5d6ff">Namespaced</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">  </span><span style="color:#7ee787">names</span>:<span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">    </span><span style="color:#8b949e;font-style:italic"># plural name to be used in the URL: /apis/&lt;group&gt;/&lt;version&gt;/&lt;plural&gt;</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">    </span><span style="color:#7ee787">plural</span>:<span style="color:#6e7681"> </span><span style="color:#a5d6ff">crontabs</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">    </span><span style="color:#8b949e;font-style:italic"># singular name to be used as an alias on the CLI and for display</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">    </span><span style="color:#7ee787">singular</span>:<span style="color:#6e7681"> </span><span style="color:#a5d6ff">crontab</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">    </span><span style="color:#8b949e;font-style:italic"># kind is normally the CamelCased singular type. Your resource manifests use this.</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">    </span><span style="color:#7ee787">kind</span>:<span style="color:#6e7681"> </span><span style="color:#a5d6ff">CronTab</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">    </span><span style="color:#8b949e;font-style:italic"># shortNames allow shorter string to match your resource on the CLI</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">    </span><span style="color:#7ee787">shortNames</span>:<span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">    </span>- <span style="color:#a5d6ff">ct</span><span style="color:#6e7681">
+</span></span></span></code></pre></div><p>and you can create it:</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl apply -f crontabs.yaml
+</span></span></code></pre></div><p>Then a new namespaced RESTful API endpoint is created at:</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>/apis/stable.example.com/v1/namespaces/*/crontabs/…
+</span></span></code></pre></div><p>You can also create an instance of the <code>crontab</code> custom resource using <code>kubectl</code>. An example <code>crontab</code> resource</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#7ee787">apiVersion</span>:<span style="color:#6e7681"> </span><span style="color:#a5d6ff">&#34;stable.example.com/v1&#34;</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681"></span><span style="color:#7ee787">kind</span>:<span style="color:#6e7681"> </span><span style="color:#a5d6ff">CronTab</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681"></span><span style="color:#7ee787">metadata</span>:<span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">  </span><span style="color:#7ee787">name</span>:<span style="color:#6e7681"> </span><span style="color:#a5d6ff">my-new-cron-object</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681"></span><span style="color:#7ee787">spec</span>:<span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">  </span><span style="color:#7ee787">cronSpec</span>:<span style="color:#6e7681"> </span><span style="color:#a5d6ff">&#34;* * * * */5&#34;</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">  </span><span style="color:#7ee787">image</span>:<span style="color:#6e7681"> </span><span style="color:#a5d6ff">my-awesome-cron-image</span><span style="color:#6e7681">
+</span></span></span></code></pre></div><p>List <code>crontab</code> resources</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>kubectl get crontabs
+</span></span></code></pre></div><p>The above is a very simple custom resource with only a few fields but in an actual operator, Kubernetes custom resource fields structure can get very complex and it would be very difficult to write the CRDs definition by hand.</p>
+<p>Also, the above custom resources do not have a custom controller to reconcile to custom resource events. There is a lot that goes into writing custom controllers for custom resources.</p>
+<p>In the next blog in this series, we will be looking at different options and tooling available for working with custom resources and custom controllers.</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+    2023
+     Vivek Kumar Singh 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>
