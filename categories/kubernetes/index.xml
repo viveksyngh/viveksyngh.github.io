@@ -31,5 +31,19 @@ What is Kubernetes? Link to heading From the official documentation of Kubernete
 Kubernetes is a portable, extensible, open-source platform for managing containerized workloads and services, that facilitates both declarative configuration and automation.</description>
     </item>
     
+    <item>
+      <title>Understanding Kubernetes Container Probes</title>
+      <link>http://www.viveksyngh.com/posts/understanding-kubernetes-container-probes/</link>
+      <pubDate>Fri, 01 Jul 2022 00:00:00 -0600</pubDate>
+      
+      <guid>http://www.viveksyngh.com/posts/understanding-kubernetes-container-probes/</guid>
+      <description>A probe is a diagnostic performed periodically by the kubelet on a container. To perform a diagnostic, the kubelet either executes code within the container or makes a network request.
+There are three types of probes in Kubernetes
+Liveness Probe indicates whether the container is running.
+Readiness Probe indicates whether the container is ready to respond to requests.
+Startup Probe indicates whether the container is started.
+Liveness Probe Link to heading The kubelet uses a liveness probe to know when to restart the container.</description>
+    </item>
+    
   </channel>
 </rss>
