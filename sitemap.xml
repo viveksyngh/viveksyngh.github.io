@@ -80,6 +80,12 @@
     <loc>http://www.viveksyngh.com/posts/understanding-kubernetes-container-probes/</loc>
     <lastmod>2022-07-01T00:00:00-06:00</lastmod>
   </url><url>
+    <loc>http://www.viveksyngh.com/posts/running-highly-available-apps-on-kubernetes/</loc>
+    <lastmod>2022-05-11T00:00:00-06:00</lastmod>
+  </url><url>
+    <loc>http://www.viveksyngh.com/tags/software-development/</loc>
+    <lastmod>2022-05-11T00:00:00-06:00</lastmod>
+  </url><url>
     <loc>http://www.viveksyngh.com/tags/mapreduce/</loc>
     <lastmod>2019-10-23T00:00:00-06:00</lastmod>
   </url><url>
@@ -90,9 +96,6 @@
     <lastmod>2019-10-23T00:00:00-06:00</lastmod>
   </url><url>
     <loc>http://www.viveksyngh.com/tags/proxy/</loc>
-    <lastmod>2019-02-06T00:00:00-06:00</lastmod>
-  </url><url>
-    <loc>http://www.viveksyngh.com/tags/software-development/</loc>
     <lastmod>2019-02-06T00:00:00-06:00</lastmod>
   </url><url>
     <loc>http://www.viveksyngh.com/tags/software-engineering/</loc>

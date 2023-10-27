@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  Running Highly Available Apps on Kubernetes · Vivek Kumar Singh
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Vivek Kumar Singh">
+<meta name="description" content="As Kubernetes becomes the de-facto standard for deploying applications, many of us are either running our applications on Kubernetes or trying to migrate to Kubernetes. In this blog post, I will go through some tips for running highly available applications on Kubernetes.
+Kubernetes: Link to heading Kubernetes, also known as K8s, is an open-source system for automating the deployment, scaling, and management of containerized applications. It is designed on the same principles that allow Google to run billions of containers a week, Kubernetes can scale without increasing your ops team.">
+<meta name="keywords" content="blog,developer,personal">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Running Highly Available Apps on Kubernetes"/>
+<meta name="twitter:description" content="As Kubernetes becomes the de-facto standard for deploying applications, many of us are either running our applications on Kubernetes or trying to migrate to Kubernetes. In this blog post, I will go through some tips for running highly available applications on Kubernetes.
+Kubernetes: Link to heading Kubernetes, also known as K8s, is an open-source system for automating the deployment, scaling, and management of containerized applications. It is designed on the same principles that allow Google to run billions of containers a week, Kubernetes can scale without increasing your ops team."/>
+
+<meta property="og:title" content="Running Highly Available Apps on Kubernetes" />
+<meta property="og:description" content="As Kubernetes becomes the de-facto standard for deploying applications, many of us are either running our applications on Kubernetes or trying to migrate to Kubernetes. In this blog post, I will go through some tips for running highly available applications on Kubernetes.
+Kubernetes: Link to heading Kubernetes, also known as K8s, is an open-source system for automating the deployment, scaling, and management of containerized applications. It is designed on the same principles that allow Google to run billions of containers a week, Kubernetes can scale without increasing your ops team." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.viveksyngh.com/posts/running-highly-available-apps-on-kubernetes/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-05-11T00:00:00-06:00" />
+<meta property="article:modified_time" content="2022-05-11T00:00:00-06:00" />
+
+
+
+
+<link rel="canonical" href="http://www.viveksyngh.com/posts/running-highly-available-apps-on-kubernetes/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.65236a6d834b26194eed04a2a3b45e44d9194ef9e620253705d4bef03bd7ef81.css" integrity="sha256-ZSNqbYNLJhlO7QSio7ReRNkZTvnmICU3BdS&#43;8DvX74E=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.f6534b0b446b75d9b6ad77a97d43ede2ddaeff1b6e2361fb7198d6f8fcb7f83f.css" integrity="sha256-9lNLC0Rrddm2rXepfUPt4t2u/xtuI2H7cZjW&#43;Py3&#43;D8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      Vivek Kumar Singh
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/paper-notes/">Paper Notes</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/system-design/">System Design</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Blogs</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="http://www.viveksyngh.com/posts/running-highly-available-apps-on-kubernetes/">
+              Running Highly Available Apps on Kubernetes
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime="2022-05-11T00:00:00-06:00">
+                May 11, 2022
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              11-minute read
+            </span>
+          </div>
+          
+          <div class="categories">
+  <i class="fa fa-folder" aria-hidden="true"></i>
+    <a href="/categories/kubernetes/">Kubernetes</a></div>
+
+          <div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/kubernetes/">kubernetes</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/containers/">containers</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/cloud-native/">cloud native</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/software-development/">software development</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <p>As Kubernetes becomes the de-facto standard for deploying applications, many of us are either running our applications on Kubernetes or trying to migrate to Kubernetes. In this blog post, I will go through some tips for running highly available applications on Kubernetes.</p>
+<h4 id="kuberneteshttpskubernetesio">
+  <a href="https://kubernetes.io/"  class="external-link" target="_blank" rel="noopener">Kubernetes</a>:
+  <a class="heading-link" href="#kuberneteshttpskubernetesio">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p><a href="https://kubernetes.io/docs/concepts/overview/"  class="external-link" target="_blank" rel="noopener">Kubernetes</a>, also known as K8s, is an open-source system for automating the deployment, scaling, and management of containerized applications. It is designed on the same principles that allow Google to run billions of containers a week, Kubernetes can scale without increasing your ops team.</p>
+<h4 id="high-availabilityhttpswwwdigitaloceancomcommunitytutorialswhat-is-high-availability">
+  <a href="https://www.digitalocean.com/community/tutorials/what-is-high-availability"  class="external-link" target="_blank" rel="noopener">High Availability</a>:
+  <a class="heading-link" href="#high-availabilityhttpswwwdigitaloceancomcommunitytutorialswhat-is-high-availability">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>In computing, the term <code>availability</code> is used to describe the period when a service is available, as well as the time required by a system to respond to a request made by a user. High availability is a quality of a system or component that assures a high level of operational performance for a given period of time.</p>
+<p>When running applications on Kubernetes, you can follow these points to make your applications highly available</p>
+<h5 id="1-dont-manage-pod-directly-instead-use-workload-resources-that-manage-a-set-of-pods-on-your-behalf">
+  1. Don’t manage <code>Pod</code> directly. Instead, use <em>workload resources</em> that manage a set of pods on your behalf.
+  <a class="heading-link" href="#1-dont-manage-pod-directly-instead-use-workload-resources-that-manage-a-set-of-pods-on-your-behalf">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h5>
+<p>In Kubernetes, a Pod represents a set of running <a href="https://kubernetes.io/docs/concepts/containers/"  class="external-link" target="_blank" rel="noopener">containers</a> on your cluster. Kubernetes pods have a <a href="https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/"  class="external-link" target="_blank" rel="noopener">defined lifecycle</a>. For example, once a pod is running in your cluster then a critical fault on the <a href="https://kubernetes.io/docs/concepts/architecture/nodes/"  class="external-link" target="_blank" rel="noopener">node</a> where that pod is running means that all the pods on that node fail. Kubernetes treats that level of failure as final: you would need to create a new <code>Pod</code> to recover, even if the node later becomes healthy.</p>
+<p>However, you don’t need to manage each <code>Pod</code> directly. Instead, you can use workload resources that manage a set of pods on your behalf. These resources configure <a href="https://kubernetes.io/docs/concepts/architecture/controller/"  class="external-link" target="_blank" rel="noopener">controllers</a> that make sure the right number of the right kind of pods are running, to match the state you specified.</p>
+<p>Kubernetes provides several built-in workload resources:</p>
+<ul>
+<li>
+<p><a href="https://kubernetes.io/docs/concepts/workloads/controllers/deployment/"  class="external-link" target="_blank" rel="noopener">Deployment</a> and <a href="https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/"  class="external-link" target="_blank" rel="noopener">ReplicaSet</a>: Deployment is a good fit for managing a stateless application workload on your cluster, where any Pod in the Deployment is interchangeable and can be replaced if needed.</p>
+</li>
+<li>
+<p><a href="https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/"  class="external-link" target="_blank" rel="noopener">StatefulSet</a>: Let&rsquo;s you run one or more related Pods that do track state somehow. <code>StatefuleSet</code> matches each Pod with <code>PersistentVolume</code> to persist the data. This is useful for stateful applications which manage states for example Databases, Queues, etc.</p>
+</li>
+<li>
+<p><a href="https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/"  class="external-link" target="_blank" rel="noopener">DaemonSet</a>: Defines <code>Pods</code> that provide node-local facilities. It schedules a <code>Pod</code> for the <code>DaemonSet</code> onto every node which matches <code>DaemonSet</code> the specification.</p>
+</li>
+<li>
+<p><a href="https://kubernetes.io/docs/concepts/workloads/controllers/job/"  class="external-link" target="_blank" rel="noopener">Job</a> and <a href="https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/"  class="external-link" target="_blank" rel="noopener">CronJob</a> : Define tasks that run to completion and then stop. Jobs represent one-off tasks, whereas <code>CronJobs</code> recur according to a schedule.</p>
+</li>
+</ul>
+<p><em>When using workload resources like <code>Deployment</code> or <code>StatefulSet</code> replicas value under <code>spec.replicas</code> to more than one to make your application highly available.</em></p>
+<h4 id="2-use-rollingupdate-update-strategy-for-workload-resources">
+  2. Use <code>RollingUpdate</code> update strategy for workload resources.
+  <a class="heading-link" href="#2-use-rollingupdate-update-strategy-for-workload-resources">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>Update strategy is used by Kubernetes to rollout new pods when you try to update existing workload resources (like Deployment, StatefuleSet, etc).</p>
+<p>If you try to update all pods of a <code>Deployment</code> at once without an update strategy, your application may become unavailable during the update.</p>
+<p>Kubernetes allows you to configure an update strategy for your workload using</p>
+<ul>
+<li><code>spec.updateStrategy</code> field DaemonSet and StatefuleSet</li>
+<li><code>spec.strategy</code> field for Deployment</li>
+</ul>
+<p>For your apps, set the <code>type</code> of the update strategy to the <code>RollingUpdate</code>. when you set the <code>strategy</code> type to <code>RollingUpdate</code> , you can also specify <code>maxUnvailable</code> and <code>maxSurge</code> to control the rolling update process.</p>
+<p>For example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#ff7b72">...</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681"></span><span style="color:#7ee787">spec</span>:<span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">  </span><span style="color:#7ee787">replicas</span>:<span style="color:#6e7681"> </span><span style="color:#a5d6ff">3</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">  </span><span style="color:#7ee787">stragtey</span>:<span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">    </span><span style="color:#7ee787">type</span>:<span style="color:#6e7681"> </span><span style="color:#a5d6ff">RollingUpdate</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">    </span><span style="color:#7ee787">rollingUpdate</span>:<span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">      </span><span style="color:#7ee787">maxUnavailable</span>:<span style="color:#6e7681"> </span><span style="color:#a5d6ff">1</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">      </span><span style="color:#7ee787">maxSurge</span>:<span style="color:#6e7681"> </span><span style="color:#a5d6ff">0</span><span style="color:#6e7681">
+</span></span></span></code></pre></div><p><strong>Max Unavailable :</strong></p>
+<p><code>.spec.strategy.rollingUpdate.maxUnavailable</code> is an optional field that specifies the maximum number of Pods that can be unavailable during the update process. The value can be an absolute number (for example, 5) or a percentage of desired Pods (for example, 10%). The absolute number is calculated from the percentage by rounding down. The value cannot be 0 if <code>.spec.strategy.rollingUpdate.maxSurge</code> is 0. The default value is 25%.</p>
+<p>For example, when this value is set to 30%, the old ReplicaSet can be scaled down to 70% of desired Pods immediately when the rolling update starts. Once new pods are ready, the old ReplicaSet can be scaled down further, followed by scaling up the new ReplicaSet, ensuring that the total number of Pods available at all times during the update is at least 70% of the desired Pods.</p>
+<p><strong>Max Surge :</strong></p>
+<p><code>.spec.strategy.rollingUpdate.maxSurge</code> is an optional field that specifies the maximum number of Pods that can be created over the desired number of Pods. The value can be an absolute number (for example, 5) or a percentage of desired Pods (for example, 10%). The value cannot be 0 if <code>MaxUnavailable</code> is 0. The absolute number is calculated from the percentage by rounding up. The default value is 25%.</p>
+<p>For example, when this value is set to 30%, the new ReplicaSet can be scaled up immediately when the rolling update starts, such that the total number of old and new Pods does not exceed 130% of desired Pods. Once old Pods have been killed, the new ReplicaSet can be scaled up further, ensuring that the total number of Pods running at any time during the update is at most 130% of desired Pods.</p>
+<p><em>DaemonSet</em></p>
+<p>With <code>RollingUpdate</code> update strategy, after you update a DaemonSet template, old DaemonSet pods will be killed, and new DaemonSet pods will be created automatically, in a controlled fashion. At most one pod of the DaemonSet will be running on each node during the whole update process.</p>
+<p><em>StatefulSet</em>
+When a StatefulSet <code>.spec.updateStrategy.type</code> is set to <code>RollingUpdate</code>, the StatefulSet controller will delete and recreate each Pod in the StatefulSet. It will proceed in the same order as Pod termination (from the largest ordinal to the smallest), updating each Pod one at a time.</p>
+<h4 id="3-spread-pods-across-your-cluster-among-failure-domains-such-as-regions-zones-and-nodes">
+  3. Spread Pods across your cluster among failure domains such as regions, zones, and nodes.
+  <a class="heading-link" href="#3-spread-pods-across-your-cluster-among-failure-domains-such-as-regions-zones-and-nodes">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p><em>Node Failures</em></p>
+<p>Kubernetes automatically spreads the Pods for workload resources (such as Deployment or StatefulSet) across different nodes in a cluster. This spreading helps reduce the impact of failures of nodes.</p>
+<p>The cluster admin also needs to make sure that there are enough nodes in the Kubernetes cluster and that each node has enough resources so that each new pod of the workload can be scheduled on different nodes.</p>
+<p><em>Zone Failures</em></p>
+<p>The concept of the zone, and regions are not intrinsic to Kubernetes but it is more tied with the public cloud providers.</p>
+<p>Kubernetes is designed so that a single Kubernetes cluster can run across multiple failure zones, typically where these zones fit within a logical grouping called a <code>region</code>. Major cloud providers define a region as a set of failure zones (also called <code>availability zones</code>) that provide a consistent set of features: within a region, each zone offers the same APIs and services.</p>
+<p>Typical cloud architectures aim to minimize the chance that a failure in one zone also impairs services in another zone.</p>
+<p><em>Distribute nodes across zones</em></p>
+<p>In order you to make your application resilient to a zone failure, you first need to distribute your Kubernetes cluster nodes across multiple zones or regions. Kubernetes’ core does not create nodes for you; you need to do that yourself or use a tool such as the <a href="https://cluster-api.sigs.k8s.io/"  class="external-link" target="_blank" rel="noopener">Cluster API</a> to manage nodes on your behalf.</p>
+<p>If your cluster spans multiple zones or regions, you can use node labels in conjunction with <a href="https://kubernetes.io/docs/concepts/scheduling-eviction/topology-spread-constraints/"  class="external-link" target="_blank" rel="noopener">Pod topology spread constraints</a> to control how Pods are spread across your cluster among fault domains: regions, zones, and even specific nodes. These hints enable the <a href="https://kubernetes.io/docs/reference/command-line-tools-reference/kube-scheduler/"  class="external-link" target="_blank" rel="noopener">scheduler</a> to place Pods for better-expected availability, reducing the risk that a correlated failure affects your whole workload.</p>
+<p>There are different methods that can be used for assigning pods to nodes</p>
+<ul>
+<li>Using node selectors with node labels</li>
+<li><a href="https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#affinity-and-anti-affinity"  class="external-link" target="_blank" rel="noopener">Affinity and anti-affinity rules</a></li>
+<li><code>nodeName</code> field</li>
+</ul>
+<p>For scheduling your pods to different failure domains, you need to use pod affinity with <code>topologyKey</code> which value will be equal to the label of the failure domain.</p>
+<p>There are two types of pod affinity:</p>
+<ul>
+<li>
+<p><code>requiredDuringSchedulingIgnoredDuringExecution</code>: The scheduler can&rsquo;t schedule the Pod unless the rule is met. This functions like <code>nodeSelector</code>, but with a more expressive syntax.</p>
+</li>
+<li>
+<p><code>preferredDuringSchedulingIgnoredDuringExecution</code>: The scheduler tries to find a node that meets the rule. If a matching node is not available, the scheduler still schedules the Pod.</p>
+</li>
+</ul>
+<p><strong>topologyKey</strong> is the key of node labels. If two Nodes are labeled with this key and have identical values for that label, the scheduler treats both Nodes as being in the same topology. The scheduler tries to place a balanced number of Pods into each topology domain.</p>
+<p>For example,</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#7ee787">kind</span>:<span style="color:#6e7681"> </span><span style="color:#a5d6ff">Deployment </span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681"></span><span style="color:#7ee787">metadata</span>:<span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">  </span><span style="color:#7ee787">name</span>:<span style="color:#6e7681"> </span><span style="color:#a5d6ff">component</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681"></span><span style="color:#7ee787">spec</span>:<span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">  </span><span style="color:#7ee787">affinity</span>:<span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">    </span><span style="color:#7ee787">podAntiAffinity</span>:<span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">      </span><span style="color:#7ee787">preferredDuringSchedulingIgnoredDuringExecution</span>:<span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">      </span>- <span style="color:#7ee787">labelSelector</span>:<span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">         </span><span style="color:#7ee787">matchExpressions</span>:<span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">         </span>- <span style="color:#7ee787">key</span>:<span style="color:#6e7681"> </span><span style="color:#a5d6ff">component</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">           </span><span style="color:#7ee787">operator</span>:<span style="color:#6e7681"> </span><span style="color:#a5d6ff">In  </span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">           </span><span style="color:#7ee787">values</span>:<span style="color:#6e7681">  
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">           </span>- <span style="color:#a5d6ff">component </span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">         </span><span style="color:#7ee787">topologyKey</span>:<span style="color:#6e7681"> </span><span style="color:#a5d6ff">&#34;failure-domain.beta.kubernetes.io/zone&#34;</span><span style="color:#6e7681">
+</span></span></span></code></pre></div><p>The above affinity rule will make sure that nodes are evenly distributed across the different zone.</p>
+<p><em>If you use cloud provider controllers, labels related to zone, region, etc gets automatically added on each node, otherwise, these labels need to be added by cluster admin while provisioning new nodes for the Kubernetes cluster.</em></p>
+<h4 id="4-handle-voluntary-disruptions-using-a-pod-disruption-budget">
+  4. Handle voluntary disruptions using a pod disruption budget
+  <a class="heading-link" href="#4-handle-voluntary-disruptions-using-a-pod-disruption-budget">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>There are two types of <a href="https://kubernetes.io/docs/concepts/workloads/pods/disruptions/"  class="external-link" target="_blank" rel="noopener">disruptions</a> that can happen to your pods running on a Kubernetes cluster.</p>
+<p><em>Involuntary disruptions</em></p>
+<p>Involuntary disruptions are unavoidable hardware or system software errors. For example,</p>
+<ul>
+<li>A hardware failure of the physical machine backing the node</li>
+<li>Cluster administrator deletes VM (instance) by mistake</li>
+<li>Cloud provider or hypervisor failure makes VM disappear</li>
+<li>A kernel panic</li>
+<li>The node disappears from the cluster due to cluster network partition</li>
+<li>Eviction of a pod due to the node being <a href="https://kubernetes.io/docs/concepts/scheduling-eviction/node-pressure-eviction/"  class="external-link" target="_blank" rel="noopener">out-of-resources</a>.</li>
+</ul>
+<p><em>Voluntary Disruptions</em></p>
+<p>Voluntary disruptions are disruptions caused by actions initiated by the application owner and cluster administrator.</p>
+<p><em>Application Owner</em> actions include</p>
+<ul>
+<li>Deleting the deployment or other controller that manages the pod</li>
+<li>Updating a deployment’s pod template causes a restart</li>
+<li>Directly deleting a pod (e.g. by accident)</li>
+</ul>
+<p><em>Cluster administrator</em> actions include:</p>
+<ul>
+<li><a href="https://kubernetes.io/docs/tasks/administer-cluster/safely-drain-node/"  class="external-link" target="_blank" rel="noopener">Draining a node</a> for repair or upgrade.</li>
+<li>Draining a node from a cluster to scale the cluster down (learn about <a href="https://github.com/kubernetes/autoscaler/#readme"  class="external-link" target="_blank" rel="noopener">Cluster Autoscaling</a> ).</li>
+<li>Removing a pod from a node to permit something else to fit on that node.</li>
+</ul>
+<p>These actions might be taken by the cluster administrator or the automation run by the cluster administrator or your cloud hosting provider.</p>
+<p>Some ways to handle involuntary disruptions are</p>
+<ul>
+<li>Ensure your pod <a href="https://kubernetes.io/docs/tasks/configure-pod-container/assign-memory-resource/"  class="external-link" target="_blank" rel="noopener">requests the resources</a> it needs.</li>
+<li>Replicate your application for higher availability.</li>
+<li>When running replicated applications, spread applications across racks or across zones</li>
+</ul>
+<p><em>Handling Voluntary disruptions</em></p>
+<p>As an application owner, you can create a PodDisruptionBudget (PDB) for each application. A PDB limits the number of Pods of a replicated application that are down simultaneously from voluntary disruptions. For example, a quorum-based application would like to ensure that the number of replicas running is never brought below the number needed for a quorum. A web front end might want to ensure that the number of replicas serving load never falls below a certain percentage of the total.</p>
+<p>A PDB specifies the number of replicas that an application can tolerate having, relative to how many it is intended to have. For example, a Deployment that has a <code>.spec.replicas: 5</code> is supposed to have 5 pods at any given time. If its PDB allows for there to be 4 at a time, then the Eviction API will allow voluntary disruption of one (but not two) pods at a time.</p>
+<p>The group of pods that comprise the application is specified using a label selector, the same as the one used by the application’s controller (deployment, stateful-set, etc).</p>
+<p>A <code>PodDisruptionBudget</code> has three fields:</p>
+<ul>
+<li>
+<p>A label selector <code>.spec.selector</code> specifies the set of pods to which it applies. This field is required.</p>
+</li>
+<li>
+<p><code>.spec.minAvailable</code> which is a description of the number of pods from that set that must still be available after the eviction, even in the absence of the evicted pod. <code>minAvailable</code> can be either an absolute number or a percentage.</p>
+</li>
+<li>
+<p><code>.spec.maxUnavailable </code>(available in Kubernetes 1.7 and higher) which is a description of the number of pods from that set that can be unavailable after the eviction. It can be either an absolute number or a percentage.</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#7ee787">apiVersion</span>:<span style="color:#6e7681"> </span><span style="color:#a5d6ff">policy/v1 </span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681"></span><span style="color:#7ee787">kind</span>:<span style="color:#6e7681"> </span><span style="color:#a5d6ff">PodDisruptionBudget</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681"></span><span style="color:#7ee787">metadata</span>:<span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">  </span><span style="color:#7ee787">name</span>:<span style="color:#6e7681"> </span><span style="color:#a5d6ff">my-app-pdb</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681"></span><span style="color:#7ee787">spec</span>:<span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">  </span><span style="color:#7ee787">minAvailable</span>:<span style="color:#6e7681"> </span><span style="color:#a5d6ff">2</span><span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">  </span><span style="color:#7ee787">selector</span>:<span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">    </span><span style="color:#7ee787">matchLabels</span>:<span style="color:#6e7681">
+</span></span></span><span style="display:flex;"><span><span style="color:#6e7681">      </span><span style="color:#7ee787">app</span>:<span style="color:#6e7681"> </span><span style="color:#a5d6ff">my-app</span><span style="color:#6e7681">
+</span></span></span></code></pre></div><p>You can specify only one of <code>maxUnavailable</code> and <code>minAvailable</code> in a single <code>PodDisruptionBudget</code>.</p>
+<p>Example 1: With a <code>minAvailable</code> of 5, evictions are allowed as long as they leave behind 5 or more healthy pods among those selected by the PodDisruptionBudget&rsquo;s <code>selector</code>.</p>
+<p>Example 2: With a <code>minAvailable</code> of 30%, evictions are allowed as long as at least 30% of the number of desired replicas are healthy.</p>
+<p>Example 3: With a <code>maxUnavailable</code> of 5, evictions are allowed as long as there are at most 5 unhealthy replicas among the total number of desired replicas.</p>
+<p>Example 4: With a <code>maxUnavailable</code> of 30%, evictions are allowed as long as no more than 30% of the desired replicas are unhealthy.</p>
+<p>Note:</p>
+<ul>
+<li>
+<p><em><a href="https://kubernetes.io/docs/concepts/workloads/pods/disruptions/#voluntary-and-involuntary-disruptions"  class="external-link" target="_blank" rel="noopener">Involuntary disruptions</a> cannot be prevented by PDBs; however, they do count against the budget.</em></p>
+</li>
+<li>
+<p><em>Cluster managers and hosting providers should use tools that respect PodDisruptionBudgets by calling the Eviction API instead of directly deleting pods or deployments.</em></p>
+</li>
+</ul>
+<p>References:</p>
+<ol>
+<li><a href="https://kubernetes.io/docs/home/"  class="external-link" target="_blank" rel="noopener">Kubernetes Docs</a></li>
+<li><a href="https://www.youtube.com/watch?v=NpT9RraqKdY"  class="external-link" target="_blank" rel="noopener">Kubecon Talk</a></li>
+</ol>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+    2023
+     Vivek Kumar Singh 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

@@ -116,7 +116,7 @@
     </item>
     
     <item>
-      <title>cloud-native</title>
+      <title>cloud native</title>
       <link>http://www.viveksyngh.com/tags/cloud-native/</link>
       <pubDate>Fri, 01 Jul 2022 00:00:00 -0600</pubDate>
       
@@ -130,6 +130,15 @@
       <pubDate>Fri, 01 Jul 2022 00:00:00 -0600</pubDate>
       
       <guid>http://www.viveksyngh.com/tags/containers/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>software development</title>
+      <link>http://www.viveksyngh.com/tags/software-development/</link>
+      <pubDate>Wed, 11 May 2022 00:00:00 -0600</pubDate>
+      
+      <guid>http://www.viveksyngh.com/tags/software-development/</guid>
       <description></description>
     </item>
     
@@ -157,15 +166,6 @@
       <pubDate>Wed, 06 Feb 2019 00:00:00 -0600</pubDate>
       
       <guid>http://www.viveksyngh.com/tags/proxy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Software development</title>
-      <link>http://www.viveksyngh.com/tags/software-development/</link>
-      <pubDate>Wed, 06 Feb 2019 00:00:00 -0600</pubDate>
-      
-      <guid>http://www.viveksyngh.com/tags/software-development/</guid>
       <description></description>
     </item>
     

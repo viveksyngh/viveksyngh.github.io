@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>cloud-native on Vivek Kumar Singh</title>
+    <title>cloud native on Vivek Kumar Singh</title>
     <link>http://www.viveksyngh.com/tags/cloud-native/</link>
-    <description>Recent content in cloud-native on Vivek Kumar Singh</description>
+    <description>Recent content in cloud native on Vivek Kumar Singh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Fri, 01 Jul 2022 00:00:00 -0600</lastBuildDate><atom:link href="http://www.viveksyngh.com/tags/cloud-native/index.xml" rel="self" type="application/rss+xml" />
@@ -19,6 +19,16 @@ Liveness Probe indicates whether the container is running.
 Readiness Probe indicates whether the container is ready to respond to requests.
 Startup Probe indicates whether the container is started.
 Liveness Probe Link to heading The kubelet uses a liveness probe to know when to restart the container.</description>
+    </item>
+    
+    <item>
+      <title>Running Highly Available Apps on Kubernetes</title>
+      <link>http://www.viveksyngh.com/posts/running-highly-available-apps-on-kubernetes/</link>
+      <pubDate>Wed, 11 May 2022 00:00:00 -0600</pubDate>
+      
+      <guid>http://www.viveksyngh.com/posts/running-highly-available-apps-on-kubernetes/</guid>
+      <description>As Kubernetes becomes the de-facto standard for deploying applications, many of us are either running our applications on Kubernetes or trying to migrate to Kubernetes. In this blog post, I will go through some tips for running highly available applications on Kubernetes.
+Kubernetes: Link to heading Kubernetes, also known as K8s, is an open-source system for automating the deployment, scaling, and management of containerized applications. It is designed on the same principles that allow Google to run billions of containers a week, Kubernetes can scale without increasing your ops team.</description>
     </item>
     
   </channel>
