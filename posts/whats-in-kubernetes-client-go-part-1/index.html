@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  What’s in Kubernetes client-go — Part 1 · Vivek Kumar Singh
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Vivek Kumar Singh">
+<meta name="description" content="Kubernetes project provides a number of the third-party consumable repository under kubernetes or kubernetes-sigs organization on Github. In the series of blog, I will go through such upstream k8s repositories and code, which are needed most frequently to write extensions for Kubernetes. Also provides some examples for using different k8s packages for developing Kubernetes applications in Golang. First covers famous kubernetes package called client-go.
+client-go Link to heading client-go is one of the most useful packages for writing Golang based Kubernetes applications.">
+<meta name="keywords" content="blog,developer,personal">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="What’s in Kubernetes client-go — Part 1"/>
+<meta name="twitter:description" content="Kubernetes project provides a number of the third-party consumable repository under kubernetes or kubernetes-sigs organization on Github. In the series of blog, I will go through such upstream k8s repositories and code, which are needed most frequently to write extensions for Kubernetes. Also provides some examples for using different k8s packages for developing Kubernetes applications in Golang. First covers famous kubernetes package called client-go.
+client-go Link to heading client-go is one of the most useful packages for writing Golang based Kubernetes applications."/>
+
+<meta property="og:title" content="What’s in Kubernetes client-go — Part 1" />
+<meta property="og:description" content="Kubernetes project provides a number of the third-party consumable repository under kubernetes or kubernetes-sigs organization on Github. In the series of blog, I will go through such upstream k8s repositories and code, which are needed most frequently to write extensions for Kubernetes. Also provides some examples for using different k8s packages for developing Kubernetes applications in Golang. First covers famous kubernetes package called client-go.
+client-go Link to heading client-go is one of the most useful packages for writing Golang based Kubernetes applications." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.viveksyngh.com/posts/whats-in-kubernetes-client-go-part-1/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-11-21T00:00:00-06:00" />
+<meta property="article:modified_time" content="2021-11-21T00:00:00-06:00" />
+
+
+
+
+<link rel="canonical" href="http://www.viveksyngh.com/posts/whats-in-kubernetes-client-go-part-1/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.65236a6d834b26194eed04a2a3b45e44d9194ef9e620253705d4bef03bd7ef81.css" integrity="sha256-ZSNqbYNLJhlO7QSio7ReRNkZTvnmICU3BdS&#43;8DvX74E=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.f6534b0b446b75d9b6ad77a97d43ede2ddaeff1b6e2361fb7198d6f8fcb7f83f.css" integrity="sha256-9lNLC0Rrddm2rXepfUPt4t2u/xtuI2H7cZjW&#43;Py3&#43;D8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      Vivek Kumar Singh
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/paper-notes/">Paper Notes</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/system-design/">System Design</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Blogs</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="http://www.viveksyngh.com/posts/whats-in-kubernetes-client-go-part-1/">
+              What’s in Kubernetes client-go — Part 1
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime="2021-11-21T00:00:00-06:00">
+                November 21, 2021
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              5-minute read
+            </span>
+          </div>
+          
+          <div class="categories">
+  <i class="fa fa-folder" aria-hidden="true"></i>
+    <a href="/categories/kubernetes/">Kubernetes</a></div>
+
+          <div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/kubernetes/">kubernetes</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/golang/">golang</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/cli/">cli</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <p>Kubernetes project provides a number of the third-party consumable repository under <code>kubernetes</code> or <code>kubernetes-sigs</code> organization on Github. In the series of blog, I will go through such upstream k8s repositories and code, which are needed most frequently to write extensions for Kubernetes. Also provides some examples for using different k8s packages for developing Kubernetes applications in Golang. First covers famous kubernetes package called <a href="https://github.com/kubernetes/client-go"  class="external-link" target="_blank" rel="noopener">client-go</a>.</p>
+<h4 id="client-go">
+  client-go
+  <a class="heading-link" href="#client-go">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p><a href="https://github.com/kubernetes/client-go"  class="external-link" target="_blank" rel="noopener">client-go</a> is one of the most useful packages for writing Golang based Kubernetes applications. This is the Kubernetes APIs client library for Golang, which is used in almost any kind of extension that you are writing for Kubernetes.</p>
+<ul>
+<li>
+<p><code>client-go</code> is an API client for Kubernetes that supports all API kinds which are officially part of Kubernetes e.g Pods, Services, Deployments, etc</p>
+</li>
+<li>
+<p>Apart from standard CRUD verbs, it also supports a special verb <code>Watch</code> for Kubernetes like API’s</p>
+</li>
+<li>
+<p>To use this in your projects, you need to import this as <code>k8s.io/client-go</code></p>
+</li>
+</ul>
+<p><img src="../../images/blogs/client-go-1.webp" alt="client-go repository"></p>
+<h4 id="packages-and-their-usages">
+  Packages and their usages
+  <a class="heading-link" href="#packages-and-their-usages">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<ol>
+<li><em>kubernetes</em> package contains the clients to access Kubernetes API. It provides typed clients for all types officially part of Kubernetes. For example, you are writing a Kubernetes app that will list all pods in a cluster</li>
+</ol>
+<ul>
+<li>For out of the cluster apps configurations</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#ff7b72">var</span> kubeconfig <span style="color:#ff7b72;font-weight:bold">*</span><span style="color:#ff7b72">string</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">if</span> home <span style="color:#ff7b72;font-weight:bold">:=</span> homedir.<span style="color:#d2a8ff;font-weight:bold">HomeDir</span>(); home <span style="color:#ff7b72;font-weight:bold">!=</span> <span style="color:#a5d6ff">&#34;&#34;</span> {
+</span></span><span style="display:flex;"><span>    kubeconfig = flag.<span style="color:#d2a8ff;font-weight:bold">String</span>(<span style="color:#a5d6ff">&#34;kubeconfig&#34;</span>, filepath.<span style="color:#d2a8ff;font-weight:bold">Join</span>(home, <span style="color:#a5d6ff">&#34;.kube&#34;</span>, <span style="color:#a5d6ff">&#34;config&#34;</span>), <span style="color:#a5d6ff">&#34;(optional) absolute path to the kubeconfig file&#34;</span>)
+</span></span><span style="display:flex;"><span>} <span style="color:#ff7b72">else</span> {
+</span></span><span style="display:flex;"><span>    kubeconfig = flag.<span style="color:#d2a8ff;font-weight:bold">String</span>(<span style="color:#a5d6ff">&#34;kubeconfig&#34;</span>, <span style="color:#a5d6ff">&#34;&#34;</span>, <span style="color:#a5d6ff">&#34;absolute path to the kubeconfig file&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>flag.<span style="color:#d2a8ff;font-weight:bold">Parse</span>()
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// use the current context in kubeconfig
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>config, err <span style="color:#ff7b72;font-weight:bold">:=</span> clientcmd.<span style="color:#d2a8ff;font-weight:bold">BuildConfigFromFlags</span>(<span style="color:#a5d6ff">&#34;&#34;</span>, <span style="color:#ff7b72;font-weight:bold">*</span>kubeconfig)
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">if</span> err <span style="color:#ff7b72;font-weight:bold">!=</span> <span style="color:#79c0ff">nil</span> {
+</span></span><span style="display:flex;"><span>    panic(err.<span style="color:#d2a8ff;font-weight:bold">Error</span>())
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// create the clientset
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>clientset, err <span style="color:#ff7b72;font-weight:bold">:=</span> kubernetes.<span style="color:#d2a8ff;font-weight:bold">NewForConfig</span>(config)
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">if</span> err <span style="color:#ff7b72;font-weight:bold">!=</span> <span style="color:#79c0ff">nil</span> {
+</span></span><span style="display:flex;"><span>    panic(err.<span style="color:#d2a8ff;font-weight:bold">Error</span>())
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>pods, err <span style="color:#ff7b72;font-weight:bold">:=</span> clientset.<span style="color:#d2a8ff;font-weight:bold">CoreV1</span>().<span style="color:#d2a8ff;font-weight:bold">Pods</span>(<span style="color:#a5d6ff">&#34;&#34;</span>).<span style="color:#d2a8ff;font-weight:bold">List</span>(context.<span style="color:#d2a8ff;font-weight:bold">TODO</span>(), metav1.ListOptions{})
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">if</span> err <span style="color:#ff7b72;font-weight:bold">!=</span> <span style="color:#79c0ff">nil</span> {
+</span></span><span style="display:flex;"><span>    panic(err.<span style="color:#d2a8ff;font-weight:bold">Error</span>())
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>fmt.<span style="color:#d2a8ff;font-weight:bold">Printf</span>(<span style="color:#a5d6ff">&#34;There are %d pods in the cluster\n&#34;</span>, len(pods.Items))
+</span></span></code></pre></div><ul>
+<li>For in-cluster apps configurations</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span>config, err <span style="color:#ff7b72;font-weight:bold">:=</span> rest.<span style="color:#d2a8ff;font-weight:bold">InClusterConfig</span>()
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">if</span> err <span style="color:#ff7b72;font-weight:bold">!=</span> <span style="color:#79c0ff">nil</span> {
+</span></span><span style="display:flex;"><span>    panic(err.<span style="color:#d2a8ff;font-weight:bold">Error</span>())
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// creates the clientset
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>clientset, err <span style="color:#ff7b72;font-weight:bold">:=</span> kubernetes.<span style="color:#d2a8ff;font-weight:bold">NewForConfig</span>(config)
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">if</span> err <span style="color:#ff7b72;font-weight:bold">!=</span> <span style="color:#79c0ff">nil</span> {
+</span></span><span style="display:flex;"><span>    panic(err.<span style="color:#d2a8ff;font-weight:bold">Error</span>())
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>pods, err <span style="color:#ff7b72;font-weight:bold">:=</span> clientset.<span style="color:#d2a8ff;font-weight:bold">CoreV1</span>().<span style="color:#d2a8ff;font-weight:bold">Pods</span>(<span style="color:#a5d6ff">&#34;&#34;</span>).<span style="color:#d2a8ff;font-weight:bold">List</span>(context.<span style="color:#d2a8ff;font-weight:bold">TODO</span>(), metav1.ListOptions{})
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">if</span> err <span style="color:#ff7b72;font-weight:bold">!=</span> <span style="color:#79c0ff">nil</span> {
+</span></span><span style="display:flex;"><span>    panic(err.<span style="color:#d2a8ff;font-weight:bold">Error</span>())
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>fmt.<span style="color:#d2a8ff;font-weight:bold">Printf</span>(<span style="color:#a5d6ff">&#34;There are %d pods in the cluster\n&#34;</span>, len(pods.Items))
+</span></span></code></pre></div><p>For more information on Kubernetes clients and how they are implemented, have a look at the <code>kubernetes</code> package <a href="https://github.com/kubernetes/client-go/blob/master/kubernetes/clientset.go#L126"  class="external-link" target="_blank" rel="noopener">here</a>.</p>
+<ol start="2">
+<li><code>discovery</code> package is used to discover APIs supported by a Kubernetes API server. This is used by many tools like <code>kubectl</code>, <code>helm</code> etc to find out different APIs and their versions supported by the Kubernetes API server.</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span>dClient <span style="color:#ff7b72;font-weight:bold">:=</span> discovery.<span style="color:#d2a8ff;font-weight:bold">NewDiscoveryClient</span>(clientset)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// returns supported groups and resources for all groups and versions.
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>allGroups, allResources, err <span style="color:#ff7b72;font-weight:bold">:=</span> dClient.<span style="color:#d2a8ff;font-weight:bold">ServerGroupsAndResources</span>()
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">if</span> err <span style="color:#ff7b72;font-weight:bold">!=</span> <span style="color:#79c0ff">nil</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">return</span> <span style="color:#79c0ff">nil</span>, err
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// returns the supported resources for a group and version.
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>rs, err <span style="color:#ff7b72;font-weight:bold">:=</span> dClient.<span style="color:#d2a8ff;font-weight:bold">ServerResourcesForGroupVersion</span>(<span style="color:#a5d6ff">&#34;apps/v1&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">if</span> err <span style="color:#ff7b72;font-weight:bold">!=</span> <span style="color:#79c0ff">nil</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">return</span> <span style="color:#79c0ff">nil</span>, err
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// returns the supported resources with the version preferred by the server.
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>preferredResources, err <span style="color:#ff7b72;font-weight:bold">:=</span> dClient.<span style="color:#d2a8ff;font-weight:bold">ServerPreferredResources</span>()
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">if</span> err <span style="color:#ff7b72;font-weight:bold">!=</span> <span style="color:#79c0ff">nil</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">return</span> <span style="color:#79c0ff">nil</span>, err
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Get Kubernetes API Server version info 
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>versionInfo, err <span style="color:#ff7b72;font-weight:bold">:=</span>  dClient.<span style="color:#d2a8ff;font-weight:bold">ServerVersion</span>()
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">if</span> err <span style="color:#ff7b72;font-weight:bold">!=</span> <span style="color:#79c0ff">nil</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">return</span> <span style="color:#79c0ff">nil</span>, err
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>For information on how the discovery client is implemented, have a look at the discovery client interface and its implementation <a href="https://github.com/kubernetes/client-go/blob/master/discovery/discovery_client.go#L57"  class="external-link" target="_blank" rel="noopener">here</a>.</p>
+<ol start="3">
+<li><code>dynamic</code> dynamic package contains a dynamic client that can perform generic operations on arbitrary Kubernetes API objects. Typed clients use program compilations to enforce data safety and some validation. However, when using typed clients, programs are forced to be tightly coupled with the version and the types used. This is where dynamic clients come in handy which uses a single type <code>unstructured.Unstructured</code> to represent all objects from the server. Unstructured uses a collection of nested map[string]interface{} values to create an internal structure that closely resembles the REST payload from the server.</li>
+</ol>
+<p>For example, creating a deployment,</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#ff7b72">var</span> kubeconfig <span style="color:#ff7b72;font-weight:bold">*</span><span style="color:#ff7b72">string</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">if</span> home <span style="color:#ff7b72;font-weight:bold">:=</span> homedir.<span style="color:#d2a8ff;font-weight:bold">HomeDir</span>(); home <span style="color:#ff7b72;font-weight:bold">!=</span> <span style="color:#a5d6ff">&#34;&#34;</span> {
+</span></span><span style="display:flex;"><span>    kubeconfig = flag.<span style="color:#d2a8ff;font-weight:bold">String</span>(<span style="color:#a5d6ff">&#34;kubeconfig&#34;</span>, filepath.<span style="color:#d2a8ff;font-weight:bold">Join</span>(home, <span style="color:#a5d6ff">&#34;.kube&#34;</span>, <span style="color:#a5d6ff">&#34;config&#34;</span>), <span style="color:#a5d6ff">&#34;(optional) absolute path to the kubeconfig file&#34;</span>)
+</span></span><span style="display:flex;"><span>} <span style="color:#ff7b72">else</span> {
+</span></span><span style="display:flex;"><span>    kubeconfig = flag.<span style="color:#d2a8ff;font-weight:bold">String</span>(<span style="color:#a5d6ff">&#34;kubeconfig&#34;</span>, <span style="color:#a5d6ff">&#34;&#34;</span>, <span style="color:#a5d6ff">&#34;absolute path to the kubeconfig file&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>flag.<span style="color:#d2a8ff;font-weight:bold">Parse</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>namespace <span style="color:#ff7b72;font-weight:bold">:=</span> <span style="color:#a5d6ff">&#34;default&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>config, err <span style="color:#ff7b72;font-weight:bold">:=</span> clientcmd.<span style="color:#d2a8ff;font-weight:bold">BuildConfigFromFlags</span>(<span style="color:#a5d6ff">&#34;&#34;</span>, <span style="color:#ff7b72;font-weight:bold">*</span>kubeconfig)
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">if</span> err <span style="color:#ff7b72;font-weight:bold">!=</span> <span style="color:#79c0ff">nil</span> {
+</span></span><span style="display:flex;"><span>    panic(err)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>client, err <span style="color:#ff7b72;font-weight:bold">:=</span> dynamic.<span style="color:#d2a8ff;font-weight:bold">NewForConfig</span>(config)
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">if</span> err <span style="color:#ff7b72;font-weight:bold">!=</span> <span style="color:#79c0ff">nil</span> {
+</span></span><span style="display:flex;"><span>    panic(err)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>deploymentRes <span style="color:#ff7b72;font-weight:bold">:=</span> schema.GroupVersionResource{Group: <span style="color:#a5d6ff">&#34;apps&#34;</span>, Version: <span style="color:#a5d6ff">&#34;v1&#34;</span>, Resource: <span style="color:#a5d6ff">&#34;deployments&#34;</span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>deployment <span style="color:#ff7b72;font-weight:bold">:=</span> <span style="color:#ff7b72;font-weight:bold">&amp;</span>unstructured.Unstructured{
+</span></span><span style="display:flex;"><span>    Object: <span style="color:#ff7b72">map</span>[<span style="color:#ff7b72">string</span>]<span style="color:#ff7b72">interface</span>{}{
+</span></span><span style="display:flex;"><span>        <span style="color:#a5d6ff">&#34;apiVersion&#34;</span>: <span style="color:#a5d6ff">&#34;apps/v1&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a5d6ff">&#34;kind&#34;</span>:       <span style="color:#a5d6ff">&#34;Deployment&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a5d6ff">&#34;metadata&#34;</span>: <span style="color:#ff7b72">map</span>[<span style="color:#ff7b72">string</span>]<span style="color:#ff7b72">interface</span>{}{
+</span></span><span style="display:flex;"><span>            <span style="color:#a5d6ff">&#34;name&#34;</span>: <span style="color:#a5d6ff">&#34;demo-deployment&#34;</span>,
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>        <span style="color:#a5d6ff">&#34;spec&#34;</span>: <span style="color:#ff7b72">map</span>[<span style="color:#ff7b72">string</span>]<span style="color:#ff7b72">interface</span>{}{
+</span></span><span style="display:flex;"><span>            <span style="color:#a5d6ff">&#34;replicas&#34;</span>: <span style="color:#a5d6ff">2</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#a5d6ff">&#34;selector&#34;</span>: <span style="color:#ff7b72">map</span>[<span style="color:#ff7b72">string</span>]<span style="color:#ff7b72">interface</span>{}{
+</span></span><span style="display:flex;"><span>                <span style="color:#a5d6ff">&#34;matchLabels&#34;</span>: <span style="color:#ff7b72">map</span>[<span style="color:#ff7b72">string</span>]<span style="color:#ff7b72">interface</span>{}{
+</span></span><span style="display:flex;"><span>                    <span style="color:#a5d6ff">&#34;app&#34;</span>: <span style="color:#a5d6ff">&#34;demo&#34;</span>,
+</span></span><span style="display:flex;"><span>                },
+</span></span><span style="display:flex;"><span>            },
+</span></span><span style="display:flex;"><span>            <span style="color:#a5d6ff">&#34;template&#34;</span>: <span style="color:#ff7b72">map</span>[<span style="color:#ff7b72">string</span>]<span style="color:#ff7b72">interface</span>{}{
+</span></span><span style="display:flex;"><span>                <span style="color:#a5d6ff">&#34;metadata&#34;</span>: <span style="color:#ff7b72">map</span>[<span style="color:#ff7b72">string</span>]<span style="color:#ff7b72">interface</span>{}{
+</span></span><span style="display:flex;"><span>                    <span style="color:#a5d6ff">&#34;labels&#34;</span>: <span style="color:#ff7b72">map</span>[<span style="color:#ff7b72">string</span>]<span style="color:#ff7b72">interface</span>{}{
+</span></span><span style="display:flex;"><span>                        <span style="color:#a5d6ff">&#34;app&#34;</span>: <span style="color:#a5d6ff">&#34;demo&#34;</span>,
+</span></span><span style="display:flex;"><span>                    },
+</span></span><span style="display:flex;"><span>                },
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                <span style="color:#a5d6ff">&#34;spec&#34;</span>: <span style="color:#ff7b72">map</span>[<span style="color:#ff7b72">string</span>]<span style="color:#ff7b72">interface</span>{}{
+</span></span><span style="display:flex;"><span>                    <span style="color:#a5d6ff">&#34;containers&#34;</span>: []<span style="color:#ff7b72">map</span>[<span style="color:#ff7b72">string</span>]<span style="color:#ff7b72">interface</span>{}{
+</span></span><span style="display:flex;"><span>                        {
+</span></span><span style="display:flex;"><span>                            <span style="color:#a5d6ff">&#34;name&#34;</span>:  <span style="color:#a5d6ff">&#34;web&#34;</span>,
+</span></span><span style="display:flex;"><span>                            <span style="color:#a5d6ff">&#34;image&#34;</span>: <span style="color:#a5d6ff">&#34;nginx:1.12&#34;</span>,
+</span></span><span style="display:flex;"><span>                            <span style="color:#a5d6ff">&#34;ports&#34;</span>: []<span style="color:#ff7b72">map</span>[<span style="color:#ff7b72">string</span>]<span style="color:#ff7b72">interface</span>{}{
+</span></span><span style="display:flex;"><span>                                {
+</span></span><span style="display:flex;"><span>                                    <span style="color:#a5d6ff">&#34;name&#34;</span>:          <span style="color:#a5d6ff">&#34;http&#34;</span>,
+</span></span><span style="display:flex;"><span>                                    <span style="color:#a5d6ff">&#34;protocol&#34;</span>:      <span style="color:#a5d6ff">&#34;TCP&#34;</span>,
+</span></span><span style="display:flex;"><span>                                    <span style="color:#a5d6ff">&#34;containerPort&#34;</span>: <span style="color:#a5d6ff">80</span>,
+</span></span><span style="display:flex;"><span>                                },
+</span></span><span style="display:flex;"><span>                            },
+</span></span><span style="display:flex;"><span>                        },
+</span></span><span style="display:flex;"><span>                    },
+</span></span><span style="display:flex;"><span>                },
+</span></span><span style="display:flex;"><span>            },
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Create Deployment
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>fmt.<span style="color:#d2a8ff;font-weight:bold">Println</span>(<span style="color:#a5d6ff">&#34;Creating deployment...&#34;</span>)
+</span></span><span style="display:flex;"><span>result, err <span style="color:#ff7b72;font-weight:bold">:=</span> client.<span style="color:#d2a8ff;font-weight:bold">Resource</span>(deploymentRes).<span style="color:#d2a8ff;font-weight:bold">Namespace</span>(namespace).<span style="color:#d2a8ff;font-weight:bold">Create</span>(context.<span style="color:#d2a8ff;font-weight:bold">TODO</span>(), deployment, metav1.CreateOptions{})
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">if</span> err <span style="color:#ff7b72;font-weight:bold">!=</span> <span style="color:#79c0ff">nil</span> {
+</span></span><span style="display:flex;"><span>    panic(err)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>fmt.<span style="color:#d2a8ff;font-weight:bold">Printf</span>(<span style="color:#a5d6ff">&#34;Created deployment %q.\n&#34;</span>, result.<span style="color:#d2a8ff;font-weight:bold">GetName</span>())
+</span></span></code></pre></div><ol start="4">
+<li><code>tools</code> package contains different tools which are useful in different use cases.</li>
+</ol>
+<ul>
+<li><code>clientcmd</code> uses for building clients from a kubeconfig file, which can be used to create clients to interact with the Kubernetes API Server.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span>config, err <span style="color:#ff7b72;font-weight:bold">:=</span> clientcmd.<span style="color:#d2a8ff;font-weight:bold">BuildConfigFromFlags</span>(<span style="color:#a5d6ff">&#34;&#34;</span>, <span style="color:#ff7b72;font-weight:bold">*</span>kubeconfig)
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">if</span> err <span style="color:#ff7b72;font-weight:bold">!=</span> <span style="color:#79c0ff">nil</span> {
+</span></span><span style="display:flex;"><span>    panic(err)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
+<li><code>cache</code> useful for writing controllers. It contains most of the logic related to Kubernetes client-side caching.</li>
+</ul>
+<ol start="5">
+<li><code>informers</code> The client interface in the clientset includes the Watch verb, which offers an event interface that reacts to changes (adds, removes, updates) of objects. Informers give a higher-level programming interface for the most common use case for watches: in-memory caching and fast, indexed lookup of objects by name or other properties in-memory. These are helpful in writing controllers using <code>client-go</code></li>
+</ol>
+<p>A controller that accesses the API server every time it needs an object creates a high load on the system. In-memory caching using informers is the solution to this problem. Moreover, informers can react to changes of objects nearly in real-time instead of requiring polling requests.</p>
+<ul>
+<li>Get input from the API server as events.</li>
+<li>Offer a client-like interface called Lister to get and list objects from the in-memory cache.</li>
+<li>Register event handlers for adds, removes, and updates.</li>
+<li>Implement the in-memory cache using a store.</li>
+</ul>
+<p>The informers are generated by a code generator and shipped as part of client-go for the standard Kubernetes resources in k8s.io/client-go/informers</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#ff7b72">import</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72;font-weight:bold">...</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a5d6ff">&#34;k8s.io/client-go/informers&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72;font-weight:bold">...</span>
+</span></span><span style="display:flex;"><span>clientset, err <span style="color:#ff7b72;font-weight:bold">:=</span> kubernetes.<span style="color:#d2a8ff;font-weight:bold">NewForConfig</span>(config)
+</span></span><span style="display:flex;"><span>informerFactory <span style="color:#ff7b72;font-weight:bold">:=</span> informers.<span style="color:#d2a8ff;font-weight:bold">NewSharedInformerFactory</span>(clientset, time.Second<span style="color:#ff7b72;font-weight:bold">*</span><span style="color:#a5d6ff">30</span>)
+</span></span><span style="display:flex;"><span>podInformer <span style="color:#ff7b72;font-weight:bold">:=</span> informerFactory.<span style="color:#d2a8ff;font-weight:bold">Core</span>().<span style="color:#d2a8ff;font-weight:bold">V1</span>().<span style="color:#d2a8ff;font-weight:bold">Pods</span>()
+</span></span><span style="display:flex;"><span>podInformer.<span style="color:#d2a8ff;font-weight:bold">Informer</span>().<span style="color:#d2a8ff;font-weight:bold">AddEventHandler</span>(cache.ResourceEventHandlerFuncs{
+</span></span><span style="display:flex;"><span>    AddFunc: <span style="color:#ff7b72">func</span>(new <span style="color:#ff7b72">interface</span>{}) {<span style="color:#ff7b72;font-weight:bold">...</span>},
+</span></span><span style="display:flex;"><span>    UpdateFunc: <span style="color:#ff7b72">func</span>(old, new <span style="color:#ff7b72">interface</span>{}) {<span style="color:#ff7b72;font-weight:bold">...</span>},
+</span></span><span style="display:flex;"><span>    DeleteFunc: <span style="color:#ff7b72">func</span>(obj <span style="color:#ff7b72">interface</span>{}) {<span style="color:#ff7b72;font-weight:bold">...</span>},
+</span></span><span style="display:flex;"><span>})
+</span></span><span style="display:flex;"><span>informerFactory.<span style="color:#d2a8ff;font-weight:bold">Start</span>(wait.NeverStop)
+</span></span><span style="display:flex;"><span>informerFactory.<span style="color:#d2a8ff;font-weight:bold">WaitForCacheSync</span>(wait.NeverStop)
+</span></span></code></pre></div><p>For example usage of <code>informers</code> and <code>cache</code>, please have look at sample-controller under Kubernetes org <a href="https://github.com/kubernetes/sample-controller"  class="external-link" target="_blank" rel="noopener">https://github.com/kubernetes/sample-controller</a></p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+    2023
+     Vivek Kumar Singh 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

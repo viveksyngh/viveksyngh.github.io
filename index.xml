@@ -76,6 +76,16 @@ Kubernetes: Link to heading Kubernetes, also known as K8s, is an open-source sys
     </item>
     
     <item>
+      <title>What’s in Kubernetes client-go — Part 1</title>
+      <link>http://www.viveksyngh.com/posts/whats-in-kubernetes-client-go-part-1/</link>
+      <pubDate>Sun, 21 Nov 2021 00:00:00 -0600</pubDate>
+      
+      <guid>http://www.viveksyngh.com/posts/whats-in-kubernetes-client-go-part-1/</guid>
+      <description>Kubernetes project provides a number of the third-party consumable repository under kubernetes or kubernetes-sigs organization on Github. In the series of blog, I will go through such upstream k8s repositories and code, which are needed most frequently to write extensions for Kubernetes. Also provides some examples for using different k8s packages for developing Kubernetes applications in Golang. First covers famous kubernetes package called client-go.
+client-go Link to heading client-go is one of the most useful packages for writing Golang based Kubernetes applications.</description>
+    </item>
+    
+    <item>
       <title>MapReduce Overview</title>
       <link>http://www.viveksyngh.com/paper-notes/mapreduce-overview/</link>
       <pubDate>Wed, 23 Oct 2019 00:00:00 -0600</pubDate>
