@@ -76,6 +76,17 @@ In this post, we will be looking into VETH (Virtual Ethernet) virtual networking
     </item>
     
     <item>
+      <title>Python collections module</title>
+      <link>http://www.viveksyngh.com/posts/python-collections-module/</link>
+      <pubDate>Sun, 19 Apr 2020 00:00:00 -0600</pubDate>
+      
+      <guid>http://www.viveksyngh.com/posts/python-collections-module/</guid>
+      <description>Apart from built-in general purpose container data structures like list, dict, set and tuple . Python provides collections module which implements some specialized container data types.
+Following container data types are present in collections module for python 3.6.
+namedtuple() : factory function for creating tuple subclasses with named fields. deque : list-like container with fast appends and pops on either end. ChainMap : dict-like class for creating a single view of multiple mappings Counter: dict subclass for counting hashable objects OrderedDict : dict subclass that remembers the order entries were added defaultdict: dict subclass that calls a factory function to supply missing values.</description>
+    </item>
+    
+    <item>
       <title>Getting Started With Golang Interfaces</title>
       <link>http://www.viveksyngh.com/posts/getting-started-with-golang-interfaces/</link>
       <pubDate>Mon, 15 Oct 2018 00:00:00 -0600</pubDate>

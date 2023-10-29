@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  Python collections module · Vivek Kumar Singh
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Vivek Kumar Singh">
+<meta name="description" content="Apart from built-in general purpose container data structures like list, dict, set and tuple . Python provides collections module which implements some specialized container data types.
+Following container data types are present in collections module for python 3.6.
+namedtuple() : factory function for creating tuple subclasses with named fields. deque : list-like container with fast appends and pops on either end. ChainMap : dict-like class for creating a single view of multiple mappings Counter: dict subclass for counting hashable objects OrderedDict : dict subclass that remembers the order entries were added defaultdict: dict subclass that calls a factory function to supply missing values.">
+<meta name="keywords" content="blog,developer,personal">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Python collections module"/>
+<meta name="twitter:description" content="Apart from built-in general purpose container data structures like list, dict, set and tuple . Python provides collections module which implements some specialized container data types.
+Following container data types are present in collections module for python 3.6.
+namedtuple() : factory function for creating tuple subclasses with named fields. deque : list-like container with fast appends and pops on either end. ChainMap : dict-like class for creating a single view of multiple mappings Counter: dict subclass for counting hashable objects OrderedDict : dict subclass that remembers the order entries were added defaultdict: dict subclass that calls a factory function to supply missing values."/>
+
+<meta property="og:title" content="Python collections module" />
+<meta property="og:description" content="Apart from built-in general purpose container data structures like list, dict, set and tuple . Python provides collections module which implements some specialized container data types.
+Following container data types are present in collections module for python 3.6.
+namedtuple() : factory function for creating tuple subclasses with named fields. deque : list-like container with fast appends and pops on either end. ChainMap : dict-like class for creating a single view of multiple mappings Counter: dict subclass for counting hashable objects OrderedDict : dict subclass that remembers the order entries were added defaultdict: dict subclass that calls a factory function to supply missing values." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.viveksyngh.com/posts/python-collections-module/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-04-19T00:00:00-06:00" />
+<meta property="article:modified_time" content="2020-04-19T00:00:00-06:00" />
+
+
+
+
+<link rel="canonical" href="http://www.viveksyngh.com/posts/python-collections-module/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.65236a6d834b26194eed04a2a3b45e44d9194ef9e620253705d4bef03bd7ef81.css" integrity="sha256-ZSNqbYNLJhlO7QSio7ReRNkZTvnmICU3BdS&#43;8DvX74E=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.f6534b0b446b75d9b6ad77a97d43ede2ddaeff1b6e2361fb7198d6f8fcb7f83f.css" integrity="sha256-9lNLC0Rrddm2rXepfUPt4t2u/xtuI2H7cZjW&#43;Py3&#43;D8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      Vivek Kumar Singh
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/paper-notes/">Paper Notes</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/system-design/">System Design</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Blogs</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="http://www.viveksyngh.com/posts/python-collections-module/">
+              Python collections module
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime="2020-04-19T00:00:00-06:00">
+                April 19, 2020
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              8-minute read
+            </span>
+          </div>
+          
+          <div class="categories">
+  <i class="fa fa-folder" aria-hidden="true"></i>
+    <a href="/categories/python/">python</a></div>
+
+          <div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/python/">python</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/data-structures/">data structures</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/collections/">collections</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/python3/">python3</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <p>Apart from built-in general purpose container data structures like <code>list</code>, <code>dict</code>, <code>set</code> and <code>tuple</code> . Python provides collections module which implements some specialized container data types.</p>
+<p>Following container data types are present in <code>collections</code> module for python 3.6.</p>
+<ol>
+<li><a href="https://docs.python.org/3.6/library/collections.html#collections.namedtuple"  class="external-link" target="_blank" rel="noopener"><code>namedtuple()</code></a> : factory function for creating tuple subclasses with named fields.</li>
+<li><a href="https://docs.python.org/3.6/library/collections.html#collections.deque"  class="external-link" target="_blank" rel="noopener"><code>deque</code></a> : list-like container with fast appends and pops on either end.</li>
+<li><a href="https://docs.python.org/3.6/library/collections.html#collections.ChainMap"  class="external-link" target="_blank" rel="noopener"><code>ChainMap</code></a> : dict-like class for creating a single view of multiple mappings</li>
+<li><a href="https://docs.python.org/3.6/library/collections.html#collections.Counter"  class="external-link" target="_blank" rel="noopener"><code>Counter</code></a>: dict subclass for counting hashable objects</li>
+<li><a href="https://docs.python.org/3.6/library/collections.html#collections.OrderedDict"  class="external-link" target="_blank" rel="noopener"><code>OrderedDict</code></a> : dict subclass that remembers the order entries were added</li>
+<li><a href="https://docs.python.org/3.6/library/collections.html#collections.defaultdict"  class="external-link" target="_blank" rel="noopener"><code>defaultdict</code></a>: dict subclass that calls a factory function to supply missing values.</li>
+<li><a href="https://docs.python.org/3.6/library/collections.html#collections.UserDict"  class="external-link" target="_blank" rel="noopener"><code>UserDict</code></a> : wrapper around dictionary objects for easier dict subclassing</li>
+<li><a href="https://docs.python.org/3.6/library/collections.html#collections.UserList"  class="external-link" target="_blank" rel="noopener"><code>UserList</code></a> : wrapper around list objects for easier list subclassing</li>
+<li><a href="https://docs.python.org/3.6/library/collections.html#collections.UserString"  class="external-link" target="_blank" rel="noopener"><code>UserString</code></a> : wrapper around string objects for easier string subclassing</li>
+</ol>
+<p>We will have look at some of these container data types in this blog.</p>
+<h3 id="namedtuple">
+  namedtuple()
+  <a class="heading-link" href="#namedtuple">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Named tuple assigned meaning to each position in a tuple and allows for more readable , self-documenting code. It allows you to access fields by name instead of position index. It can be used anywhere you can use regular tuple.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>collections<span style="color:#ff7b72;font-weight:bold">.</span>namedtuple(typename, field_names, <span style="color:#ff7b72;font-weight:bold">*</span>, verbose<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#79c0ff">False</span>, rename<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#79c0ff">False</span>, module<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#79c0ff">None</span>)
+</span></span></code></pre></div><p>It creates a named tuple with <code>typename</code> as name and fields name as item in the iterable <code>field_names</code>. For example if you want to create a named tuple for a 2D points.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>Point <span style="color:#ff7b72;font-weight:bold">=</span> collections<span style="color:#ff7b72;font-weight:bold">.</span>namedtuple(<span style="color:#a5d6ff">&#39;Point&#39;</span>, [<span style="color:#a5d6ff">&#39;x&#39;</span>, <span style="color:#a5d6ff">&#39;y&#39;</span>])<span style="color:#8b949e;font-style:italic"># Create a namedtuple</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>p <span style="color:#ff7b72;font-weight:bold">=</span> Point(x<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">10</span>, y<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">11</span>) <span style="color:#8b949e;font-style:italic"># Create a new point instance of named tuple</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(p<span style="color:#ff7b72;font-weight:bold">.</span>x, p<span style="color:#ff7b72;font-weight:bold">.</span>y) <span style="color:#8b949e;font-style:italic"># Accessing the value using named field</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>x, y <span style="color:#ff7b72;font-weight:bold">=</span> p <span style="color:#8b949e;font-style:italic"># Unpacking a named tuple value</span>
+</span></span></code></pre></div><p>This can be very useful when reading data from CSV file or a database. For example, we have a CSV file which has employee record such as <em>name, age, title, department, paygrade</em>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff7b72">from</span> <span style="color:#ff7b72">collections</span> <span style="color:#ff7b72">import</span> namedtuple
+</span></span><span style="display:flex;"><span>EmployeeRecord <span style="color:#ff7b72;font-weight:bold">=</span> namedtuple(<span style="color:#a5d6ff">&#39;EmployeeRecord&#39;</span>, <span style="color:#a5d6ff">&#39;name, age, title, department, paygrade&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">import</span> <span style="color:#ff7b72">csv</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">for</span> emp <span style="color:#ff7b72;font-weight:bold">in</span> map(EmployeeRecord<span style="color:#ff7b72;font-weight:bold">.</span>_make,
+</span></span><span style="display:flex;"><span>               csv<span style="color:#ff7b72;font-weight:bold">.</span>reader(open(<span style="color:#a5d6ff">&#34;employees.csv&#34;</span>, <span style="color:#a5d6ff">&#34;rb&#34;</span>))):
+</span></span><span style="display:flex;"><span>    print(emp<span style="color:#ff7b72;font-weight:bold">.</span>name, emp<span style="color:#ff7b72;font-weight:bold">.</span>title)
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Reading from a database</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">import</span> <span style="color:#ff7b72">sqlite3</span>
+</span></span><span style="display:flex;"><span>conn <span style="color:#ff7b72;font-weight:bold">=</span> sqlite3<span style="color:#ff7b72;font-weight:bold">.</span>connect(<span style="color:#a5d6ff">&#39;/companydata&#39;</span>)
+</span></span><span style="display:flex;"><span>cursor <span style="color:#ff7b72;font-weight:bold">=</span> conn<span style="color:#ff7b72;font-weight:bold">.</span>cursor()
+</span></span><span style="display:flex;"><span>cursor<span style="color:#ff7b72;font-weight:bold">.</span>execute(<span style="color:#a5d6ff">&#39;SELECT name, age, title, department, paygrade FROM employees&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">for</span> emp <span style="color:#ff7b72;font-weight:bold">in</span> map(EmployeeRecord<span style="color:#ff7b72;font-weight:bold">.</span>_make, cursor<span style="color:#ff7b72;font-weight:bold">.</span>fetchall()):
+</span></span><span style="display:flex;"><span>    print(emp<span style="color:#ff7b72;font-weight:bold">.</span>name, emp<span style="color:#ff7b72;font-weight:bold">.</span>title)
+</span></span></code></pre></div><p>In addition to the methods inherited from tuples, named tuples support three additional methods and two attributes.</p>
+<p><em><code>somenamedtuple._make(iterable):</code></em> makes a new instance from an existing sequence or iterable.</p>
+<p><em><code>somenamedtuple._asdict():</code></em> Return a new OrderedDict which maps field names to their corresponding values.</p>
+<p><em><code>somenamedtuple._replace(**kwargs):</code></em> Return a new instance of the named tuple replacing specified fields with new values.</p>
+<p><em><code>somenamedtuple._source</code></em></p>
+<p><em><code>somenamedtuple._fields</code></em></p>
+<h3 id="ordereddict">
+  OrderedDict
+  <a class="heading-link" href="#ordereddict">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Ordered dictionaries are just like regular dictionaries but they remember the order in which items were inserted. If a new entry overwrites an existing entry, the original position left unchanged. Deleting an entry and re-inserting it will move it to the end.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff7b72;font-weight:bold">&gt;&gt;&gt;</span> <span style="color:#ff7b72">from</span> <span style="color:#ff7b72">collections</span> <span style="color:#ff7b72">import</span> OrderedDict
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72;font-weight:bold">&gt;&gt;&gt;</span> d <span style="color:#ff7b72;font-weight:bold">=</span> OrderedDict()
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72;font-weight:bold">&gt;&gt;&gt;</span> d[<span style="color:#a5d6ff">&#34;a&#34;</span>] <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72;font-weight:bold">&gt;&gt;&gt;</span> d[<span style="color:#a5d6ff">&#34;b&#34;</span>] <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">2</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72;font-weight:bold">&gt;&gt;&gt;</span> d[<span style="color:#a5d6ff">&#34;c&#34;</span>] <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">3</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72;font-weight:bold">&gt;&gt;&gt;</span> print(d<span style="color:#ff7b72;font-weight:bold">.</span>items())
+</span></span><span style="display:flex;"><span>OrderedDict([(<span style="color:#a5d6ff">&#39;a&#39;</span>, <span style="color:#a5d6ff">1</span>), (<span style="color:#a5d6ff">&#39;b&#39;</span>, <span style="color:#a5d6ff">2</span>), (<span style="color:#a5d6ff">&#39;c&#39;</span>, <span style="color:#a5d6ff">3</span>)])
+</span></span></code></pre></div><blockquote>
+<p>Most of the <code>OrderedDict</code> methods works in same way as regular dictionary. There are two methods which you should know.</p>
+</blockquote>
+<p><em><code>popitem(last=True):</code></em> returns and removes a key-value pair. The pairs are returned in LIFO order if last is True or FIFO order if false.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff7b72;font-weight:bold">&gt;&gt;&gt;</span> <span style="color:#ff7b72">from</span> <span style="color:#ff7b72">collections</span> <span style="color:#ff7b72">import</span> OrderedDict
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72;font-weight:bold">&gt;&gt;&gt;</span> d <span style="color:#ff7b72;font-weight:bold">=</span> OrderedDict()
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72;font-weight:bold">&gt;&gt;&gt;</span> d[<span style="color:#a5d6ff">&#34;a&#34;</span>] <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72;font-weight:bold">&gt;&gt;&gt;</span> d[<span style="color:#a5d6ff">&#34;b&#34;</span>] <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">2</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72;font-weight:bold">&gt;&gt;&gt;</span> d[<span style="color:#a5d6ff">&#34;c&#34;</span>] <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">3</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72;font-weight:bold">&gt;&gt;&gt;</span> d
+</span></span><span style="display:flex;"><span>OrderedDict([(<span style="color:#a5d6ff">&#39;a&#39;</span>, <span style="color:#a5d6ff">1</span>), (<span style="color:#a5d6ff">&#39;b&#39;</span>, <span style="color:#a5d6ff">2</span>), (<span style="color:#a5d6ff">&#39;c&#39;</span>, <span style="color:#a5d6ff">3</span>)])
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72;font-weight:bold">&gt;&gt;&gt;</span> d<span style="color:#ff7b72;font-weight:bold">.</span>popitem(last<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#79c0ff">True</span>)
+</span></span><span style="display:flex;"><span>(<span style="color:#a5d6ff">&#39;c&#39;</span>, <span style="color:#a5d6ff">3</span>)
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72;font-weight:bold">&gt;&gt;&gt;</span> d
+</span></span><span style="display:flex;"><span>OrderedDict([(<span style="color:#a5d6ff">&#39;a&#39;</span>, <span style="color:#a5d6ff">1</span>), (<span style="color:#a5d6ff">&#39;b&#39;</span>, <span style="color:#a5d6ff">2</span>)])
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72;font-weight:bold">&gt;&gt;&gt;</span> d<span style="color:#ff7b72;font-weight:bold">.</span>popitem(last<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#79c0ff">False</span>)
+</span></span><span style="display:flex;"><span>(<span style="color:#a5d6ff">&#39;a&#39;</span>, <span style="color:#a5d6ff">1</span>)
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72;font-weight:bold">&gt;&gt;&gt;</span> d
+</span></span><span style="display:flex;"><span>OrderedDict([(<span style="color:#a5d6ff">&#39;b&#39;</span>, <span style="color:#a5d6ff">2</span>)])
+</span></span></code></pre></div><p><em><code>move_to_end(key, last=True):</code></em> Move an existing key to either end of an ordered dictionary. The items is moved to the right if last is True or to the beginning if last is False.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff7b72;font-weight:bold">&gt;&gt;&gt;</span> <span style="color:#ff7b72">from</span> <span style="color:#ff7b72">collections</span> <span style="color:#ff7b72">import</span> OrderedDict
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72;font-weight:bold">&gt;&gt;&gt;</span> d <span style="color:#ff7b72;font-weight:bold">=</span> OrderedDict()
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72;font-weight:bold">&gt;&gt;&gt;</span> d[<span style="color:#a5d6ff">&#34;a&#34;</span>] <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72;font-weight:bold">&gt;&gt;&gt;</span> d[<span style="color:#a5d6ff">&#34;b&#34;</span>] <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">2</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72;font-weight:bold">&gt;&gt;&gt;</span> d[<span style="color:#a5d6ff">&#34;c&#34;</span>] <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">3</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72;font-weight:bold">&gt;&gt;&gt;</span> d
+</span></span><span style="display:flex;"><span>OrderedDict([(<span style="color:#a5d6ff">&#39;a&#39;</span>, <span style="color:#a5d6ff">1</span>), (<span style="color:#a5d6ff">&#39;b&#39;</span>, <span style="color:#a5d6ff">2</span>), (<span style="color:#a5d6ff">&#39;c&#39;</span>, <span style="color:#a5d6ff">3</span>)])
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72;font-weight:bold">&gt;&gt;&gt;</span> d<span style="color:#ff7b72;font-weight:bold">.</span>move_to_end(<span style="color:#a5d6ff">&#39;b&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72;font-weight:bold">&gt;&gt;&gt;</span> d
+</span></span><span style="display:flex;"><span>OrderedDict([(<span style="color:#a5d6ff">&#39;a&#39;</span>, <span style="color:#a5d6ff">1</span>), (<span style="color:#a5d6ff">&#39;c&#39;</span>, <span style="color:#a5d6ff">3</span>), (<span style="color:#a5d6ff">&#39;b&#39;</span>, <span style="color:#a5d6ff">2</span>)])
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72;font-weight:bold">&gt;&gt;&gt;</span> d<span style="color:#ff7b72;font-weight:bold">.</span>move_to_end(<span style="color:#a5d6ff">&#39;c&#39;</span>, last<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#79c0ff">False</span>)
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72;font-weight:bold">&gt;&gt;&gt;</span> d
+</span></span><span style="display:flex;"><span>OrderedDict([(<span style="color:#a5d6ff">&#39;c&#39;</span>, <span style="color:#a5d6ff">3</span>), (<span style="color:#a5d6ff">&#39;a&#39;</span>, <span style="color:#a5d6ff">1</span>), (<span style="color:#a5d6ff">&#39;b&#39;</span>, <span style="color:#a5d6ff">2</span>)])
+</span></span></code></pre></div><h3 id="counter">
+  Counter
+  <a class="heading-link" href="#counter">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>A <code>counter</code> is a dict subclass for counting hashable objects. It is an unordered collection where elements are stored as dictionary keys and their counts are stored as dictionary values. Counts are allowed to be any integer value including zero or negative counts.</p>
+<p>Elements are counted from an <code>iterable</code> or initialized from another <code>mapping</code> (or counter):</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff7b72;font-weight:bold">&gt;&gt;&gt;</span> c <span style="color:#ff7b72;font-weight:bold">=</span> Counter()           <span style="color:#8b949e;font-style:italic"># a new, empty counter</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72;font-weight:bold">&gt;&gt;&gt;</span> c <span style="color:#ff7b72;font-weight:bold">=</span> Counter(<span style="color:#a5d6ff">&#39;gallahad&#39;</span>) <span style="color:#8b949e;font-style:italic"># a new counter from aiterable  </span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72;font-weight:bold">&gt;&gt;&gt;</span> c <span style="color:#ff7b72;font-weight:bold">=</span> Counter({<span style="color:#a5d6ff">&#39;red&#39;</span>: <span style="color:#a5d6ff">4</span>, <span style="color:#a5d6ff">&#39;blue&#39;</span>: <span style="color:#a5d6ff">2</span>}) <span style="color:#8b949e;font-style:italic"># a new counter from mapping</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72;font-weight:bold">&gt;&gt;&gt;</span> c <span style="color:#ff7b72;font-weight:bold">=</span> Counter(cats<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">4</span>, dogs<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">8</span>)   <span style="color:#8b949e;font-style:italic"># a new counter from keyword args</span>
+</span></span></code></pre></div><p>counter objects returns zero count for missing item.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff7b72;font-weight:bold">&gt;&gt;&gt;</span> c <span style="color:#ff7b72;font-weight:bold">=</span> Counter([<span style="color:#a5d6ff">&#39;cat&#39;</span>, <span style="color:#a5d6ff">&#39;dogs&#39;</span>])
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72;font-weight:bold">&gt;&gt;&gt;</span> c[<span style="color:#a5d6ff">&#39;fan&#39;</span>]
+</span></span><span style="display:flex;"><span><span style="color:#a5d6ff">0</span>
+</span></span></code></pre></div><p>setting a count to zero does not remove element from the counter. use <code>del</code> to remove entirely.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff7b72;font-weight:bold">&gt;&gt;&gt;</span> c[<span style="color:#a5d6ff">&#39;fan&#39;</span>] <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72;font-weight:bold">&gt;&gt;&gt;</span> <span style="color:#ff7b72">del</span> c[<span style="color:#a5d6ff">&#39;fan&#39;</span>]
+</span></span></code></pre></div><blockquote>
+<p>Apart from all methods available to dictionaries there are three extra methods available.</p>
+</blockquote>
+<p><em><code>elements():</code></em> returns iterator of elements, each repeated as many times as count arranged in arbitrary manner.</p>
+<p><em><code>most_common([n]):</code></em> returns list of most common elements and their counts from the most common to least. if n is omitted or None it returns all elements.</p>
+<p><em><code>subtract([iterable or mapping]):</code></em> Elements are subtracted from an iterable or another mapping. It subtracts counts.</p>
+<blockquote>
+<p>Note: <code>update([iterable or mapping])</code> method of dictionary does not replace them instead it adds and update counts from an iterable or mapping.</p>
+</blockquote>
+<h3 id="chainmap">
+  ChainMap
+  <a class="heading-link" href="#chainmap">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>ChainMap is a data structure which provides a way for quickly linking a number of mapping objects, so that they can be treated as a single unit. Lookups search all mapping successively until a key is found. In contrast, writes, updates and deletions only operate on the first mapping.</p>
+<p>This data structure can be very useful for scenarios like</p>
+<ul>
+<li>
+<p>Config or argument parsing : E.g for a command line tool flag, you have to give priority to user provided value, if user does not provide any input read it from environment otherwise use default value.</p>
+</li>
+<li>
+<p>Simulating a nested scoping, like local and global variable</p>
+</li>
+</ul>
+<h4 id="collectionschainmapmaps">
+  <code>collections.ChainMap(*maps)</code>
+  <a class="heading-link" href="#collectionschainmapmaps">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>It constructor takes multiple dicts or other mappings together and provides a single update able view. If no maps are provided, a single empty dictionary.</p>
+<p>ChainMap stores all mapping in a list and can be accessed or updated using <code>maps</code> attributes as it is public. It also stores the reference of mapping, so if a mapping gets updated it will be reflected in ChainMap as well.</p>
+<blockquote>
+<p>It supports all dictionary methods and provides an attribute <code>maps</code> , a method <code>new_child([m])</code> and a property <code>parent</code></p>
+</blockquote>
+<p><strong>maps:</strong> returns a list of mapping ordered from first-searched to last-searched.</p>
+<p><strong>new_child([mapping]):</strong> Returns a new ChainMap followed by all maps in the current instance. If mapping is specified that becomes first map otherwise an empty dictionary is used. This can be used to create a new sub context which can be updated without altering values in any of the parents mappings.</p>
+<p><strong>parents:</strong> returns a new ChainMap containing all the maps in current ChainMap except the first one.</p>
+<p>Example usage of ChainMap where a user specified value take precedence over environment variable which is turn take precedence over default value.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff7b72">import</span> <span style="color:#ff7b72">os</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">import</span> <span style="color:#ff7b72">argparse</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">from</span> <span style="color:#ff7b72">collections</span> <span style="color:#ff7b72">import</span> ChainMap
+</span></span><span style="display:flex;"><span>DEFAULTS <span style="color:#ff7b72;font-weight:bold">=</span> {<span style="color:#a5d6ff">&#34;message&#34;</span>: <span style="color:#a5d6ff">&#34;Hello&#34;</span>, <span style="color:#a5d6ff">&#34;user&#34;</span>: <span style="color:#a5d6ff">&#34;Guest&#34;</span>}
+</span></span><span style="display:flex;"><span>parser <span style="color:#ff7b72;font-weight:bold">=</span> argparse<span style="color:#ff7b72;font-weight:bold">.</span>ArgumentParser()
+</span></span><span style="display:flex;"><span>parser<span style="color:#ff7b72;font-weight:bold">.</span>add_argument(<span style="color:#a5d6ff">&#34;-u&#34;</span>, <span style="color:#a5d6ff">&#34;--user&#34;</span>)
+</span></span><span style="display:flex;"><span>parser<span style="color:#ff7b72;font-weight:bold">.</span>add_argument(<span style="color:#a5d6ff">&#34;-m&#34;</span>, <span style="color:#a5d6ff">&#34;--message&#34;</span>)parsed_arguments <span style="color:#ff7b72;font-weight:bold">=</span> parser<span style="color:#ff7b72;font-weight:bold">.</span>parse_args()
+</span></span><span style="display:flex;"><span>command_line_args <span style="color:#ff7b72;font-weight:bold">=</span> {k: v <span style="color:#ff7b72">for</span> k, v <span style="color:#ff7b72;font-weight:bold">in</span> vars(parsed_arguments)<span style="color:#ff7b72;font-weight:bold">.</span>items() <span style="color:#ff7b72">if</span> v}
+</span></span><span style="display:flex;"><span>chain_map <span style="color:#ff7b72;font-weight:bold">=</span> ChainMap(command_line_args, os<span style="color:#ff7b72;font-weight:bold">.</span>environ, DEFAULTS)
+</span></span><span style="display:flex;"><span>print(<span style="color:#a5d6ff">&#34;</span><span style="color:#a5d6ff">{}</span><span style="color:#a5d6ff">, </span><span style="color:#a5d6ff">{}</span><span style="color:#a5d6ff">&#34;</span><span style="color:#ff7b72;font-weight:bold">.</span>format(chain_map[<span style="color:#a5d6ff">&#39;message&#39;</span>], chain_map[<span style="color:#a5d6ff">&#39;user&#39;</span>]))
+</span></span></code></pre></div><h3 id="deque">
+  deque
+  <a class="heading-link" href="#deque">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p><code>Deque</code> are a generalization of stacks and queues (the name is pronounced “deck” and is short for “double-ended queue”). <code>Deque</code> support thread-safe, memory efficient appends and pops from either side of the <code>deque</code> with approximately the same O(1) performance in either direction.</p>
+<p><code>Deque</code> can be bounded or unbounded and it can be controlled using <code>maxlen</code> argument while initializing a deque. If <code>maxlen</code> is <code>None</code> deque can grow to an arbitrary length. Otherwise, the deque is bounded to the specified maximum length. Once a bounded length deque is full, when new items are added, a corresponding number of items are discarded from the opposite end.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff7b72;font-weight:bold">&gt;&gt;&gt;</span> <span style="color:#ff7b72">from</span> <span style="color:#ff7b72">collections</span> <span style="color:#ff7b72">import</span> deque
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72;font-weight:bold">&gt;&gt;&gt;</span> d <span style="color:#ff7b72;font-weight:bold">=</span> deque([<span style="color:#a5d6ff">1</span>, <span style="color:#a5d6ff">2</span>, <span style="color:#a5d6ff">3</span>])         <span style="color:#8b949e;font-style:italic"># Creating a deque from iterable</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72;font-weight:bold">&gt;&gt;&gt;</span> empty_d <span style="color:#ff7b72;font-weight:bold">=</span> deque()            <span style="color:#8b949e;font-style:italic"># Empty deque</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72;font-weight:bold">&gt;&gt;&gt;</span> bounded_d <span style="color:#ff7b72;font-weight:bold">=</span> deque(maxlen<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">10</span>) <span style="color:#8b949e;font-style:italic"># A bounded deque of length 10</span>
+</span></span></code></pre></div><blockquote>
+<p>It has methods like <code>appendleft</code> , <code>extendleft</code>, <code>popleft</code>, <code>rotate</code> apart from regular list methods.</p>
+</blockquote>
+<p><strong>appendleft(item):</strong> It can be used to append an element from the left side of <code>deque</code>.</p>
+<p><strong>extendleft(iterable):</strong> Extend the left side of the <code>deque</code> by appending elements from <code>iterable</code>.</p>
+<p><strong>popleft():</strong> removes and return element from the left side of the queue.</p>
+<p><strong>rotate(n):</strong> rotates the deque n steps to the right. if n is negative, rotate to the left.</p>
+<h3 id="defaultdict">
+  defaultdict
+  <a class="heading-link" href="#defaultdict">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p><code>defaultdict</code> is a subclass of <code>dict</code> class which calls a factory function to supplying missing values. All functionalities are similar to dictionary except when a new key is encountered, it call <code>default_factory</code> to get the default value.</p>
+<p>For example, if we use <code>list</code> as <code>default_factory</code> .</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff7b72;font-weight:bold">&gt;&gt;&gt;</span> <span style="color:#ff7b72">from</span> <span style="color:#ff7b72">collections</span> <span style="color:#ff7b72">import</span> defaultdict
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72;font-weight:bold">&gt;&gt;&gt;</span> s <span style="color:#ff7b72;font-weight:bold">=</span> [(<span style="color:#a5d6ff">&#39;yellow&#39;</span>, <span style="color:#a5d6ff">1</span>), (<span style="color:#a5d6ff">&#39;blue&#39;</span>, <span style="color:#a5d6ff">2</span>), (<span style="color:#a5d6ff">&#39;yellow&#39;</span>, <span style="color:#a5d6ff">3</span>), (<span style="color:#a5d6ff">&#39;blue&#39;</span>, <span style="color:#a5d6ff">4</span>), (<span style="color:#a5d6ff">&#39;red&#39;</span>, <span style="color:#a5d6ff">1</span>)]
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72;font-weight:bold">&gt;&gt;&gt;</span> d <span style="color:#ff7b72;font-weight:bold">=</span> defaultdict(list)
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72;font-weight:bold">&gt;&gt;&gt;</span> <span style="color:#ff7b72">for</span> k, v <span style="color:#ff7b72;font-weight:bold">in</span> s:
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72;font-weight:bold">...</span>     d[k]<span style="color:#ff7b72;font-weight:bold">.</span>append(v)
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72;font-weight:bold">...</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72;font-weight:bold">&gt;&gt;&gt;</span> sorted(d<span style="color:#ff7b72;font-weight:bold">.</span>items())
+</span></span><span style="display:flex;"><span>[(<span style="color:#a5d6ff">&#39;blue&#39;</span>, [<span style="color:#a5d6ff">2</span>, <span style="color:#a5d6ff">4</span>]), (<span style="color:#a5d6ff">&#39;red&#39;</span>, [<span style="color:#a5d6ff">1</span>]), (<span style="color:#a5d6ff">&#39;yellow&#39;</span>, [<span style="color:#a5d6ff">1</span>, <span style="color:#a5d6ff">3</span>])]
+</span></span></code></pre></div><p>When each key is encountered for the first time, it is not already in the mapping; so an entry is automatically created using the <code>default_factory</code> function which returns an empty list. The l<code>ist.append()</code> operation then attaches the value to the new list. When keys are encountered again, the look-up proceeds normally (returning the list for that key) and the <code>list.append()</code> operation adds another value to the list.</p>
+<h3 id="resources">
+  Resources:
+  <a class="heading-link" href="#resources">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li><a href="https://docs.python.org/3.6/library/collections.html"  class="external-link" target="_blank" rel="noopener">https://docs.python.org/3.6/library/collections.html</a></li>
+</ul>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+    2023
+     Vivek Kumar Singh 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>
