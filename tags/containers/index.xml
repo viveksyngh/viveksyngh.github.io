@@ -31,5 +31,15 @@ Liveness Probe Link to heading The kubelet uses a liveness probe to know when to
 Kubernetes: Link to heading Kubernetes, also known as K8s, is an open-source system for automating the deployment, scaling, and management of containerized applications. It is designed on the same principles that allow Google to run billions of containers a week, Kubernetes can scale without increasing your ops team.</description>
     </item>
     
+    <item>
+      <title>Linux Virtual Ethernet Devices</title>
+      <link>http://www.viveksyngh.com/posts/linux-virtual-ethernet-devices/</link>
+      <pubDate>Sat, 25 Sep 2021 00:00:00 -0600</pubDate>
+      
+      <guid>http://www.viveksyngh.com/posts/linux-virtual-ethernet-devices/</guid>
+      <description>Linux has rich virtual networking capabilities and in the series of posts, I am going to dig into these virtual networking interfaces, how to use them and what are their use cases.
+In this post, we will be looking into VETH (Virtual Ethernet) virtual networking interface. VETH devices are virtual ethernet devices. They can act as tunnels between network namespaces to create a bridge to a physical network device in another namespace, but can also be used as standalone network devices.</description>
+    </item>
+    
   </channel>
 </rss>
