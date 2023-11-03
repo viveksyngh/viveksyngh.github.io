@@ -37,5 +37,15 @@ Merkle trees are used in distributed systems for efficient data verification.</d
 MapReduce is a programming model and an associated implementation for processing and generating large data sets. User specifies a map function that processes a key/value pair to generate a set for intermediate key/value pairs, and a reduce function that merges all intermediate values associated with the same intermediate key.</description>
     </item>
     
+    <item>
+      <title>What is API Gateway?</title>
+      <link>http://www.viveksyngh.com/system-design/what-is-api-gateway/</link>
+      <pubDate>Mon, 25 Feb 2019 00:00:00 -0600</pubDate>
+      
+      <guid>http://www.viveksyngh.com/system-design/what-is-api-gateway/</guid>
+      <description>In microservices architecture, there are several services running each designed for a very specific component of the system. When clients (Mobile Apps, Web Apps or Third party applications) communicates directly with these microservices then many problems arise.
+The granularity of APIs provided by microservices is often different than what the client needs. Microservice API’s are very generic and granular in nature where each returns only a portion of data for functionality.</description>
+    </item>
+    
   </channel>
 </rss>

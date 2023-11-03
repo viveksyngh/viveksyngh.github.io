@@ -18,6 +18,16 @@ Consistency: Every read receives the most recent writes or an error. For consist
     </item>
     
     <item>
+      <title>What is API Gateway?</title>
+      <link>http://www.viveksyngh.com/system-design/what-is-api-gateway/</link>
+      <pubDate>Mon, 25 Feb 2019 00:00:00 -0600</pubDate>
+      
+      <guid>http://www.viveksyngh.com/system-design/what-is-api-gateway/</guid>
+      <description>In microservices architecture, there are several services running each designed for a very specific component of the system. When clients (Mobile Apps, Web Apps or Third party applications) communicates directly with these microservices then many problems arise.
+The granularity of APIs provided by microservices is often different than what the client needs. Microservice API’s are very generic and granular in nature where each returns only a portion of data for functionality.</description>
+    </item>
+    
+    <item>
       <title>Load Balancing and Load Balancer</title>
       <link>http://www.viveksyngh.com/system-design/load-balancing-and-load-balancer/</link>
       <pubDate>Mon, 18 Feb 2019 00:00:00 -0600</pubDate>
