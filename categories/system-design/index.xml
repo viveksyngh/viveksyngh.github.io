@@ -6,7 +6,17 @@
     <description>Recent content in system design on Vivek Kumar Singh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 18 Feb 2019 00:00:00 -0600</lastBuildDate><atom:link href="http://www.viveksyngh.com/categories/system-design/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 04 Mar 2019 00:00:00 -0600</lastBuildDate><atom:link href="http://www.viveksyngh.com/categories/system-design/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CAP Theorem</title>
+      <link>http://www.viveksyngh.com/system-design/cap-theorem/</link>
+      <pubDate>Mon, 04 Mar 2019 00:00:00 -0600</pubDate>
+      
+      <guid>http://www.viveksyngh.com/system-design/cap-theorem/</guid>
+      <description>CAP theorem also known as Brewer’s theorem was introduced by computer scientist Eric Brewer at Symposium on Principles of Distributed computing in 2000. In CAP theorem, C stands for Consistency, A stands for Availability and P stands for Partition tolerance.
+Consistency: Every read receives the most recent writes or an error. For consistency, any read operation that begins after a write operation completes must return that value, or the result of a later write operation.</description>
+    </item>
+    
     <item>
       <title>Load Balancing and Load Balancer</title>
       <link>http://www.viveksyngh.com/system-design/load-balancing-and-load-balancer/</link>

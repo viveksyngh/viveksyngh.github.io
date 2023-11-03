@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  CAP Theorem · Vivek Kumar Singh
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Vivek Kumar Singh">
+<meta name="description" content="CAP theorem also known as Brewer’s theorem was introduced by computer scientist Eric Brewer at Symposium on Principles of Distributed computing in 2000. In CAP theorem, C stands for Consistency, A stands for Availability and P stands for Partition tolerance.
+Consistency: Every read receives the most recent writes or an error. For consistency, any read operation that begins after a write operation completes must return that value, or the result of a later write operation.">
+<meta name="keywords" content="blog,developer,personal">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="CAP Theorem"/>
+<meta name="twitter:description" content="CAP theorem also known as Brewer’s theorem was introduced by computer scientist Eric Brewer at Symposium on Principles of Distributed computing in 2000. In CAP theorem, C stands for Consistency, A stands for Availability and P stands for Partition tolerance.
+Consistency: Every read receives the most recent writes or an error. For consistency, any read operation that begins after a write operation completes must return that value, or the result of a later write operation."/>
+
+<meta property="og:title" content="CAP Theorem" />
+<meta property="og:description" content="CAP theorem also known as Brewer’s theorem was introduced by computer scientist Eric Brewer at Symposium on Principles of Distributed computing in 2000. In CAP theorem, C stands for Consistency, A stands for Availability and P stands for Partition tolerance.
+Consistency: Every read receives the most recent writes or an error. For consistency, any read operation that begins after a write operation completes must return that value, or the result of a later write operation." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.viveksyngh.com/system-design/cap-theorem/" /><meta property="article:section" content="system-design" />
+<meta property="article:published_time" content="2019-03-04T00:00:00-06:00" />
+<meta property="article:modified_time" content="2019-03-04T00:00:00-06:00" />
+
+
+
+
+<link rel="canonical" href="http://www.viveksyngh.com/system-design/cap-theorem/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.65236a6d834b26194eed04a2a3b45e44d9194ef9e620253705d4bef03bd7ef81.css" integrity="sha256-ZSNqbYNLJhlO7QSio7ReRNkZTvnmICU3BdS&#43;8DvX74E=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.f6534b0b446b75d9b6ad77a97d43ede2ddaeff1b6e2361fb7198d6f8fcb7f83f.css" integrity="sha256-9lNLC0Rrddm2rXepfUPt4t2u/xtuI2H7cZjW&#43;Py3&#43;D8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      Vivek Kumar Singh
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/paper-notes/">Paper Notes</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/system-design/">System Design</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Blogs</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container page">
+  <article>
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="http://www.viveksyngh.com/system-design/cap-theorem/">
+          CAP Theorem
+        </a>
+      </h1>
+    </header>
+
+    <p><img src="../../images/system-design/cap-theorem-1.webp" alt="CAP Theorem"></p>
+<p>CAP theorem also known as <strong>Brewer’s</strong> theorem was introduced by computer scientist Eric Brewer at Symposium on Principles of Distributed computing in 2000. In CAP theorem, <strong>C</strong> stands for <strong>Consistency</strong>, <strong>A</strong> stands for <strong>Availability</strong> and <strong>P</strong> stands for <strong>Partition tolerance</strong>.</p>
+<p><strong>Consistency:</strong> Every read receives the most recent writes or an error. For consistency, any read operation that begins after a write operation completes must return that value, or the result of a later write operation.</p>
+<p>In a consistent system, once a client writes a value to any server and gets a response, it expects to get that value (or a fresher value) back from any server it reads from.</p>
+<blockquote>
+<p>Note that consistency, as defined in the CAP theorem is quite different from the consistency guaranteed in ACID database transactions.</p>
+</blockquote>
+<p><strong>Availability:</strong> Every request received by a non-failing node in the system must result in a response. Whether you want to read or write you will get some response back.</p>
+<p>In an available system, if our client sends a request to a server and the server has not crashed, then the server must eventually respond to the client. The server is not allowed to ignore the client’s requests.</p>
+<p><strong>Partition tolerance:</strong> The system continues to operate despite an arbitrary number of messages being dropped(or delayed) by the network between nodes. When a network is partitioned, all messages sent from nodes in one component of the partition to nodes in another component are lost.</p>
+<p><em><strong>CAP theorem</strong> states that it is impossible for a distributed system to simultaneously provide more than two out of the above three guarantees.</em></p>
+<h4 id="to-prove-that">
+  To prove that:
+  <a class="heading-link" href="#to-prove-that">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>For example, suppose we have a very simple distributed system with only two server S1 and S2 and assume our distributed system is Consistent, Available and Partition tolerant all at the same time.</p>
+<p><img src="../../images/system-design/cap-theorem-2.webp" alt="CAP Theorem"></p>
+<p>Suppose there is network failure, since our system is partition tolerant it suppose to work. During the network failure client sends a write request to server S1. S1 will receive the request and process it.</p>
+<p>Our system is <strong>consistent</strong>, so S1 must update the value in S2 before confirming to the client but S1 cannot update S2 because there is a network failure. In this case, the request to S1 will timeout which means our system is not available.</p>
+<p>If our system <strong>Available</strong>, S1 will respond to the client without waiting for an update in S2. If any client makes a read request to S2 for the same information it will receive older value not the result of recent write. This means our system cannot be consistent when it is available.</p>
+<blockquote>
+<p><strong>Above proves the CAP theorem.</strong></p>
+</blockquote>
+<p>All distributed system needs partition tolerance because no distributed system is safe from network failure. In presence of a partition tolerance, we can select one out of two options: <strong>Consistency and Availability</strong>.</p>
+<p><strong>CAP Theorem</strong> is frequently misunderstood that one has to choose two out of three guarantees all the times. In fact, one has to choose between <strong>Consistency</strong> and <strong>Availability</strong> only when there is a network partition or failure happens. In absence of network partition or network failures, both <strong>availability</strong> and <strong>consistency</strong> can be satisfied.</p>
+<p>In presence of a partition, one is left with two options consistency and availability.</p>
+<p><strong>AP(Availability and Partition tolerance):</strong> When availability is chosen over consistency, the system is will always process the client request and try to return the most recent available version of the information even if it cannot guarantee it is up to date due to network partitioning.</p>
+<p><strong>CP(Consistency and Partition tolerance):</strong> When consistency is chosen over availability, the system will return an error or time-out if particular information cannot be updated to other nodes due to network partition or failures.</p>
+<p>Database system designed with <strong>ACID</strong> guarantees (RDBMS) usually chooses consistency over availability whereas system Designed with <strong>BASE</strong> guarantees, chooses availability over consistency.</p>
+<h4 id="resources">
+  Resources
+  <a class="heading-link" href="#resources">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/CAP_theorem"  class="external-link" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/CAP_theorem</a></li>
+<li><a href="https://mwhittaker.github.io/blog/an_illustrated_proof_of_the_cap_theorem/"  class="external-link" target="_blank" rel="noopener">https://mwhittaker.github.io/blog/an_illustrated_proof_of_the_cap_theorem/</a></li>
+</ul>
+
+  </article>
+</section>
+
+  
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+    2023
+     Vivek Kumar Singh 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

@@ -117,6 +117,16 @@ MapReduce is a programming model and an associated implementation for processing
     </item>
     
     <item>
+      <title>CAP Theorem</title>
+      <link>http://www.viveksyngh.com/system-design/cap-theorem/</link>
+      <pubDate>Mon, 04 Mar 2019 00:00:00 -0600</pubDate>
+      
+      <guid>http://www.viveksyngh.com/system-design/cap-theorem/</guid>
+      <description>CAP theorem also known as Brewer’s theorem was introduced by computer scientist Eric Brewer at Symposium on Principles of Distributed computing in 2000. In CAP theorem, C stands for Consistency, A stands for Availability and P stands for Partition tolerance.
+Consistency: Every read receives the most recent writes or an error. For consistency, any read operation that begins after a write operation completes must return that value, or the result of a later write operation.</description>
+    </item>
+    
+    <item>
       <title>Load Balancing and Load Balancer</title>
       <link>http://www.viveksyngh.com/system-design/load-balancing-and-load-balancer/</link>
       <pubDate>Mon, 18 Feb 2019 00:00:00 -0600</pubDate>

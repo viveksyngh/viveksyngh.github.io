@@ -215,18 +215,27 @@
     </item>
     
     <item>
-      <title>load balancer</title>
-      <link>http://www.viveksyngh.com/tags/load-balancer/</link>
-      <pubDate>Mon, 18 Feb 2019 00:00:00 -0600</pubDate>
+      <title>distributed system</title>
+      <link>http://www.viveksyngh.com/tags/distributed-system/</link>
+      <pubDate>Mon, 04 Mar 2019 00:00:00 -0600</pubDate>
       
-      <guid>http://www.viveksyngh.com/tags/load-balancer/</guid>
+      <guid>http://www.viveksyngh.com/tags/distributed-system/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>high availability</title>
+      <link>http://www.viveksyngh.com/tags/high-availability/</link>
+      <pubDate>Mon, 04 Mar 2019 00:00:00 -0600</pubDate>
+      
+      <guid>http://www.viveksyngh.com/tags/high-availability/</guid>
       <description></description>
     </item>
     
     <item>
       <title>scalability</title>
       <link>http://www.viveksyngh.com/tags/scalability/</link>
-      <pubDate>Mon, 18 Feb 2019 00:00:00 -0600</pubDate>
+      <pubDate>Mon, 04 Mar 2019 00:00:00 -0600</pubDate>
       
       <guid>http://www.viveksyngh.com/tags/scalability/</guid>
       <description></description>
@@ -235,9 +244,18 @@
     <item>
       <title>Software engineering</title>
       <link>http://www.viveksyngh.com/tags/software-engineering/</link>
-      <pubDate>Mon, 18 Feb 2019 00:00:00 -0600</pubDate>
+      <pubDate>Mon, 04 Mar 2019 00:00:00 -0600</pubDate>
       
       <guid>http://www.viveksyngh.com/tags/software-engineering/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>load balancer</title>
+      <link>http://www.viveksyngh.com/tags/load-balancer/</link>
+      <pubDate>Mon, 18 Feb 2019 00:00:00 -0600</pubDate>
+      
+      <guid>http://www.viveksyngh.com/tags/load-balancer/</guid>
       <description></description>
     </item>
     
