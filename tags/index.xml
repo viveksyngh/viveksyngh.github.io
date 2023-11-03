@@ -188,15 +188,6 @@
     </item>
     
     <item>
-      <title>python</title>
-      <link>http://www.viveksyngh.com/tags/python/</link>
-      <pubDate>Sun, 19 Apr 2020 00:00:00 -0600</pubDate>
-      
-      <guid>http://www.viveksyngh.com/tags/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>python3</title>
       <link>http://www.viveksyngh.com/tags/python3/</link>
       <pubDate>Sun, 19 Apr 2020 00:00:00 -0600</pubDate>
@@ -224,20 +215,38 @@
     </item>
     
     <item>
-      <title>proxy</title>
-      <link>http://www.viveksyngh.com/tags/proxy/</link>
-      <pubDate>Wed, 06 Feb 2019 00:00:00 -0600</pubDate>
+      <title>load balancer</title>
+      <link>http://www.viveksyngh.com/tags/load-balancer/</link>
+      <pubDate>Mon, 18 Feb 2019 00:00:00 -0600</pubDate>
       
-      <guid>http://www.viveksyngh.com/tags/proxy/</guid>
+      <guid>http://www.viveksyngh.com/tags/load-balancer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>scalability</title>
+      <link>http://www.viveksyngh.com/tags/scalability/</link>
+      <pubDate>Mon, 18 Feb 2019 00:00:00 -0600</pubDate>
+      
+      <guid>http://www.viveksyngh.com/tags/scalability/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Software engineering</title>
       <link>http://www.viveksyngh.com/tags/software-engineering/</link>
-      <pubDate>Wed, 06 Feb 2019 00:00:00 -0600</pubDate>
+      <pubDate>Mon, 18 Feb 2019 00:00:00 -0600</pubDate>
       
       <guid>http://www.viveksyngh.com/tags/software-engineering/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>proxy</title>
+      <link>http://www.viveksyngh.com/tags/proxy/</link>
+      <pubDate>Wed, 06 Feb 2019 00:00:00 -0600</pubDate>
+      
+      <guid>http://www.viveksyngh.com/tags/proxy/</guid>
       <description></description>
     </item>
     

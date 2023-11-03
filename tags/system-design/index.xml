@@ -18,6 +18,17 @@ MapReduce is a programming model and an associated implementation for processing
     </item>
     
     <item>
+      <title>Load Balancing and Load Balancer</title>
+      <link>http://www.viveksyngh.com/system-design/load-balancing-and-load-balancer/</link>
+      <pubDate>Mon, 18 Feb 2019 00:00:00 -0600</pubDate>
+      
+      <guid>http://www.viveksyngh.com/system-design/load-balancing-and-load-balancer/</guid>
+      <description>[Source: https://medium.com/containers-on-aws/using-aws-application-load-balancer-and-network-load-balancer-with-ec2-container-service-d0cb0b1d5ae5]
+Load Balancing Link to heading Load balancing is the process of efficiently distributing network traffic across multiple servers also known as a server farm or server pool. By distributing the load evenly load balancing improves responsiveness and increases the availability of applications. It has become a necessity as applications become more complex, user demand grows and traffic volume increases.
+Load balancing is the most straightforward method of scaling out an application server infrastructure.</description>
+    </item>
+    
+    <item>
       <title>What is proxy server?</title>
       <link>http://www.viveksyngh.com/system-design/what-is-proxy-server/</link>
       <pubDate>Wed, 06 Feb 2019 00:00:00 -0600</pubDate>
