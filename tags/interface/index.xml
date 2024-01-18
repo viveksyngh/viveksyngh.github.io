@@ -6,16 +6,14 @@
     <description>Recent content in interface on Vivek Kumar Singh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 15 Oct 2018 00:00:00 -0600</lastBuildDate><atom:link href="http://www.viveksyngh.com/tags/interface/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 15 Oct 2018 00:00:00 -0600</lastBuildDate>
+    <atom:link href="http://www.viveksyngh.com/tags/interface/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Getting Started With Golang Interfaces</title>
       <link>http://www.viveksyngh.com/posts/getting-started-with-golang-interfaces/</link>
       <pubDate>Mon, 15 Oct 2018 00:00:00 -0600</pubDate>
-      
       <guid>http://www.viveksyngh.com/posts/getting-started-with-golang-interfaces/</guid>
-      <description>Interfaces in Go provides a way to specify the behavior of an object. Interfaces allow us to write more flexible and scalable code in Go. It is also a mechanism to achieve polymorphism in Go.
-type Interface interface { Method1(int, string) (int, error) Method2(int) bool Method3(string) } Interfaces specify methods (or behavior) but do not provide an implementation for those methods. Types implementing the interface provide an implementation of methods.</description>
+      <description>Interfaces in Go provides a way to specify the behavior of an object. Interfaces allow us to write more flexible and scalable code in Go. It is also a mechanism to achieve polymorphism in Go.&#xA;type Interface interface { Method1(int, string) (int, error) Method2(int) bool Method3(string) } Interfaces specify methods (or behavior) but do not provide an implementation for those methods. Types implementing the interface provide an implementation of methods.</description>
     </item>
-    
   </channel>
 </rss>

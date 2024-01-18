@@ -6,16 +6,14 @@
     <description>Recent content in cassandra on Vivek Kumar Singh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 19 Feb 2023 00:00:00 -0600</lastBuildDate><atom:link href="http://www.viveksyngh.com/tags/cassandra/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 19 Feb 2023 00:00:00 -0600</lastBuildDate>
+    <atom:link href="http://www.viveksyngh.com/tags/cassandra/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Diving into Amazon Dynamo Paper</title>
       <link>http://www.viveksyngh.com/paper-notes/diving-into-amazon-dynamo-paper/</link>
       <pubDate>Sun, 19 Feb 2023 00:00:00 -0600</pubDate>
-      
       <guid>http://www.viveksyngh.com/paper-notes/diving-into-amazon-dynamo-paper/</guid>
-      <description>In this blog post, we are going to look into Amazon Dynamo paper which describes a set of techniques that can be combined to form a highly-available, distributed key-value data store. This paper then became foundation for databases such as Cassandra, Riak etc.
-Dynamo addresses the need for an incrementally scalable, highly-available key-value storage system. The technology is designed to give its users the ability to trade-off cost, consistency, durability and performance, while maintaining high-availability.</description>
+      <description>In this blog post, we are going to look into Amazon Dynamo paper which describes a set of techniques that can be combined to form a highly-available, distributed key-value data store. This paper then became foundation for databases such as Cassandra, Riak etc.&#xA;Dynamo addresses the need for an incrementally scalable, highly-available key-value storage system. The technology is designed to give its users the ability to trade-off cost, consistency, durability and performance, while maintaining high-availability.</description>
     </item>
-    
   </channel>
 </rss>

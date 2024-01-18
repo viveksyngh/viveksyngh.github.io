@@ -6,28 +6,21 @@
     <description>Recent content in oops on Vivek Kumar Singh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 14 Sep 2018 00:00:00 -0600</lastBuildDate><atom:link href="http://www.viveksyngh.com/tags/oops/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 14 Sep 2018 00:00:00 -0600</lastBuildDate>
+    <atom:link href="http://www.viveksyngh.com/tags/oops/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Object Oriented Programming and Golang</title>
       <link>http://www.viveksyngh.com/posts/object-oriented-programming-and-golang/</link>
       <pubDate>Fri, 14 Sep 2018 00:00:00 -0600</pubDate>
-      
       <guid>http://www.viveksyngh.com/posts/object-oriented-programming-and-golang/</guid>
-      <description>Go has picked some good concepts from different kind of programming languages like procedural, functional and object-oriented programming language and combined them together to create a unique flavor programming language.
-Go isn’t an object-oriented language like C++, Java, C# etc. but it supports some of the OOPs concepts like Encapsulation, Type Methods, Composition etc.
-In this blog post, we will see how can we implement those concepts in Go
-Type Methods Link to heading Go does not have classes but it has types.</description>
+      <description>Go has picked some good concepts from different kind of programming languages like procedural, functional and object-oriented programming language and combined them together to create a unique flavor programming language.&#xA;Go isn’t an object-oriented language like C++, Java, C# etc. but it supports some of the OOPs concepts like Encapsulation, Type Methods, Composition etc.&#xA;In this blog post, we will see how can we implement those concepts in Go&#xA;Type Methods Link to heading Go does not have classes but it has types.</description>
     </item>
-    
     <item>
       <title>Pass by value and Pass by reference in Go</title>
       <link>http://www.viveksyngh.com/posts/pass-by-value-and-pass-by-reference-in-go/</link>
       <pubDate>Fri, 07 Sep 2018 00:00:00 -0600</pubDate>
-      
       <guid>http://www.viveksyngh.com/posts/pass-by-value-and-pass-by-reference-in-go/</guid>
-      <description>In Go, everything is passed by value. When we pass arguments to a function, a function always gets the copy of the data passed. For example, passing an int value to function makes a copy of the int, passing a pointer value makes a copy of the pointer but not the data it points to.
-When we pass a value to function it is called pass by value and when we pass a pointer to a function it is called pass by reference.</description>
+      <description>In Go, everything is passed by value. When we pass arguments to a function, a function always gets the copy of the data passed. For example, passing an int value to function makes a copy of the int, passing a pointer value makes a copy of the pointer but not the data it points to.&#xA;When we pass a value to function it is called pass by value and when we pass a pointer to a function it is called pass by reference.</description>
     </item>
-    
   </channel>
 </rss>

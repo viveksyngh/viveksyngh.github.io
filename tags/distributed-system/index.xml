@@ -6,16 +6,28 @@
     <description>Recent content in distributed system on Vivek Kumar Singh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 04 Mar 2019 00:00:00 -0600</lastBuildDate><atom:link href="http://www.viveksyngh.com/tags/distributed-system/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 Mar 2019 00:00:00 -0600</lastBuildDate>
+    <atom:link href="http://www.viveksyngh.com/tags/distributed-system/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Consistent Hashing</title>
+      <link>http://www.viveksyngh.com/system-design/consistent-hashing/</link>
+      <pubDate>Fri, 22 Mar 2019 00:00:00 -0600</pubDate>
+      <guid>http://www.viveksyngh.com/system-design/consistent-hashing/</guid>
+      <description>Consistent hashing idea was introduced in paper Consistent Hashing and Random Trees: Distributed Caching Protocols for Relieving Hot Spots on the World Wide Web which was released in the year 1997. Akamai distributed content delivery network uses the approach described in the paper.&#xA;In 2007, consistent hashing was used in two published works&#xA;Dynamo: Amazon’s Highly Available Key-Value Datastore Last.fm Memcached client After that it has been used in many other distributed system like Cassandra, Riak etc.</description>
+    </item>
+    <item>
+      <title>Eventual Consistency vs Strong Consistency</title>
+      <link>http://www.viveksyngh.com/system-design/eventual-consistency-vs-strong-consistency/</link>
+      <pubDate>Mon, 11 Mar 2019 00:00:00 -0600</pubDate>
+      <guid>http://www.viveksyngh.com/system-design/eventual-consistency-vs-strong-consistency/</guid>
+      <description>Eventual Consistency Link to heading Eventual consistency is a theoretical guarantee that, provided no new updates to an entity are made, all reads of the entity will eventually return the last updated value. The Internet Domain Name System (DNS) is a well-known example of a system with an eventual consistency model. DNS servers do not necessarily reflect the latest values but, rather, the values are cached and replicated across many directories over the Internet.</description>
+    </item>
     <item>
       <title>CAP Theorem</title>
       <link>http://www.viveksyngh.com/system-design/cap-theorem/</link>
       <pubDate>Mon, 04 Mar 2019 00:00:00 -0600</pubDate>
-      
       <guid>http://www.viveksyngh.com/system-design/cap-theorem/</guid>
-      <description>CAP theorem also known as Brewer’s theorem was introduced by computer scientist Eric Brewer at Symposium on Principles of Distributed computing in 2000. In CAP theorem, C stands for Consistency, A stands for Availability and P stands for Partition tolerance.
-Consistency: Every read receives the most recent writes or an error. For consistency, any read operation that begins after a write operation completes must return that value, or the result of a later write operation.</description>
+      <description>CAP theorem also known as Brewer’s theorem was introduced by computer scientist Eric Brewer at Symposium on Principles of Distributed computing in 2000. In CAP theorem, C stands for Consistency, A stands for Availability and P stands for Partition tolerance.&#xA;Consistency: Every read receives the most recent writes or an error. For consistency, any read operation that begins after a write operation completes must return that value, or the result of a later write operation.</description>
     </item>
-    
   </channel>
 </rss>

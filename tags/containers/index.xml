@@ -6,40 +6,28 @@
     <description>Recent content in containers on Vivek Kumar Singh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 01 Jul 2022 00:00:00 -0600</lastBuildDate><atom:link href="http://www.viveksyngh.com/tags/containers/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 01 Jul 2022 00:00:00 -0600</lastBuildDate>
+    <atom:link href="http://www.viveksyngh.com/tags/containers/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Understanding Kubernetes Container Probes</title>
       <link>http://www.viveksyngh.com/posts/understanding-kubernetes-container-probes/</link>
       <pubDate>Fri, 01 Jul 2022 00:00:00 -0600</pubDate>
-      
       <guid>http://www.viveksyngh.com/posts/understanding-kubernetes-container-probes/</guid>
-      <description>A probe is a diagnostic performed periodically by the kubelet on a container. To perform a diagnostic, the kubelet either executes code within the container or makes a network request.
-There are three types of probes in Kubernetes
-Liveness Probe indicates whether the container is running.
-Readiness Probe indicates whether the container is ready to respond to requests.
-Startup Probe indicates whether the container is started.
-Liveness Probe Link to heading The kubelet uses a liveness probe to know when to restart the container.</description>
+      <description>A probe is a diagnostic performed periodically by the kubelet on a container. To perform a diagnostic, the kubelet either executes code within the container or makes a network request.&#xA;There are three types of probes in Kubernetes&#xA;Liveness Probe indicates whether the container is running.&#xA;Readiness Probe indicates whether the container is ready to respond to requests.&#xA;Startup Probe indicates whether the container is started.&#xA;Liveness Probe Link to heading The kubelet uses a liveness probe to know when to restart the container.</description>
     </item>
-    
     <item>
       <title>Running Highly Available Apps on Kubernetes</title>
       <link>http://www.viveksyngh.com/posts/running-highly-available-apps-on-kubernetes/</link>
       <pubDate>Wed, 11 May 2022 00:00:00 -0600</pubDate>
-      
       <guid>http://www.viveksyngh.com/posts/running-highly-available-apps-on-kubernetes/</guid>
-      <description>As Kubernetes becomes the de-facto standard for deploying applications, many of us are either running our applications on Kubernetes or trying to migrate to Kubernetes. In this blog post, I will go through some tips for running highly available applications on Kubernetes.
-Kubernetes: Link to heading Kubernetes, also known as K8s, is an open-source system for automating the deployment, scaling, and management of containerized applications. It is designed on the same principles that allow Google to run billions of containers a week, Kubernetes can scale without increasing your ops team.</description>
+      <description>As Kubernetes becomes the de-facto standard for deploying applications, many of us are either running our applications on Kubernetes or trying to migrate to Kubernetes. In this blog post, I will go through some tips for running highly available applications on Kubernetes.&#xA;Kubernetes: Link to heading Kubernetes, also known as K8s, is an open-source system for automating the deployment, scaling, and management of containerized applications. It is designed on the same principles that allow Google to run billions of containers a week, Kubernetes can scale without increasing your ops team.</description>
     </item>
-    
     <item>
       <title>Linux Virtual Ethernet Devices</title>
       <link>http://www.viveksyngh.com/posts/linux-virtual-ethernet-devices/</link>
       <pubDate>Sat, 25 Sep 2021 00:00:00 -0600</pubDate>
-      
       <guid>http://www.viveksyngh.com/posts/linux-virtual-ethernet-devices/</guid>
-      <description>Linux has rich virtual networking capabilities and in the series of posts, I am going to dig into these virtual networking interfaces, how to use them and what are their use cases.
-In this post, we will be looking into VETH (Virtual Ethernet) virtual networking interface. VETH devices are virtual ethernet devices. They can act as tunnels between network namespaces to create a bridge to a physical network device in another namespace, but can also be used as standalone network devices.</description>
+      <description>Linux has rich virtual networking capabilities and in the series of posts, I am going to dig into these virtual networking interfaces, how to use them and what are their use cases.&#xA;In this post, we will be looking into VETH (Virtual Ethernet) virtual networking interface. VETH devices are virtual ethernet devices. They can act as tunnels between network namespaces to create a bridge to a physical network device in another namespace, but can also be used as standalone network devices.</description>
     </item>
-    
   </channel>
 </rss>

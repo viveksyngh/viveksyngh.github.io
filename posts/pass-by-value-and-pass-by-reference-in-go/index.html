@@ -17,8 +17,7 @@
 When we pass a value to function it is called pass by value and when we pass a pointer to a function it is called pass by reference.">
 <meta name="keywords" content="blog,developer,personal">
 
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Pass by value and Pass by reference in Go"/>
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Pass by value and Pass by reference in Go"/>
 <meta name="twitter:description" content="In Go, everything is passed by value. When we pass arguments to a function, a function always gets the copy of the data passed. For example, passing an int value to function makes a copy of the int, passing a pointer value makes a copy of the pointer but not the data it points to.
 When we pass a value to function it is called pass by value and when we pass a pointer to a function it is called pass by reference."/>
 
@@ -29,6 +28,7 @@ When we pass a value to function it is called pass by value and when we pass a p
 <meta property="og:url" content="http://www.viveksyngh.com/posts/pass-by-value-and-pass-by-reference-in-go/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2018-09-07T00:00:00-06:00" />
 <meta property="article:modified_time" content="2018-09-07T00:00:00-06:00" />
+
 
 
 
@@ -192,7 +192,7 @@ When we pass a value to function it is called pass by value and when we pass a p
   </a>
 </h2>
 <p>By default, everything in Go is passed by value. The function receives the copy of data passed and any changes in the called function will not be reflected in caller function. If you want to make your data immutable (changes that function made to it will not be visible by calling code)</p>
-<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#ff7b72">package</span> main
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#ff7b72">package</span> main
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#ff7b72">import</span> (
 </span></span><span style="display:flex;"><span>	<span style="color:#a5d6ff">&#34;fmt&#34;</span>
@@ -231,7 +231,7 @@ When we pass a value to function it is called pass by value and when we pass a p
 </span></span><span style="display:flex;"><span>	fmt.<span style="color:#d2a8ff;font-weight:bold">Printf</span>(<span style="color:#a5d6ff">&#34;Person&#39;s age after birthday : %d\n&#34;</span>, person.Age)
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>If you run the above code, you will get the following output.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#a5d6ff">&#34;a&#34;</span> value before calling <span style="color:#a5d6ff">&#34;add1&#34;</span> : <span style="color:#a5d6ff">10</span>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#a5d6ff">&#34;a&#34;</span> value before calling <span style="color:#a5d6ff">&#34;add1&#34;</span> : <span style="color:#a5d6ff">10</span>
 </span></span><span style="display:flex;"><span><span style="color:#a5d6ff">&#34;a&#34;</span> value after calling <span style="color:#a5d6ff">&#34;add1&#34;</span> : <span style="color:#a5d6ff">10</span>
 </span></span><span style="display:flex;"><span>Person<span style="color:#a5d6ff">&#39;s age before birthday : 30
 </span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">Person&#39;</span>s age after birthday : <span style="color:#a5d6ff">30</span>
@@ -244,10 +244,10 @@ When we pass a value to function it is called pass by value and when we pass a p
   </a>
 </h2>
 <p>To pass anything by reference in Go, we make use of <code>&amp;</code> and <code>*</code> operator. <code>&amp;</code> is address of operator which gives memory address of a variable when applied in front of it.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#ff7b72">var</span> a <span style="color:#ff7b72;font-weight:bold">:=</span> <span style="color:#ff7b72;font-weight:bold">&amp;</span>i
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#ff7b72">var</span> a <span style="color:#ff7b72;font-weight:bold">:=</span> <span style="color:#ff7b72;font-weight:bold">&amp;</span>i
 </span></span></code></pre></div><p><code>*</code> is an operator which is used in conjunction with &amp; operator and returns the value stored at the pointer. It goes in front of a variable which holds a memory address and gets the value pointer was pointing to.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#ff7b72">var</span> b <span style="color:#ff7b72;font-weight:bold">:=</span> <span style="color:#ff7b72;font-weight:bold">*</span>a
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#ff7b72">package</span> main
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#ff7b72">var</span> b <span style="color:#ff7b72;font-weight:bold">:=</span> <span style="color:#ff7b72;font-weight:bold">*</span>a
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#ff7b72">package</span> main
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#ff7b72">import</span> (
 </span></span><span style="display:flex;"><span>	<span style="color:#a5d6ff">&#34;fmt&#34;</span>
@@ -286,7 +286,7 @@ When we pass a value to function it is called pass by value and when we pass a p
 </span></span><span style="display:flex;"><span>	fmt.<span style="color:#d2a8ff;font-weight:bold">Printf</span>(<span style="color:#a5d6ff">&#34;Person&#39;s age after birthday : %d\n&#34;</span>, person.Age)
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>If you run the above code, you will get the following output.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#a5d6ff">&#34;a&#34;</span> value before calling <span style="color:#a5d6ff">&#34;add1&#34;</span> : <span style="color:#a5d6ff">10</span>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#a5d6ff">&#34;a&#34;</span> value before calling <span style="color:#a5d6ff">&#34;add1&#34;</span> : <span style="color:#a5d6ff">10</span>
 </span></span><span style="display:flex;"><span><span style="color:#a5d6ff">&#34;a&#34;</span> value after calling <span style="color:#a5d6ff">&#34;add1&#34;</span> : <span style="color:#a5d6ff">11</span>
 </span></span><span style="display:flex;"><span>Person<span style="color:#a5d6ff">&#39;s age before birthday : 30
 </span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">Person&#39;</span>s age after birthday : <span style="color:#a5d6ff">31</span>
@@ -325,7 +325,9 @@ When we pass a value to function it is called pass by value and when we pass a p
   <section class="container">
     ©
     
-    2023
+      2023 -
+    
+    2024
      Vivek Kumar Singh 
     ·
     

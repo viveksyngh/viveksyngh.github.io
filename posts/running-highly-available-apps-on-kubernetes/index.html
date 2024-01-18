@@ -17,8 +17,7 @@
 Kubernetes: Link to heading Kubernetes, also known as K8s, is an open-source system for automating the deployment, scaling, and management of containerized applications. It is designed on the same principles that allow Google to run billions of containers a week, Kubernetes can scale without increasing your ops team.">
 <meta name="keywords" content="blog,developer,personal">
 
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Running Highly Available Apps on Kubernetes"/>
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Running Highly Available Apps on Kubernetes"/>
 <meta name="twitter:description" content="As Kubernetes becomes the de-facto standard for deploying applications, many of us are either running our applications on Kubernetes or trying to migrate to Kubernetes. In this blog post, I will go through some tips for running highly available applications on Kubernetes.
 Kubernetes: Link to heading Kubernetes, also known as K8s, is an open-source system for automating the deployment, scaling, and management of containerized applications. It is designed on the same principles that allow Google to run billions of containers a week, Kubernetes can scale without increasing your ops team."/>
 
@@ -29,6 +28,7 @@ Kubernetes: Link to heading Kubernetes, also known as K8s, is an open-source sys
 <meta property="og:url" content="http://www.viveksyngh.com/posts/running-highly-available-apps-on-kubernetes/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-05-11T00:00:00-06:00" />
 <meta property="article:modified_time" content="2022-05-11T00:00:00-06:00" />
+
 
 
 
@@ -244,7 +244,7 @@ Kubernetes: Link to heading Kubernetes, also known as K8s, is an open-source sys
 </ul>
 <p>For your apps, set the <code>type</code> of the update strategy to the <code>RollingUpdate</code>. when you set the <code>strategy</code> type to <code>RollingUpdate</code> , you can also specify <code>maxUnvailable</code> and <code>maxSurge</code> to control the rolling update process.</p>
 <p>For example:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#ff7b72">...</span><span style="color:#6e7681">
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#ff7b72">...</span><span style="color:#6e7681">
 </span></span></span><span style="display:flex;"><span><span style="color:#6e7681"></span><span style="color:#7ee787">spec</span>:<span style="color:#6e7681">
 </span></span></span><span style="display:flex;"><span><span style="color:#6e7681">  </span><span style="color:#7ee787">replicas</span>:<span style="color:#6e7681"> </span><span style="color:#a5d6ff">3</span><span style="color:#6e7681">
 </span></span></span><span style="display:flex;"><span><span style="color:#6e7681">  </span><span style="color:#7ee787">stragtey</span>:<span style="color:#6e7681">
@@ -297,7 +297,7 @@ When a StatefulSet <code>.spec.updateStrategy.type</code> is set to <code>Rollin
 </ul>
 <p><strong>topologyKey</strong> is the key of node labels. If two Nodes are labeled with this key and have identical values for that label, the scheduler treats both Nodes as being in the same topology. The scheduler tries to place a balanced number of Pods into each topology domain.</p>
 <p>For example,</p>
-<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#7ee787">kind</span>:<span style="color:#6e7681"> </span><span style="color:#a5d6ff">Deployment </span><span style="color:#6e7681">
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#7ee787">kind</span>:<span style="color:#6e7681"> </span><span style="color:#a5d6ff">Deployment </span><span style="color:#6e7681">
 </span></span></span><span style="display:flex;"><span><span style="color:#6e7681"></span><span style="color:#7ee787">metadata</span>:<span style="color:#6e7681">
 </span></span></span><span style="display:flex;"><span><span style="color:#6e7681">  </span><span style="color:#7ee787">name</span>:<span style="color:#6e7681"> </span><span style="color:#a5d6ff">component</span><span style="color:#6e7681">
 </span></span></span><span style="display:flex;"><span><span style="color:#6e7681"></span><span style="color:#7ee787">spec</span>:<span style="color:#6e7681">
@@ -368,7 +368,7 @@ When a StatefulSet <code>.spec.updateStrategy.type</code> is set to <code>Rollin
 <p><code>.spec.maxUnavailable </code>(available in Kubernetes 1.7 and higher) which is a description of the number of pods from that set that can be unavailable after the eviction. It can be either an absolute number or a percentage.</p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#7ee787">apiVersion</span>:<span style="color:#6e7681"> </span><span style="color:#a5d6ff">policy/v1 </span><span style="color:#6e7681">
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#7ee787">apiVersion</span>:<span style="color:#6e7681"> </span><span style="color:#a5d6ff">policy/v1 </span><span style="color:#6e7681">
 </span></span></span><span style="display:flex;"><span><span style="color:#6e7681"></span><span style="color:#7ee787">kind</span>:<span style="color:#6e7681"> </span><span style="color:#a5d6ff">PodDisruptionBudget</span><span style="color:#6e7681">
 </span></span></span><span style="display:flex;"><span><span style="color:#6e7681"></span><span style="color:#7ee787">metadata</span>:<span style="color:#6e7681">
 </span></span></span><span style="display:flex;"><span><span style="color:#6e7681">  </span><span style="color:#7ee787">name</span>:<span style="color:#6e7681"> </span><span style="color:#a5d6ff">my-app-pdb</span><span style="color:#6e7681">
@@ -420,7 +420,9 @@ When a StatefulSet <code>.spec.updateStrategy.type</code> is set to <code>Rollin
   <section class="container">
     ©
     
-    2023
+      2023 -
+    
+    2024
      Vivek Kumar Singh 
     ·
     

@@ -17,8 +17,7 @@
 In this post, we will be looking into VETH (Virtual Ethernet) virtual networking interface. VETH devices are virtual ethernet devices. They can act as tunnels between network namespaces to create a bridge to a physical network device in another namespace, but can also be used as standalone network devices.">
 <meta name="keywords" content="blog,developer,personal">
 
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Linux Virtual Ethernet Devices"/>
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Linux Virtual Ethernet Devices"/>
 <meta name="twitter:description" content="Linux has rich virtual networking capabilities and in the series of posts, I am going to dig into these virtual networking interfaces, how to use them and what are their use cases.
 In this post, we will be looking into VETH (Virtual Ethernet) virtual networking interface. VETH devices are virtual ethernet devices. They can act as tunnels between network namespaces to create a bridge to a physical network device in another namespace, but can also be used as standalone network devices."/>
 
@@ -29,6 +28,7 @@ In this post, we will be looking into VETH (Virtual Ethernet) virtual networking
 <meta property="og:url" content="http://www.viveksyngh.com/posts/linux-virtual-ethernet-devices/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-09-25T00:00:00-06:00" />
 <meta property="article:modified_time" content="2021-09-25T00:00:00-06:00" />
+
 
 
 
@@ -201,14 +201,14 @@ In this post, we will be looking into VETH (Virtual Ethernet) virtual networking
     <span class="sr-only">Link to heading</span>
   </a>
 </h4>
-<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ ip netns add net1
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ ip netns add net1
 </span></span><span style="display:flex;"><span>$ ip netns add net2
 </span></span></code></pre></div><p>When you list, network namespaces it should list two namespaces that we created just now.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ ip netns list
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ ip netns list
 </span></span><span style="display:flex;"><span>net2
 </span></span><span style="display:flex;"><span>net1
 </span></span></code></pre></div><p>If you list network devices in these newly created network namespaces, you will find only loopback devices and no other devices</p>
-<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ ip netns exec net1 ip link list
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ ip netns exec net1 ip link list
 </span></span><span style="display:flex;"><span>1: lo: &lt;LOOPBACK&gt; mtu <span style="color:#a5d6ff">65536</span> qdisc noop state DOWN group default qlen <span style="color:#a5d6ff">1000</span>
 </span></span><span style="display:flex;"><span>    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
 </span></span><span style="display:flex;"><span>$ ip netns exec net2 ip link list
@@ -221,9 +221,9 @@ In this post, we will be looking into VETH (Virtual Ethernet) virtual networking
     <span class="sr-only">Link to heading</span>
   </a>
 </h4>
-<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ ip link add veth1 netns net1 type veth peer name veth2 netns net2
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ ip link add veth1 netns net1 type veth peer name veth2 netns net2
 </span></span></code></pre></div><p>After running the above command, you list network devices in these namespaces you should be able to see virtual ethernet devices as well.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ ip netns exec net1 ip link list
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ ip netns exec net1 ip link list
 </span></span><span style="display:flex;"><span>1: lo: &lt;LOOPBACK&gt; mtu <span style="color:#a5d6ff">65536</span> qdisc noop state DOWN mode DEFAULT group default qlen <span style="color:#a5d6ff">1000</span>
 </span></span><span style="display:flex;"><span>    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
 </span></span><span style="display:flex;"><span>2: veth1: &lt;BROADCAST,MULTICAST&gt; mtu <span style="color:#a5d6ff">1500</span> qdisc noop state DOWN mode DEFAULT group default qlen <span style="color:#a5d6ff">1000</span>
@@ -242,7 +242,7 @@ In this post, we will be looking into VETH (Virtual Ethernet) virtual networking
   </a>
 </h4>
 <p>If you have noticed the output of the networking devices, they are all DOWN. We need to up these network devices in namespace.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ ip netns exec net1 ip link set lo up
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ ip netns exec net1 ip link set lo up
 </span></span><span style="display:flex;"><span>$ ip netns exec net2 ip link set lo up
 </span></span><span style="display:flex;"><span>$ ip netns exec net1 ip link set veth1 up
 </span></span><span style="display:flex;"><span>$ ip netns exec net2 ip link set veth2 up
@@ -253,10 +253,10 @@ In this post, we will be looking into VETH (Virtual Ethernet) virtual networking
     <span class="sr-only">Link to heading</span>
   </a>
 </h4>
-<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ ip netns exec net1 ip addr add 10.10.0.10/16 dev veth1
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ ip netns exec net1 ip addr add 10.10.0.10/16 dev veth1
 </span></span><span style="display:flex;"><span>$ ip netns exec net2 ip addr add 10.10.0.20/16 dev veth2
 </span></span></code></pre></div><p>After assigning IP addresses to the devices, if you run ifconfig in these network namespaces you should be able to see assigned IP addresses.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ ip netns exec net1 ifconfig
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ ip netns exec net1 ifconfig
 </span></span><span style="display:flex;"><span>veth1: <span style="color:#79c0ff">flags</span><span style="color:#ff7b72;font-weight:bold">=</span>4099&lt;UP,BROADCAST,MULTICAST&gt;  mtu <span style="color:#a5d6ff">1500</span>
 </span></span><span style="display:flex;"><span>        inet 10.10.0.10  netmask 255.255.0.0  broadcast 0.0.0.0
 </span></span><span style="display:flex;"><span>        ether fe:e3:ae:62:93:7e  txqueuelen <span style="color:#a5d6ff">1000</span>  <span style="color:#ff7b72;font-weight:bold">(</span>Ethernet<span style="color:#ff7b72;font-weight:bold">)</span>
@@ -275,7 +275,7 @@ In this post, we will be looking into VETH (Virtual Ethernet) virtual networking
 </span></span><span style="display:flex;"><span>        TX packets <span style="color:#a5d6ff">6</span>  bytes <span style="color:#a5d6ff">516</span> <span style="color:#ff7b72;font-weight:bold">(</span>516.0 B<span style="color:#ff7b72;font-weight:bold">)</span>
 </span></span><span style="display:flex;"><span>        TX errors <span style="color:#a5d6ff">0</span>  dropped <span style="color:#a5d6ff">0</span> overruns <span style="color:#a5d6ff">0</span>  carrier <span style="color:#a5d6ff">0</span>  collisions <span style="color:#a5d6ff">0</span>
 </span></span></code></pre></div><p>Now that devices are setup and IP addresses are assigned to them. We should be able to reach one namespace from another namespace using the IP address of each other.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ ip netns exec net1 ping 10.10.0.20
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ ip netns exec net1 ping 10.10.0.20
 </span></span><span style="display:flex;"><span>PING 10.10.0.20 <span style="color:#ff7b72;font-weight:bold">(</span>10.10.0.20<span style="color:#ff7b72;font-weight:bold">)</span> 56<span style="color:#ff7b72;font-weight:bold">(</span>84<span style="color:#ff7b72;font-weight:bold">)</span> bytes of data.
 </span></span><span style="display:flex;"><span><span style="color:#a5d6ff">64</span> bytes from 10.10.0.20: <span style="color:#79c0ff">icmp_seq</span><span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">1</span> <span style="color:#79c0ff">ttl</span><span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">64</span> <span style="color:#79c0ff">time</span><span style="color:#ff7b72;font-weight:bold">=</span>0.084 ms
 </span></span><span style="display:flex;"><span><span style="color:#a5d6ff">64</span> bytes from 10.10.0.20: <span style="color:#79c0ff">icmp_seq</span><span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">2</span> <span style="color:#79c0ff">ttl</span><span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">64</span> <span style="color:#79c0ff">time</span><span style="color:#ff7b72;font-weight:bold">=</span>0.029 ms
@@ -292,10 +292,10 @@ In this post, we will be looking into VETH (Virtual Ethernet) virtual networking
 </span></span><span style="display:flex;"><span><span style="color:#a5d6ff">64</span> bytes from 10.10.0.10: <span style="color:#79c0ff">icmp_seq</span><span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">5</span> <span style="color:#79c0ff">ttl</span><span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">64</span> <span style="color:#79c0ff">time</span><span style="color:#ff7b72;font-weight:bold">=</span>0.026 ms
 </span></span></code></pre></div><p>We can even run a web server on a port in one namespace and can reach invoke that web server from another namespace.</p>
 <p>Let’s start a simple python HTTP web server in network namespace <code>net2</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ ip netns exec net2 python -m SimpleHTTPServer
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ ip netns exec net2 python -m SimpleHTTPServer
 </span></span><span style="display:flex;"><span>Serving HTTP on 0.0.0.0 port <span style="color:#a5d6ff">8000</span> ...
 </span></span></code></pre></div><p>Now in another terminal, try to make an HTTP request to the web server running in network namespace <code>net2</code> from network namespace <code>net1</code> using curl.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ ip netns exec net1 curl http://10.10.0.20:8000
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ ip netns exec net1 curl http://10.10.0.20:8000
 </span></span><span style="display:flex;"><span>&lt;!DOCTYPE html PUBLIC <span style="color:#a5d6ff">&#34;-//W3C//DTD HTML 3.2 Final//EN&#34;</span>&gt;&lt;html&gt;
 </span></span><span style="display:flex;"><span>&lt;title&gt;Directory listing <span style="color:#ff7b72">for</span> /&lt;/title&gt;
 </span></span><span style="display:flex;"><span>&lt;body&gt;
@@ -338,7 +338,9 @@ In this post, we will be looking into VETH (Virtual Ethernet) virtual networking
   <section class="container">
     ©
     
-    2023
+      2023 -
+    
+    2024
      Vivek Kumar Singh 
     ·
     

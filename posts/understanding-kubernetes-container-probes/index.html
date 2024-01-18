@@ -21,8 +21,7 @@ Startup Probe indicates whether the container is started.
 Liveness Probe Link to heading The kubelet uses a liveness probe to know when to restart the container.">
 <meta name="keywords" content="blog,developer,personal">
 
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Understanding Kubernetes Container Probes"/>
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Understanding Kubernetes Container Probes"/>
 <meta name="twitter:description" content="A probe is a diagnostic performed periodically by the kubelet on a container. To perform a diagnostic, the kubelet either executes code within the container or makes a network request.
 There are three types of probes in Kubernetes
 Liveness Probe indicates whether the container is running.
@@ -41,6 +40,7 @@ Liveness Probe Link to heading The kubelet uses a liveness probe to know when to
 <meta property="og:url" content="http://www.viveksyngh.com/posts/understanding-kubernetes-container-probes/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-07-01T00:00:00-06:00" />
 <meta property="article:modified_time" content="2022-07-01T00:00:00-06:00" />
+
 
 
 
@@ -227,7 +227,7 @@ Liveness Probe Link to heading The kubelet uses a liveness probe to know when to
 <p>If a container does not provide a liveness probe, the default state is a <code>success</code>.</p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#ff7b72">...</span><span style="color:#6e7681">
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#ff7b72">...</span><span style="color:#6e7681">
 </span></span></span><span style="display:flex;"><span><span style="color:#6e7681">  </span><span style="color:#7ee787">containers</span>:<span style="color:#6e7681">
 </span></span></span><span style="display:flex;"><span><span style="color:#6e7681">    </span><span style="color:#a5d6ff">...    </span><span style="color:#6e7681">
 </span></span></span><span style="display:flex;"><span><span style="color:#6e7681">    </span><span style="color:#7ee787">livenessProbe</span>:<span style="color:#6e7681">
@@ -257,7 +257,7 @@ Liveness Probe Link to heading The kubelet uses a liveness probe to know when to
 <p>For example, An application might need to load some data or configuration at or connect to some external services at startup. We don’t want to kill such applications or either start sending requests until that application’s Pod is not successfully loaded data or configurations at startup. Kubernetes provides readiness probes to detect and mitigate these situations.</p>
 <p>If the readiness probe fails, the endpoints controller removes the Pod’s IP address from the endpoints of all Services that match the Pod. The default state of readiness before the initial delay is <code>Failure</code>. If a container does not provide a readiness probe, the default state is <code>Success</code>.</p>
 <p>The readiness probe can be specified as similar to the liveness probe with the <code>readinessProbe</code> field. The spec is the same as the readiness probe spec.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#ff7b72">...</span><span style="color:#6e7681">
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#ff7b72">...</span><span style="color:#6e7681">
 </span></span></span><span style="display:flex;"><span><span style="color:#6e7681">  </span><span style="color:#7ee787">containers</span>:<span style="color:#6e7681">
 </span></span></span><span style="display:flex;"><span><span style="color:#6e7681">    </span><span style="color:#a5d6ff">...    </span><span style="color:#6e7681">
 </span></span></span><span style="display:flex;"><span><span style="color:#6e7681">    </span><span style="color:#7ee787">readinessProbe</span>:<span style="color:#6e7681">
@@ -279,7 +279,7 @@ Liveness Probe Link to heading The kubelet uses a liveness probe to know when to
 </h3>
 <p>The kubelet uses this probe to know when a container application has started. If the <code>startupProbe</code> is enabled, it disables liveness and readiness probe until it succeeds. This is done to make sure that liveness and readiness probes do not interface with the application startup. This can be used to replace the liveness probe on a slow starting container which can be killed by kubelet before they are up and running.</p>
 <p>The startup probe can be specified as similar to the liveness probe with the <code>startupProbe</code> field. The spec is the same as the readiness probe spec.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#ff7b72">...</span><span style="color:#6e7681">
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#ff7b72">...</span><span style="color:#6e7681">
 </span></span></span><span style="display:flex;"><span><span style="color:#6e7681">  </span><span style="color:#7ee787">containers</span>:<span style="color:#6e7681">
 </span></span></span><span style="display:flex;"><span><span style="color:#6e7681">    </span><span style="color:#a5d6ff">...    </span><span style="color:#6e7681">
 </span></span></span><span style="display:flex;"><span><span style="color:#6e7681">    </span><span style="color:#7ee787">startupProbe</span>:<span style="color:#6e7681">
@@ -305,7 +305,7 @@ Liveness Probe Link to heading The kubelet uses a liveness probe to know when to
 </ul>
 <p>This kind of check executes a specified command inside the container. The probe is considered successful if the command exits with a status code of 0.</p>
 <p>For example,</p>
-<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#7ee787">apiVersion</span>:<span style="color:#6e7681"> </span><span style="color:#a5d6ff">v1</span><span style="color:#6e7681">
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#7ee787">apiVersion</span>:<span style="color:#6e7681"> </span><span style="color:#a5d6ff">v1</span><span style="color:#6e7681">
 </span></span></span><span style="display:flex;"><span><span style="color:#6e7681"></span><span style="color:#7ee787">kind</span>:<span style="color:#6e7681"> </span><span style="color:#a5d6ff">Pod</span><span style="color:#6e7681">
 </span></span></span><span style="display:flex;"><span><span style="color:#6e7681"></span><span style="color:#ff7b72">...</span><span style="color:#6e7681">
 </span></span></span><span style="display:flex;"><span><span style="color:#6e7681"></span><span style="color:#7ee787">spec</span>:<span style="color:#6e7681">
@@ -332,7 +332,7 @@ Liveness Probe Link to heading The kubelet uses a liveness probe to know when to
 </ul>
 <p>This check performs an HTTP <code>GET</code> request against the Pod&rsquo;s IP address on a specified port and path. The check is considered successful if the response has a status code greater than or equal to 200 and less than 400. Any other code indicates failure.</p>
 <p>For example,</p>
-<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#ff7b72">...</span><span style="color:#6e7681">
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#ff7b72">...</span><span style="color:#6e7681">
 </span></span></span><span style="display:flex;"><span><span style="color:#6e7681">  </span><span style="color:#7ee787">containers</span>:<span style="color:#6e7681">
 </span></span></span><span style="display:flex;"><span><span style="color:#6e7681">    </span><span style="color:#a5d6ff">...    </span><span style="color:#6e7681">
 </span></span></span><span style="display:flex;"><span><span style="color:#6e7681">    </span><span style="color:#7ee787">livenessProbe</span>:<span style="color:#6e7681">
@@ -357,7 +357,7 @@ Liveness Probe Link to heading The kubelet uses a liveness probe to know when to
 </ul>
 <p>This check performs a TCP connection request against the Pod’s IP address on a specified port. The check is considered successful if the port is open. If the remote system (the container) closes the connection immediately after it opens, this counts as healthy.</p>
 <p>For example,</p>
-<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#7ee787">apiVersion</span>:<span style="color:#6e7681"> </span><span style="color:#a5d6ff">v1</span><span style="color:#6e7681">
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#7ee787">apiVersion</span>:<span style="color:#6e7681"> </span><span style="color:#a5d6ff">v1</span><span style="color:#6e7681">
 </span></span></span><span style="display:flex;"><span><span style="color:#6e7681"></span><span style="color:#7ee787">kind</span>:<span style="color:#6e7681"> </span><span style="color:#a5d6ff">Pod</span><span style="color:#6e7681">
 </span></span></span><span style="display:flex;"><span><span style="color:#6e7681"></span><span style="color:#ff7b72">...</span><span style="color:#6e7681">
 </span></span></span><span style="display:flex;"><span><span style="color:#6e7681"></span><span style="color:#7ee787">spec</span>:<span style="color:#6e7681">
@@ -383,7 +383,7 @@ Liveness Probe Link to heading The kubelet uses a liveness probe to know when to
 <p>gRPC probes are an alpha feature and are only available if you enable the <code>GRPCContainerProbe</code> <a href="https://kubernetes.io/docs/reference/command-line-tools-reference/feature-gates/"  class="external-link" target="_blank" rel="noopener">feature gate</a>.</p>
 <p>This check performs a remote procedure call using <a href="https://grpc.io/"  class="external-link" target="_blank" rel="noopener">gRPC</a>. The target should implement <a href="https://grpc.github.io/grpc/core/md_doc_health-checking.html"  class="external-link" target="_blank" rel="noopener">gRPC health checks</a>. This check is considered successful if the <code>status</code> of the response is <code>SERVING</code>.</p>
 <p>For example.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#7ee787">apiVersion</span>:<span style="color:#6e7681"> </span><span style="color:#a5d6ff">v1</span><span style="color:#6e7681">
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#7ee787">apiVersion</span>:<span style="color:#6e7681"> </span><span style="color:#a5d6ff">v1</span><span style="color:#6e7681">
 </span></span></span><span style="display:flex;"><span><span style="color:#6e7681"></span><span style="color:#7ee787">kind</span>:<span style="color:#6e7681"> </span><span style="color:#a5d6ff">Pod</span><span style="color:#6e7681">
 </span></span></span><span style="display:flex;"><span><span style="color:#6e7681"></span><span style="color:#7ee787">metadata</span>:<span style="color:#6e7681">
 </span></span></span><span style="display:flex;"><span><span style="color:#6e7681">  </span><span style="color:#a5d6ff">...</span><span style="color:#6e7681">
@@ -436,7 +436,9 @@ Liveness Probe Link to heading The kubelet uses a liveness probe to know when to
   <section class="container">
     ©
     
-    2023
+      2023 -
+    
+    2024
      Vivek Kumar Singh 
     ·
     

@@ -6,17 +6,14 @@
     <description>Recent content in load balancer on Vivek Kumar Singh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 18 Feb 2019 00:00:00 -0600</lastBuildDate><atom:link href="http://www.viveksyngh.com/tags/load-balancer/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 18 Feb 2019 00:00:00 -0600</lastBuildDate>
+    <atom:link href="http://www.viveksyngh.com/tags/load-balancer/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Load Balancing and Load Balancer</title>
       <link>http://www.viveksyngh.com/system-design/load-balancing-and-load-balancer/</link>
       <pubDate>Mon, 18 Feb 2019 00:00:00 -0600</pubDate>
-      
       <guid>http://www.viveksyngh.com/system-design/load-balancing-and-load-balancer/</guid>
-      <description>[Source: https://medium.com/containers-on-aws/using-aws-application-load-balancer-and-network-load-balancer-with-ec2-container-service-d0cb0b1d5ae5]
-Load Balancing Link to heading Load balancing is the process of efficiently distributing network traffic across multiple servers also known as a server farm or server pool. By distributing the load evenly load balancing improves responsiveness and increases the availability of applications. It has become a necessity as applications become more complex, user demand grows and traffic volume increases.
-Load balancing is the most straightforward method of scaling out an application server infrastructure.</description>
+      <description>[Source: https://medium.com/containers-on-aws/using-aws-application-load-balancer-and-network-load-balancer-with-ec2-container-service-d0cb0b1d5ae5]&#xA;Load Balancing Link to heading Load balancing is the process of efficiently distributing network traffic across multiple servers also known as a server farm or server pool. By distributing the load evenly load balancing improves responsiveness and increases the availability of applications. It has become a necessity as applications become more complex, user demand grows and traffic volume increases.&#xA;Load balancing is the most straightforward method of scaling out an application server infrastructure.</description>
     </item>
-    
   </channel>
 </rss>

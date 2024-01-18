@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>consistency on Vivek Kumar Singh</title>
+    <link>http://www.viveksyngh.com/tags/consistency/</link>
+    <description>Recent content in consistency on Vivek Kumar Singh</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 11 Mar 2019 00:00:00 -0600</lastBuildDate>
+    <atom:link href="http://www.viveksyngh.com/tags/consistency/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Eventual Consistency vs Strong Consistency</title>
+      <link>http://www.viveksyngh.com/system-design/eventual-consistency-vs-strong-consistency/</link>
+      <pubDate>Mon, 11 Mar 2019 00:00:00 -0600</pubDate>
+      <guid>http://www.viveksyngh.com/system-design/eventual-consistency-vs-strong-consistency/</guid>
+      <description>Eventual Consistency Link to heading Eventual consistency is a theoretical guarantee that, provided no new updates to an entity are made, all reads of the entity will eventually return the last updated value. The Internet Domain Name System (DNS) is a well-known example of a system with an eventual consistency model. DNS servers do not necessarily reflect the latest values but, rather, the values are cached and replicated across many directories over the Internet.</description>
+    </item>
+  </channel>
+</rss>

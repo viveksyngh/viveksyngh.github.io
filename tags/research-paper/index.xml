@@ -6,36 +6,28 @@
     <description>Recent content in research paper on Vivek Kumar Singh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 19 Feb 2023 00:00:00 -0600</lastBuildDate><atom:link href="http://www.viveksyngh.com/tags/research-paper/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 19 Feb 2023 00:00:00 -0600</lastBuildDate>
+    <atom:link href="http://www.viveksyngh.com/tags/research-paper/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Diving into Amazon Dynamo Paper</title>
       <link>http://www.viveksyngh.com/paper-notes/diving-into-amazon-dynamo-paper/</link>
       <pubDate>Sun, 19 Feb 2023 00:00:00 -0600</pubDate>
-      
       <guid>http://www.viveksyngh.com/paper-notes/diving-into-amazon-dynamo-paper/</guid>
-      <description>In this blog post, we are going to look into Amazon Dynamo paper which describes a set of techniques that can be combined to form a highly-available, distributed key-value data store. This paper then became foundation for databases such as Cassandra, Riak etc.
-Dynamo addresses the need for an incrementally scalable, highly-available key-value storage system. The technology is designed to give its users the ability to trade-off cost, consistency, durability and performance, while maintaining high-availability.</description>
+      <description>In this blog post, we are going to look into Amazon Dynamo paper which describes a set of techniques that can be combined to form a highly-available, distributed key-value data store. This paper then became foundation for databases such as Cassandra, Riak etc.&#xA;Dynamo addresses the need for an incrementally scalable, highly-available key-value storage system. The technology is designed to give its users the ability to trade-off cost, consistency, durability and performance, while maintaining high-availability.</description>
     </item>
-    
     <item>
       <title>Merkle Tree and It’s Applications</title>
       <link>http://www.viveksyngh.com/paper-notes/merkle-tree-and-its-applications/</link>
       <pubDate>Sun, 01 Jan 2023 00:00:00 -0600</pubDate>
-      
       <guid>http://www.viveksyngh.com/paper-notes/merkle-tree-and-its-applications/</guid>
-      <description>A Merkle tree, also known as hash tree is a hash based data structure. It is a tree data structure in which each node leaf nodes are cryptographic hash of data blocks for example a file or set of files, and each non-leaf node is cryptographic hash on its children nodes. A hash tree allows efficient and secure verification of the contents of a large data structure.
-Merkle trees are used in distributed systems for efficient data verification.</description>
+      <description>A Merkle tree, also known as hash tree is a hash based data structure. It is a tree data structure in which each node leaf nodes are cryptographic hash of data blocks for example a file or set of files, and each non-leaf node is cryptographic hash on its children nodes. A hash tree allows efficient and secure verification of the contents of a large data structure.&#xA;Merkle trees are used in distributed systems for efficient data verification.</description>
     </item>
-    
     <item>
       <title>MapReduce Overview</title>
       <link>http://www.viveksyngh.com/paper-notes/mapreduce-overview/</link>
       <pubDate>Wed, 23 Oct 2019 00:00:00 -0600</pubDate>
-      
       <guid>http://www.viveksyngh.com/paper-notes/mapreduce-overview/</guid>
-      <description>In this blog, I will be discussing MapReduce programming model and how it works. This blog is based on the original MapReduce research paper MapReduce: Simplified Data Processing on Large Clusters from Google.
-MapReduce is a programming model and an associated implementation for processing and generating large data sets. User specifies a map function that processes a key/value pair to generate a set for intermediate key/value pairs, and a reduce function that merges all intermediate values associated with the same intermediate key.</description>
+      <description>In this blog, I will be discussing MapReduce programming model and how it works. This blog is based on the original MapReduce research paper MapReduce: Simplified Data Processing on Large Clusters from Google.&#xA;MapReduce is a programming model and an associated implementation for processing and generating large data sets. User specifies a map function that processes a key/value pair to generate a set for intermediate key/value pairs, and a reduce function that merges all intermediate values associated with the same intermediate key.</description>
     </item>
-    
   </channel>
 </rss>

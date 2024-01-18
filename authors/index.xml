@@ -5,6 +5,7 @@
     <link>http://www.viveksyngh.com/authors/</link>
     <description>Recent content in Authors on Vivek Kumar Singh</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language><atom:link href="http://www.viveksyngh.com/authors/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <atom:link href="http://www.viveksyngh.com/authors/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

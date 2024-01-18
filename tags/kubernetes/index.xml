@@ -6,64 +6,42 @@
     <description>Recent content in kubernetes on Vivek Kumar Singh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 07 Nov 2022 00:00:00 -0600</lastBuildDate><atom:link href="http://www.viveksyngh.com/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 07 Nov 2022 00:00:00 -0600</lastBuildDate>
+    <atom:link href="http://www.viveksyngh.com/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Converting Kubernetes Go Types to YAML and vice versa</title>
       <link>http://www.viveksyngh.com/posts/converting-kubernetes-go-types-to-yaml-and-vice-versa/</link>
       <pubDate>Mon, 07 Nov 2022 00:00:00 -0600</pubDate>
-      
       <guid>http://www.viveksyngh.com/posts/converting-kubernetes-go-types-to-yaml-and-vice-versa/</guid>
-      <description>In this blog post, we will see how we can encode/decode Kubernetes Go API types to/from Kubernetes YAML.
-When we work with Kubernetes Go API types (custom types or core types), we often need to convert the Go API types into YAML manifest or vice versa. For example, A CLI application
-Which output Kubernetes objects in YAML
-Which takes Kubernetes objects YAML as input
-For demonstration purposes, we will be creating a simple application that creates a Kubernetes ConfigMap object and encodes/decodes it.</description>
+      <description>In this blog post, we will see how we can encode/decode Kubernetes Go API types to/from Kubernetes YAML.&#xA;When we work with Kubernetes Go API types (custom types or core types), we often need to convert the Go API types into YAML manifest or vice versa. For example, A CLI application&#xA;Which output Kubernetes objects in YAML&#xA;Which takes Kubernetes objects YAML as input&#xA;For demonstration purposes, we will be creating a simple application that creates a Kubernetes ConfigMap object and encodes/decodes it.</description>
     </item>
-    
     <item>
       <title>Kubernetes Operators — Fundamental Concepts</title>
       <link>http://www.viveksyngh.com/posts/kubernetes-operators-fundamental-concepts/</link>
       <pubDate>Sat, 08 Oct 2022 00:00:00 -0600</pubDate>
-      
       <guid>http://www.viveksyngh.com/posts/kubernetes-operators-fundamental-concepts/</guid>
-      <description>In this series of blog posts, I am going to talk about Kubernetes operator patterns, Kubernetes controllers, Custom resources, and many more related topics. We will also build a Kubernetes operator in Go and look at different tools available for building a Kubernetes operator.
-What is Kubernetes? Link to heading From the official documentation of Kubernetes
-Kubernetes is a portable, extensible, open-source platform for managing containerized workloads and services, that facilitates both declarative configuration and automation.</description>
+      <description>In this series of blog posts, I am going to talk about Kubernetes operator patterns, Kubernetes controllers, Custom resources, and many more related topics. We will also build a Kubernetes operator in Go and look at different tools available for building a Kubernetes operator.&#xA;What is Kubernetes? Link to heading From the official documentation of Kubernetes&#xA;Kubernetes is a portable, extensible, open-source platform for managing containerized workloads and services, that facilitates both declarative configuration and automation.</description>
     </item>
-    
     <item>
       <title>Understanding Kubernetes Container Probes</title>
       <link>http://www.viveksyngh.com/posts/understanding-kubernetes-container-probes/</link>
       <pubDate>Fri, 01 Jul 2022 00:00:00 -0600</pubDate>
-      
       <guid>http://www.viveksyngh.com/posts/understanding-kubernetes-container-probes/</guid>
-      <description>A probe is a diagnostic performed periodically by the kubelet on a container. To perform a diagnostic, the kubelet either executes code within the container or makes a network request.
-There are three types of probes in Kubernetes
-Liveness Probe indicates whether the container is running.
-Readiness Probe indicates whether the container is ready to respond to requests.
-Startup Probe indicates whether the container is started.
-Liveness Probe Link to heading The kubelet uses a liveness probe to know when to restart the container.</description>
+      <description>A probe is a diagnostic performed periodically by the kubelet on a container. To perform a diagnostic, the kubelet either executes code within the container or makes a network request.&#xA;There are three types of probes in Kubernetes&#xA;Liveness Probe indicates whether the container is running.&#xA;Readiness Probe indicates whether the container is ready to respond to requests.&#xA;Startup Probe indicates whether the container is started.&#xA;Liveness Probe Link to heading The kubelet uses a liveness probe to know when to restart the container.</description>
     </item>
-    
     <item>
       <title>Running Highly Available Apps on Kubernetes</title>
       <link>http://www.viveksyngh.com/posts/running-highly-available-apps-on-kubernetes/</link>
       <pubDate>Wed, 11 May 2022 00:00:00 -0600</pubDate>
-      
       <guid>http://www.viveksyngh.com/posts/running-highly-available-apps-on-kubernetes/</guid>
-      <description>As Kubernetes becomes the de-facto standard for deploying applications, many of us are either running our applications on Kubernetes or trying to migrate to Kubernetes. In this blog post, I will go through some tips for running highly available applications on Kubernetes.
-Kubernetes: Link to heading Kubernetes, also known as K8s, is an open-source system for automating the deployment, scaling, and management of containerized applications. It is designed on the same principles that allow Google to run billions of containers a week, Kubernetes can scale without increasing your ops team.</description>
+      <description>As Kubernetes becomes the de-facto standard for deploying applications, many of us are either running our applications on Kubernetes or trying to migrate to Kubernetes. In this blog post, I will go through some tips for running highly available applications on Kubernetes.&#xA;Kubernetes: Link to heading Kubernetes, also known as K8s, is an open-source system for automating the deployment, scaling, and management of containerized applications. It is designed on the same principles that allow Google to run billions of containers a week, Kubernetes can scale without increasing your ops team.</description>
     </item>
-    
     <item>
       <title>What’s in Kubernetes client-go — Part 1</title>
       <link>http://www.viveksyngh.com/posts/whats-in-kubernetes-client-go-part-1/</link>
       <pubDate>Sun, 21 Nov 2021 00:00:00 -0600</pubDate>
-      
       <guid>http://www.viveksyngh.com/posts/whats-in-kubernetes-client-go-part-1/</guid>
-      <description>Kubernetes project provides a number of the third-party consumable repository under kubernetes or kubernetes-sigs organization on Github. In the series of blog, I will go through such upstream k8s repositories and code, which are needed most frequently to write extensions for Kubernetes. Also provides some examples for using different k8s packages for developing Kubernetes applications in Golang. First covers famous kubernetes package called client-go.
-client-go Link to heading client-go is one of the most useful packages for writing Golang based Kubernetes applications.</description>
+      <description>Kubernetes project provides a number of the third-party consumable repository under kubernetes or kubernetes-sigs organization on Github. In the series of blog, I will go through such upstream k8s repositories and code, which are needed most frequently to write extensions for Kubernetes. Also provides some examples for using different k8s packages for developing Kubernetes applications in Golang. First covers famous kubernetes package called client-go.&#xA;client-go Link to heading client-go is one of the most useful packages for writing Golang based Kubernetes applications.</description>
     </item>
-    
   </channel>
 </rss>

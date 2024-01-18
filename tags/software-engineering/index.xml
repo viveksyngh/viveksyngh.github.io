@@ -6,47 +6,42 @@
     <description>Recent content in Software engineering on Vivek Kumar Singh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 04 Mar 2019 00:00:00 -0600</lastBuildDate><atom:link href="http://www.viveksyngh.com/tags/software-engineering/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 Mar 2019 00:00:00 -0600</lastBuildDate>
+    <atom:link href="http://www.viveksyngh.com/tags/software-engineering/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Consistent Hashing</title>
+      <link>http://www.viveksyngh.com/system-design/consistent-hashing/</link>
+      <pubDate>Fri, 22 Mar 2019 00:00:00 -0600</pubDate>
+      <guid>http://www.viveksyngh.com/system-design/consistent-hashing/</guid>
+      <description>Consistent hashing idea was introduced in paper Consistent Hashing and Random Trees: Distributed Caching Protocols for Relieving Hot Spots on the World Wide Web which was released in the year 1997. Akamai distributed content delivery network uses the approach described in the paper.&#xA;In 2007, consistent hashing was used in two published works&#xA;Dynamo: Amazon’s Highly Available Key-Value Datastore Last.fm Memcached client After that it has been used in many other distributed system like Cassandra, Riak etc.</description>
+    </item>
     <item>
       <title>CAP Theorem</title>
       <link>http://www.viveksyngh.com/system-design/cap-theorem/</link>
       <pubDate>Mon, 04 Mar 2019 00:00:00 -0600</pubDate>
-      
       <guid>http://www.viveksyngh.com/system-design/cap-theorem/</guid>
-      <description>CAP theorem also known as Brewer’s theorem was introduced by computer scientist Eric Brewer at Symposium on Principles of Distributed computing in 2000. In CAP theorem, C stands for Consistency, A stands for Availability and P stands for Partition tolerance.
-Consistency: Every read receives the most recent writes or an error. For consistency, any read operation that begins after a write operation completes must return that value, or the result of a later write operation.</description>
+      <description>CAP theorem also known as Brewer’s theorem was introduced by computer scientist Eric Brewer at Symposium on Principles of Distributed computing in 2000. In CAP theorem, C stands for Consistency, A stands for Availability and P stands for Partition tolerance.&#xA;Consistency: Every read receives the most recent writes or an error. For consistency, any read operation that begins after a write operation completes must return that value, or the result of a later write operation.</description>
     </item>
-    
     <item>
       <title>What is API Gateway?</title>
       <link>http://www.viveksyngh.com/system-design/what-is-api-gateway/</link>
       <pubDate>Mon, 25 Feb 2019 00:00:00 -0600</pubDate>
-      
       <guid>http://www.viveksyngh.com/system-design/what-is-api-gateway/</guid>
-      <description>In microservices architecture, there are several services running each designed for a very specific component of the system. When clients (Mobile Apps, Web Apps or Third party applications) communicates directly with these microservices then many problems arise.
-The granularity of APIs provided by microservices is often different than what the client needs. Microservice API’s are very generic and granular in nature where each returns only a portion of data for functionality.</description>
+      <description>In microservices architecture, there are several services running each designed for a very specific component of the system. When clients (Mobile Apps, Web Apps or Third party applications) communicates directly with these microservices then many problems arise.&#xA;The granularity of APIs provided by microservices is often different than what the client needs. Microservice API’s are very generic and granular in nature where each returns only a portion of data for functionality.</description>
     </item>
-    
     <item>
       <title>Load Balancing and Load Balancer</title>
       <link>http://www.viveksyngh.com/system-design/load-balancing-and-load-balancer/</link>
       <pubDate>Mon, 18 Feb 2019 00:00:00 -0600</pubDate>
-      
       <guid>http://www.viveksyngh.com/system-design/load-balancing-and-load-balancer/</guid>
-      <description>[Source: https://medium.com/containers-on-aws/using-aws-application-load-balancer-and-network-load-balancer-with-ec2-container-service-d0cb0b1d5ae5]
-Load Balancing Link to heading Load balancing is the process of efficiently distributing network traffic across multiple servers also known as a server farm or server pool. By distributing the load evenly load balancing improves responsiveness and increases the availability of applications. It has become a necessity as applications become more complex, user demand grows and traffic volume increases.
-Load balancing is the most straightforward method of scaling out an application server infrastructure.</description>
+      <description>[Source: https://medium.com/containers-on-aws/using-aws-application-load-balancer-and-network-load-balancer-with-ec2-container-service-d0cb0b1d5ae5]&#xA;Load Balancing Link to heading Load balancing is the process of efficiently distributing network traffic across multiple servers also known as a server farm or server pool. By distributing the load evenly load balancing improves responsiveness and increases the availability of applications. It has become a necessity as applications become more complex, user demand grows and traffic volume increases.&#xA;Load balancing is the most straightforward method of scaling out an application server infrastructure.</description>
     </item>
-    
     <item>
       <title>What is proxy server?</title>
       <link>http://www.viveksyngh.com/system-design/what-is-proxy-server/</link>
       <pubDate>Wed, 06 Feb 2019 00:00:00 -0600</pubDate>
-      
       <guid>http://www.viveksyngh.com/system-design/what-is-proxy-server/</guid>
-      <description>Word proxy defines, someone or something acting on behalf of something else. In computer science proxy means one server acting on behalf of other servers. A proxy server is a server ( or computer system or an application) that acts as an intermediary for requests from clients seeking resources from other servers.
-A client connects to the proxy server, requesting for some service (file, connection, web page) available from a different server and the proxy server evaluates the request as a way simplify and control it’s complexity.</description>
+      <description>Word proxy defines, someone or something acting on behalf of something else. In computer science proxy means one server acting on behalf of other servers. A proxy server is a server ( or computer system or an application) that acts as an intermediary for requests from clients seeking resources from other servers.&#xA;A client connects to the proxy server, requesting for some service (file, connection, web page) available from a different server and the proxy server evaluates the request as a way simplify and control it’s complexity.</description>
     </item>
-    
   </channel>
 </rss>
