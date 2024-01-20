@@ -79,6 +79,13 @@
       <description>In this blog, I will be discussing MapReduce programming model and how it works. This blog is based on the original MapReduce research paper MapReduce: Simplified Data Processing on Large Clusters from Google.&#xA;MapReduce is a programming model and an associated implementation for processing and generating large data sets. User specifies a map function that processes a key/value pair to generate a set for intermediate key/value pairs, and a reduce function that merges all intermediate values associated with the same intermediate key.</description>
     </item>
     <item>
+      <title>Database Sharding</title>
+      <link>http://www.viveksyngh.com/system-design/database-sharding/</link>
+      <pubDate>Mon, 22 Apr 2019 00:00:00 -0600</pubDate>
+      <guid>http://www.viveksyngh.com/system-design/database-sharding/</guid>
+      <description>Database sharding is the process of splitting up a database across multiple machines to improve the scalability of an application. In Sharding, one’s data is broken into two or more smaller chunks, called logical shards. The logical shards are then distributed across separate database nodes, referred to as physical shards.&#xA;Database shards are autonomous and they don’t share any of the same data or computing resources. In some cases, though, it makes sense to replicate certain tables into each shard to serve as referenced tables.</description>
+    </item>
+    <item>
       <title>Event Driven Architecture</title>
       <link>http://www.viveksyngh.com/system-design/event-driven-architecture/</link>
       <pubDate>Mon, 15 Apr 2019 00:00:00 -0600</pubDate>

@@ -6,8 +6,15 @@
     <description>Recent content in scalability on Vivek Kumar Singh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 15 Apr 2019 00:00:00 -0600</lastBuildDate>
+    <lastBuildDate>Mon, 22 Apr 2019 00:00:00 -0600</lastBuildDate>
     <atom:link href="http://www.viveksyngh.com/tags/scalability/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Database Sharding</title>
+      <link>http://www.viveksyngh.com/system-design/database-sharding/</link>
+      <pubDate>Mon, 22 Apr 2019 00:00:00 -0600</pubDate>
+      <guid>http://www.viveksyngh.com/system-design/database-sharding/</guid>
+      <description>Database sharding is the process of splitting up a database across multiple machines to improve the scalability of an application. In Sharding, one’s data is broken into two or more smaller chunks, called logical shards. The logical shards are then distributed across separate database nodes, referred to as physical shards.&#xA;Database shards are autonomous and they don’t share any of the same data or computing resources. In some cases, though, it makes sense to replicate certain tables into each shard to serve as referenced tables.</description>
+    </item>
     <item>
       <title>Event Driven Architecture</title>
       <link>http://www.viveksyngh.com/system-design/event-driven-architecture/</link>
