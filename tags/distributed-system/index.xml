@@ -6,8 +6,22 @@
     <description>Recent content in distributed system on Vivek Kumar Singh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 22 Mar 2019 00:00:00 -0600</lastBuildDate>
+    <lastBuildDate>Mon, 01 Apr 2019 00:00:00 -0600</lastBuildDate>
     <atom:link href="http://www.viveksyngh.com/tags/distributed-system/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Microservices Architecture</title>
+      <link>http://www.viveksyngh.com/system-design/microservices-architecture/</link>
+      <pubDate>Mon, 01 Apr 2019 00:00:00 -0600</pubDate>
+      <guid>http://www.viveksyngh.com/system-design/microservices-architecture/</guid>
+      <description>Microservices are small, focused on doing one thing well and autonomous services that work together. Microservices were not invented. They emerged as a trend, or a pattern from real-world use case.&#xA;The benefits of microservices are many and varied.&#xA;Technology Heterogeneity: Link to heading With a system composed of multiple, collaborating services, we can decide to use different technologies inside each one. This allows us to pick the right tool for each job, rather than having to select a more standardized, one-size-fits-all approach that often ends up being the lowest common denominator.</description>
+    </item>
+    <item>
+      <title>SQL vs NoSQL Databases</title>
+      <link>http://www.viveksyngh.com/system-design/sql-vs-nosql-databases/</link>
+      <pubDate>Mon, 25 Mar 2019 00:00:00 -0600</pubDate>
+      <guid>http://www.viveksyngh.com/system-design/sql-vs-nosql-databases/</guid>
+      <description>SQL Database is also known as a relational database. It has the following properties.&#xA;It uses a table or relation to store the data. Table stores data in row and columns.&#xA;Relational databases are used to store structured data. Data are stored in the form of relationships.&#xA;Uses Structured Query Language ( SQL) for defining and manipulating data.&#xA;Define the schema before you add any data to the system. All your future data must follow the same structure.</description>
+    </item>
     <item>
       <title>Consistent Hashing</title>
       <link>http://www.viveksyngh.com/system-design/consistent-hashing/</link>

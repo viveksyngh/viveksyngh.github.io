@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  Event Driven Architecture · Vivek Kumar Singh
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Vivek Kumar Singh">
+<meta name="description" content="Event Driven Architecture Link to heading The event-driven architecture pattern is a popular distributed asynchronous architecture pattern used to produce highly scalable applications. It is also highly adaptable and can be used for small applications and as well as large, complex ones. The event-driven architecture is made up of highly decoupled, single-purpose event processing components that asynchronously receive and process events.
+It is suitable for applications or systems that transmit events among loosely coupled software components and services.">
+<meta name="keywords" content="blog,developer,personal">
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Event Driven Architecture"/>
+<meta name="twitter:description" content="Event Driven Architecture Link to heading The event-driven architecture pattern is a popular distributed asynchronous architecture pattern used to produce highly scalable applications. It is also highly adaptable and can be used for small applications and as well as large, complex ones. The event-driven architecture is made up of highly decoupled, single-purpose event processing components that asynchronously receive and process events.
+It is suitable for applications or systems that transmit events among loosely coupled software components and services."/>
+
+<meta property="og:title" content="Event Driven Architecture" />
+<meta property="og:description" content="Event Driven Architecture Link to heading The event-driven architecture pattern is a popular distributed asynchronous architecture pattern used to produce highly scalable applications. It is also highly adaptable and can be used for small applications and as well as large, complex ones. The event-driven architecture is made up of highly decoupled, single-purpose event processing components that asynchronously receive and process events.
+It is suitable for applications or systems that transmit events among loosely coupled software components and services." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.viveksyngh.com/system-design/event-driven-architecture/" /><meta property="article:section" content="system-design" />
+<meta property="article:published_time" content="2019-04-15T00:00:00-06:00" />
+<meta property="article:modified_time" content="2019-04-15T00:00:00-06:00" />
+
+
+
+
+
+<link rel="canonical" href="http://www.viveksyngh.com/system-design/event-driven-architecture/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.65236a6d834b26194eed04a2a3b45e44d9194ef9e620253705d4bef03bd7ef81.css" integrity="sha256-ZSNqbYNLJhlO7QSio7ReRNkZTvnmICU3BdS&#43;8DvX74E=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.f6534b0b446b75d9b6ad77a97d43ede2ddaeff1b6e2361fb7198d6f8fcb7f83f.css" integrity="sha256-9lNLC0Rrddm2rXepfUPt4t2u/xtuI2H7cZjW&#43;Py3&#43;D8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      Vivek Kumar Singh
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/paper-notes/">Paper Notes</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/system-design/">System Design</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Blogs</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container page">
+  <article>
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="http://www.viveksyngh.com/system-design/event-driven-architecture/">
+          Event Driven Architecture
+        </a>
+      </h1>
+    </header>
+
+    <h3 id="event-driven-architecture">
+  Event Driven Architecture
+  <a class="heading-link" href="#event-driven-architecture">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>The event-driven architecture pattern is a popular distributed asynchronous architecture pattern used to produce highly scalable applications. It is also highly adaptable and can be used for small applications and as well as large, complex ones. The event-driven architecture is made up of highly decoupled, single-purpose event processing components that asynchronously receive and process events.</p>
+<p>It is suitable for applications or systems that transmit events among loosely coupled software components and services. An event-driven system consist of typically consists of <strong>event emitters (or agents)</strong>, <strong>event consumers (or sinks)</strong>, and <strong>event channels</strong>. Emitters have the responsibility to detect, gather, and transfer events. They do not know anything about consumers, it’s existence or how it processed the events. <strong>Sinks</strong> have the responsibility of applying reaction as soon as an event is produced. The sink can process the event or do some transformation and forward the event to another component. <strong>Event channels</strong> are conduits in which events are transmitted from event emitters to event consumers.</p>
+<p>In Event-driven systems events are processed in different systems, it is very difficult to maintain atomicity. Things which are needs to be done together as an atomic transaction should be part of one system. EDA is horizontally scalable and resilient to failure as components are loosely coupled and can be scaled independently.</p>
+<p>There are four most used patterns in event driven architecture which Martin flower has described in his blog <a href="https://martinfowler.com/articles/201701-event-driven.html"  class="external-link" target="_blank" rel="noopener">here</a>.</p>
+<h4 id="event-notification">
+  Event Notification
+  <a class="heading-link" href="#event-notification">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>In this pattern, a system sends event messages to notify other systems of a change in its domain. Source system does not care much about the response. Often does not expects a response, or if there is a response it will not be direct. This provides low coupling between different systems.</p>
+<p>This pattern is simple and easy to set up, but It can become difficult to debug and modify if event notification flows through various systems. In this pattern, event contains minimal information and sometimes they may need to contact the sender for more information while processing the event.</p>
+<h4 id="event-carried-state-transfer">
+  Event Carried State Transfer
+  <a class="heading-link" href="#event-carried-state-transfer">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>In this pattern, an event contains all details required by a system to process the event and each system maintains its own copy of the data. The system can reduce latency by not making the remote call for information and can update its own copy of the data. In this pattern, there will be different copies of the same data which can lead to inconsistency of data across the system at some point of time.</p>
+<h4 id="event-sourcing">
+  Event Sourcing
+  <a class="heading-link" href="#event-sourcing">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>In Event Sourcing EDA, we store every change in state as an event in the event store, so that we can rebuild the system state by reprocessing the event at any time in the future. The event store becomes the principal source of truth. The best example of this is a version control system.</p>
+<p>Event sourced system provides a strong audit capability to the system but sometimes it can become difficult to rebuild the state if it depends on some external system.</p>
+<h4 id="cqrs-command-query-responsibility-segregation">
+  CQRS (Command Query Responsibility Segregation)
+  <a class="heading-link" href="#cqrs-command-query-responsibility-segregation">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>Command Query Responsibility Segregation patterns use different data structures for reading and writing information. CQRS can be used in systems where there are no events but it is most commonly used in combination with above patterns.</p>
+<p><strong>References</strong></p>
+<ul>
+<li><a href="https://martinfowler.com/articles/201701-event-driven.html"  class="external-link" target="_blank" rel="noopener">https://martinfowler.com/articles/201701-event-driven.html</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Event-driven_architecture"  class="external-link" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Event-driven_architecture</a></li>
+</ul>
+
+  </article>
+</section>
+
+  
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2023 -
+    
+    2024
+     Vivek Kumar Singh 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

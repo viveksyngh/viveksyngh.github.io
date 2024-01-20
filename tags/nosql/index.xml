@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>nosql on Vivek Kumar Singh</title>
+    <link>http://www.viveksyngh.com/tags/nosql/</link>
+    <description>Recent content in nosql on Vivek Kumar Singh</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 25 Mar 2019 00:00:00 -0600</lastBuildDate>
+    <atom:link href="http://www.viveksyngh.com/tags/nosql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SQL vs NoSQL Databases</title>
+      <link>http://www.viveksyngh.com/system-design/sql-vs-nosql-databases/</link>
+      <pubDate>Mon, 25 Mar 2019 00:00:00 -0600</pubDate>
+      <guid>http://www.viveksyngh.com/system-design/sql-vs-nosql-databases/</guid>
+      <description>SQL Database is also known as a relational database. It has the following properties.&#xA;It uses a table or relation to store the data. Table stores data in row and columns.&#xA;Relational databases are used to store structured data. Data are stored in the form of relationships.&#xA;Uses Structured Query Language ( SQL) for defining and manipulating data.&#xA;Define the schema before you add any data to the system. All your future data must follow the same structure.</description>
+    </item>
+  </channel>
+</rss>

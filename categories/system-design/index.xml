@@ -6,8 +6,36 @@
     <description>Recent content in system design on Vivek Kumar Singh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 22 Mar 2019 00:00:00 -0600</lastBuildDate>
+    <lastBuildDate>Mon, 15 Apr 2019 00:00:00 -0600</lastBuildDate>
     <atom:link href="http://www.viveksyngh.com/categories/system-design/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Event Driven Architecture</title>
+      <link>http://www.viveksyngh.com/system-design/event-driven-architecture/</link>
+      <pubDate>Mon, 15 Apr 2019 00:00:00 -0600</pubDate>
+      <guid>http://www.viveksyngh.com/system-design/event-driven-architecture/</guid>
+      <description>Event Driven Architecture Link to heading The event-driven architecture pattern is a popular distributed asynchronous architecture pattern used to produce highly scalable applications. It is also highly adaptable and can be used for small applications and as well as large, complex ones. The event-driven architecture is made up of highly decoupled, single-purpose event processing components that asynchronously receive and process events.&#xA;It is suitable for applications or systems that transmit events among loosely coupled software components and services.</description>
+    </item>
+    <item>
+      <title>Long Polling vs WebSockets vs Server-Sent Events</title>
+      <link>http://www.viveksyngh.com/system-design/long-polling-vs-websockets-vs-server-sent-events/</link>
+      <pubDate>Tue, 09 Apr 2019 00:00:00 -0600</pubDate>
+      <guid>http://www.viveksyngh.com/system-design/long-polling-vs-websockets-vs-server-sent-events/</guid>
+      <description>Web applications were originally designed as a simple client-server model where the web client initiates an HTTP request requesting some data from the server. For example, a basic web application with the client-server model flow will be as follows.&#xA;A client makes an HTTP request requesting a web page from a server.&#xA;The server calculates the response&#xA;The server sends the response to the client&#xA;As developers began to explore ways to implement more “real-time” applications.</description>
+    </item>
+    <item>
+      <title>Microservices Architecture</title>
+      <link>http://www.viveksyngh.com/system-design/microservices-architecture/</link>
+      <pubDate>Mon, 01 Apr 2019 00:00:00 -0600</pubDate>
+      <guid>http://www.viveksyngh.com/system-design/microservices-architecture/</guid>
+      <description>Microservices are small, focused on doing one thing well and autonomous services that work together. Microservices were not invented. They emerged as a trend, or a pattern from real-world use case.&#xA;The benefits of microservices are many and varied.&#xA;Technology Heterogeneity: Link to heading With a system composed of multiple, collaborating services, we can decide to use different technologies inside each one. This allows us to pick the right tool for each job, rather than having to select a more standardized, one-size-fits-all approach that often ends up being the lowest common denominator.</description>
+    </item>
+    <item>
+      <title>SQL vs NoSQL Databases</title>
+      <link>http://www.viveksyngh.com/system-design/sql-vs-nosql-databases/</link>
+      <pubDate>Mon, 25 Mar 2019 00:00:00 -0600</pubDate>
+      <guid>http://www.viveksyngh.com/system-design/sql-vs-nosql-databases/</guid>
+      <description>SQL Database is also known as a relational database. It has the following properties.&#xA;It uses a table or relation to store the data. Table stores data in row and columns.&#xA;Relational databases are used to store structured data. Data are stored in the form of relationships.&#xA;Uses Structured Query Language ( SQL) for defining and manipulating data.&#xA;Define the schema before you add any data to the system. All your future data must follow the same structure.</description>
+    </item>
     <item>
       <title>Consistent Hashing</title>
       <link>http://www.viveksyngh.com/system-design/consistent-hashing/</link>

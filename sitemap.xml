@@ -128,34 +128,64 @@
     <loc>http://www.viveksyngh.com/tags/system-design/</loc>
     <lastmod>2019-10-23T00:00:00-06:00</lastmod>
   </url><url>
+    <loc>http://www.viveksyngh.com/system-design/event-driven-architecture/</loc>
+    <lastmod>2019-04-15T00:00:00-06:00</lastmod>
+  </url><url>
+    <loc>http://www.viveksyngh.com/tags/microservices/</loc>
+    <lastmod>2019-04-15T00:00:00-06:00</lastmod>
+  </url><url>
+    <loc>http://www.viveksyngh.com/tags/scalability/</loc>
+    <lastmod>2019-04-15T00:00:00-06:00</lastmod>
+  </url><url>
+    <loc>http://www.viveksyngh.com/tags/software-engineering/</loc>
+    <lastmod>2019-04-15T00:00:00-06:00</lastmod>
+  </url><url>
+    <loc>http://www.viveksyngh.com/categories/system-design/</loc>
+    <lastmod>2019-04-15T00:00:00-06:00</lastmod>
+  </url><url>
+    <loc>http://www.viveksyngh.com/system-design/</loc>
+    <lastmod>2019-04-15T00:00:00-06:00</lastmod>
+  </url><url>
+    <loc>http://www.viveksyngh.com/system-design/long-polling-vs-websockets-vs-server-sent-events/</loc>
+    <lastmod>2019-04-09T00:00:00-06:00</lastmod>
+  </url><url>
+    <loc>http://www.viveksyngh.com/tags/web-development/</loc>
+    <lastmod>2019-04-09T00:00:00-06:00</lastmod>
+  </url><url>
+    <loc>http://www.viveksyngh.com/tags/websocket/</loc>
+    <lastmod>2019-04-09T00:00:00-06:00</lastmod>
+  </url><url>
+    <loc>http://www.viveksyngh.com/tags/distributed-system/</loc>
+    <lastmod>2019-04-01T00:00:00-06:00</lastmod>
+  </url><url>
+    <loc>http://www.viveksyngh.com/tags/high-availability/</loc>
+    <lastmod>2019-04-01T00:00:00-06:00</lastmod>
+  </url><url>
+    <loc>http://www.viveksyngh.com/tags/microservice/</loc>
+    <lastmod>2019-04-01T00:00:00-06:00</lastmod>
+  </url><url>
+    <loc>http://www.viveksyngh.com/system-design/microservices-architecture/</loc>
+    <lastmod>2019-04-01T00:00:00-06:00</lastmod>
+  </url><url>
+    <loc>http://www.viveksyngh.com/tags/database/</loc>
+    <lastmod>2019-03-25T00:00:00-06:00</lastmod>
+  </url><url>
+    <loc>http://www.viveksyngh.com/tags/nosql/</loc>
+    <lastmod>2019-03-25T00:00:00-06:00</lastmod>
+  </url><url>
+    <loc>http://www.viveksyngh.com/system-design/sql-vs-nosql-databases/</loc>
+    <lastmod>2019-03-25T00:00:00-06:00</lastmod>
+  </url><url>
     <loc>http://www.viveksyngh.com/tags/consistent-hashing/</loc>
     <lastmod>2019-03-22T00:00:00-06:00</lastmod>
   </url><url>
     <loc>http://www.viveksyngh.com/system-design/consistent-hashing/</loc>
     <lastmod>2019-03-22T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://www.viveksyngh.com/tags/distributed-system/</loc>
-    <lastmod>2019-03-22T00:00:00-06:00</lastmod>
-  </url><url>
-    <loc>http://www.viveksyngh.com/tags/high-availability/</loc>
-    <lastmod>2019-03-22T00:00:00-06:00</lastmod>
-  </url><url>
-    <loc>http://www.viveksyngh.com/tags/software-engineering/</loc>
-    <lastmod>2019-03-22T00:00:00-06:00</lastmod>
-  </url><url>
-    <loc>http://www.viveksyngh.com/categories/system-design/</loc>
-    <lastmod>2019-03-22T00:00:00-06:00</lastmod>
-  </url><url>
-    <loc>http://www.viveksyngh.com/system-design/</loc>
-    <lastmod>2019-03-22T00:00:00-06:00</lastmod>
-  </url><url>
     <loc>http://www.viveksyngh.com/tags/consistency/</loc>
     <lastmod>2019-03-11T00:00:00-06:00</lastmod>
   </url><url>
     <loc>http://www.viveksyngh.com/system-design/eventual-consistency-vs-strong-consistency/</loc>
-    <lastmod>2019-03-11T00:00:00-06:00</lastmod>
-  </url><url>
-    <loc>http://www.viveksyngh.com/tags/scalability/</loc>
     <lastmod>2019-03-11T00:00:00-06:00</lastmod>
   </url><url>
     <loc>http://www.viveksyngh.com/system-design/cap-theorem/</loc>

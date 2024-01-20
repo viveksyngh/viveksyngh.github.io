@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  Long Polling vs WebSockets vs Server-Sent Events · Vivek Kumar Singh
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Vivek Kumar Singh">
+<meta name="description" content="Web applications were originally designed as a simple client-server model where the web client initiates an HTTP request requesting some data from the server. For example, a basic web application with the client-server model flow will be as follows.
+A client makes an HTTP request requesting a web page from a server.
+The server calculates the response
+The server sends the response to the client
+As developers began to explore ways to implement more “real-time” applications.">
+<meta name="keywords" content="blog,developer,personal">
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Long Polling vs WebSockets vs Server-Sent Events"/>
+<meta name="twitter:description" content="Web applications were originally designed as a simple client-server model where the web client initiates an HTTP request requesting some data from the server. For example, a basic web application with the client-server model flow will be as follows.
+A client makes an HTTP request requesting a web page from a server.
+The server calculates the response
+The server sends the response to the client
+As developers began to explore ways to implement more “real-time” applications."/>
+
+<meta property="og:title" content="Long Polling vs WebSockets vs Server-Sent Events" />
+<meta property="og:description" content="Web applications were originally designed as a simple client-server model where the web client initiates an HTTP request requesting some data from the server. For example, a basic web application with the client-server model flow will be as follows.
+A client makes an HTTP request requesting a web page from a server.
+The server calculates the response
+The server sends the response to the client
+As developers began to explore ways to implement more “real-time” applications." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.viveksyngh.com/system-design/long-polling-vs-websockets-vs-server-sent-events/" /><meta property="article:section" content="system-design" />
+<meta property="article:published_time" content="2019-04-09T00:00:00-06:00" />
+<meta property="article:modified_time" content="2019-04-09T00:00:00-06:00" />
+
+
+
+
+
+<link rel="canonical" href="http://www.viveksyngh.com/system-design/long-polling-vs-websockets-vs-server-sent-events/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.65236a6d834b26194eed04a2a3b45e44d9194ef9e620253705d4bef03bd7ef81.css" integrity="sha256-ZSNqbYNLJhlO7QSio7ReRNkZTvnmICU3BdS&#43;8DvX74E=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.f6534b0b446b75d9b6ad77a97d43ede2ddaeff1b6e2361fb7198d6f8fcb7f83f.css" integrity="sha256-9lNLC0Rrddm2rXepfUPt4t2u/xtuI2H7cZjW&#43;Py3&#43;D8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      Vivek Kumar Singh
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/paper-notes/">Paper Notes</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/system-design/">System Design</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Blogs</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container page">
+  <article>
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="http://www.viveksyngh.com/system-design/long-polling-vs-websockets-vs-server-sent-events/">
+          Long Polling vs WebSockets vs Server-Sent Events
+        </a>
+      </h1>
+    </header>
+
+    <p>Web applications were originally designed as a simple client-server model where the web client initiates an HTTP request requesting some data from the server. For example, a basic web application with the client-server model flow will be as follows.</p>
+<ol>
+<li>
+<p>A client makes an HTTP request requesting a web page from a server.</p>
+</li>
+<li>
+<p>The server calculates the response</p>
+</li>
+<li>
+<p>The server sends the response to the client</p>
+</li>
+</ol>
+<blockquote>
+<p>As developers began to explore ways to implement more “<strong>real-time</strong>” applications. The HTTP protocol made these sort of use cases very challenging, as a result, creative ways to manipulate HTTP request-response model into a more real-time model began to emerge.</p>
+</blockquote>
+<h3 id="ajax-polling">
+  Ajax Polling:
+  <a class="heading-link" href="#ajax-polling">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>In Ajax polling, a client makes XHR(XMLHttpRequest)/Ajax requests to server repeatedly at some regular interval to check for new data.</p>
+<p>A flow for Ajax polling will as follow.</p>
+<ul>
+<li>A client initiates requests at a small regular intervals (e.g 0.5 Seconds)</li>
+<li>The server prepares the response and sends it back to to the client just like normal HTTP requests.</li>
+</ul>
+<p>Making repeated requests to server wastes resources as each new incoming connection must be established, the HTTP headers must be passed, a query for new data must be performed, and a response (usually with no new data to offer) must be generated and delivered. The connection must be closed and any resources cleaned up.</p>
+<h3 id="long-polling">
+  Long Polling:
+  <a class="heading-link" href="#long-polling">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>As in regular polling, rather than having to repeat this process multiple times for every client until new data for a given client becomes available, Long polling is technique where the server elects to hold a client connection open for as long as possible, delivering a response only after data becomes available or timeout threshold has been reached. After receiving response client immediately sends the next request.</p>
+<p>On the client side, only a single request to the server needs to be managed. When the response is received, the client can initiate a new request, repeating this process as many times as necessary.</p>
+<p><img src="../../images/system-design/long-polling.webp" alt="Long Polling"></p>
+<p>A flow for Long polling will look as follows</p>
+<ul>
+<li>
+<p>A client initiates an XHR/AJAX request, requesting some data from a server.</p>
+</li>
+<li>
+<p>The server does not immediately respond with request information but waits until there is new information available.</p>
+</li>
+<li>
+<p>When there is new information available, the server responds with new information.</p>
+</li>
+<li>
+<p>The client receives the new information and immediately sends another request to the server restarting the process.</p>
+</li>
+</ul>
+<h4 id="some-challenges-in-long-polling">
+  Some challenges in long polling
+  <a class="heading-link" href="#some-challenges-in-long-polling">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<ul>
+<li>Message ordering and delivery guarantees.</li>
+</ul>
+<blockquote>
+<p>Message ordering cannot be guaranteed if the same client opens multiple connections to the server. If the client was not able to receive the message then there will be possible message loss.</p>
+</blockquote>
+<ul>
+<li>
+<p>Performance and scaling</p>
+</li>
+<li>
+<p>Device support and fallbacks</p>
+</li>
+</ul>
+<h3 id="websockets">
+  WebSockets:
+  <a class="heading-link" href="#websockets">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>WebSocket is a <strong>computer communication protocol</strong> which provides <strong>full-duplex</strong> communication channels over a <strong>single TCP connection</strong>.</p>
+<ul>
+<li>
+<p>It is different from HTTP but compatible with HTTP.</p>
+</li>
+<li>
+<p>Located at layer 7 in the OSI model and depends on TCP at layer 4.</p>
+</li>
+<li>
+<p>Works over port 80 and 443 ( in case of TLS encrypted) and supports HTTP proxies and intermediaries.</p>
+</li>
+<li>
+<p>To achieve compatibility, the WebSocket handshake uses Upgrade header to update the protocol to the WebSocket protocol.</p>
+</li>
+</ul>
+<p>The WebSocket protocol enables interaction between a client and a web server with lesser overheads, providing real-time data transfer from and to the server. WebSockets keeps the connection open, allowing messages to be passed back and forth between the client and the server. In this way, a two-way ongoing conversation can take place between the client and the server.</p>
+<p><img src="../../images/system-design/websocket.webp" alt="WebSocket"></p>
+<p>A WebSocket connection flow will look something like this.</p>
+<ol>
+<li>
+<p>A client initiates a WebSocket handshake process by sending a request which also contains <code>Upgrade</code> header to switch to WebSocket protocol along with other information.</p>
+</li>
+<li>
+<p>The server receives WebSocket handshake request and process it.</p>
+</li>
+</ol>
+<p>2(a). If the server can establish the connection and agrees with client terms then sends a response to the client, acknowledging the WebSocket handshake request with other information.</p>
+<p>2(b). If the server can not establish the connection then it sends response acknowledging it cannot establish WebSocket connection.</p>
+<ol start="3">
+<li>
+<p>Once the client receives a successful WebSocket connection handshake request, WebSocket connection will be opened. Now, client and servers can start sending data in both directions allowing real-time communication.</p>
+</li>
+<li>
+<p>The connection will be closed once the server or the client decides to close the connection.</p>
+</li>
+</ol>
+<h3 id="server-sent-events">
+  Server Sent Events:
+  <a class="heading-link" href="#server-sent-events">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Unlike WebSockets, Server-Sent Events are a <strong>one-way communication</strong> channel where events flow from <strong>server to client only</strong>. Server-Sent Events allows browser clients to receive a stream of events from a server over an HTTP connection without polling.</p>
+<p>A client subscribes to a “stream” from a server and the server will send messages (“event-stream”) to the client until the server or the client closes the stream. It is up to the server to decide when and what to send the client, for instance as soon as data changes.</p>
+<p><img src="../../images/system-design/server-sent-events.webp" alt="Server Sent Events"></p>
+<p>A flow for server send events will be as follows.</p>
+<ol>
+<li>
+<p>Browser client creates a connection using an EventSource API with a server endpoint which is expected to return a stream of events over time. This essentially makes an HTTP request at given URL.</p>
+</li>
+<li>
+<p>The server receives a regular HTTP request from the client and opens the connection and keeps it open. The server can now send the event data as long as it wants or it can close the connection if there are no data.</p>
+</li>
+<li>
+<p>The client receives each event from the server and process it. If it receives a close signal from the server it can close the connection. The client can also initiate the connection close request.</p>
+</li>
+</ol>
+<blockquote>
+<p>As SSE is based on HTTP, it is more compliant with existing IT infrastructure like (Load Balancer, Firewall, etc), unlike WebSockets which can be blocked by some firewall. Server-Sent events are not supported by all browsers.</p>
+</blockquote>
+<h4 id="references">
+  References
+  <a class="heading-link" href="#references">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<ul>
+<li><a href="https://ably.com/topic/long-polling"  class="external-link" target="_blank" rel="noopener">https://ably.com/topic/long-polling</a></li>
+<li><a href="https://www.pubnub.com/blog/2014-12-01-http-long-polling"  class="external-link" target="_blank" rel="noopener">https://www.pubnub.com/blog/2014-12-01-http-long-polling</a></li>
+<li><a href="https://ably.com/topic/websockets"  class="external-link" target="_blank" rel="noopener">https://ably.com/topic/websockets</a></li>
+<li><a href="https://stackoverflow.com/questions/11077857/what-are-long-polling-websockets-server-sent-events-sse-and-comet"  class="external-link" target="_blank" rel="noopener">https://stackoverflow.com/questions/11077857/what-are-long-polling-websockets-server-sent-events-sse-and-comet</a></li>
+</ul>
+
+  </article>
+</section>
+
+  
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2023 -
+    
+    2024
+     Vivek Kumar Singh 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>
