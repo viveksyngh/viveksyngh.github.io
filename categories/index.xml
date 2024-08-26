@@ -2,52 +2,52 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Vivek Kumar Singh</title>
-    <link>http://www.viveksyngh.com/categories/</link>
+    <link>http://localhost:1313/categories/</link>
     <description>Recent content in Categories on Vivek Kumar Singh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sun, 19 Feb 2023 00:00:00 -0600</lastBuildDate>
-    <atom:link href="http://www.viveksyngh.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Distributed Systems</title>
-      <link>http://www.viveksyngh.com/categories/distributed-systems/</link>
+      <link>http://localhost:1313/categories/distributed-systems/</link>
       <pubDate>Sun, 19 Feb 2023 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/categories/distributed-systems/</guid>
+      <guid>http://localhost:1313/categories/distributed-systems/</guid>
       <description></description>
     </item>
     <item>
       <title>Kubernetes</title>
-      <link>http://www.viveksyngh.com/categories/kubernetes/</link>
+      <link>http://localhost:1313/categories/kubernetes/</link>
       <pubDate>Mon, 07 Nov 2022 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/categories/kubernetes/</guid>
+      <guid>http://localhost:1313/categories/kubernetes/</guid>
       <description></description>
     </item>
     <item>
-      <title>linux</title>
-      <link>http://www.viveksyngh.com/categories/linux/</link>
+      <title>Linux</title>
+      <link>http://localhost:1313/categories/linux/</link>
       <pubDate>Sat, 25 Sep 2021 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/categories/linux/</guid>
+      <guid>http://localhost:1313/categories/linux/</guid>
       <description></description>
     </item>
     <item>
-      <title>python</title>
-      <link>http://www.viveksyngh.com/categories/python/</link>
+      <title>Python</title>
+      <link>http://localhost:1313/categories/python/</link>
       <pubDate>Sun, 19 Apr 2020 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/categories/python/</guid>
+      <guid>http://localhost:1313/categories/python/</guid>
       <description></description>
     </item>
     <item>
-      <title>system design</title>
-      <link>http://www.viveksyngh.com/categories/system-design/</link>
+      <title>System Design</title>
+      <link>http://localhost:1313/categories/system-design/</link>
       <pubDate>Mon, 22 Apr 2019 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/categories/system-design/</guid>
+      <guid>http://localhost:1313/categories/system-design/</guid>
       <description></description>
     </item>
     <item>
       <title>Golang</title>
-      <link>http://www.viveksyngh.com/categories/golang/</link>
+      <link>http://localhost:1313/categories/golang/</link>
       <pubDate>Mon, 15 Oct 2018 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/categories/golang/</guid>
+      <guid>http://localhost:1313/categories/golang/</guid>
       <description></description>
     </item>
   </channel>

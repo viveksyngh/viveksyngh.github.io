@@ -2,318 +2,318 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Vivek Kumar Singh</title>
-    <link>http://www.viveksyngh.com/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on Vivek Kumar Singh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sun, 19 Feb 2023 00:00:00 -0600</lastBuildDate>
-    <atom:link href="http://www.viveksyngh.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>cassandra</title>
-      <link>http://www.viveksyngh.com/tags/cassandra/</link>
+      <title>Cassandra</title>
+      <link>http://localhost:1313/tags/cassandra/</link>
       <pubDate>Sun, 19 Feb 2023 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/tags/cassandra/</guid>
+      <guid>http://localhost:1313/tags/cassandra/</guid>
       <description></description>
     </item>
     <item>
-      <title>distributed systems</title>
-      <link>http://www.viveksyngh.com/tags/distributed-systems/</link>
+      <title>Distributed Systems</title>
+      <link>http://localhost:1313/tags/distributed-systems/</link>
       <pubDate>Sun, 19 Feb 2023 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/tags/distributed-systems/</guid>
+      <guid>http://localhost:1313/tags/distributed-systems/</guid>
       <description></description>
     </item>
     <item>
-      <title>dynamo</title>
-      <link>http://www.viveksyngh.com/tags/dynamo/</link>
+      <title>Dynamo</title>
+      <link>http://localhost:1313/tags/dynamo/</link>
       <pubDate>Sun, 19 Feb 2023 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/tags/dynamo/</guid>
+      <guid>http://localhost:1313/tags/dynamo/</guid>
       <description></description>
     </item>
     <item>
-      <title>research paper</title>
-      <link>http://www.viveksyngh.com/tags/research-paper/</link>
+      <title>Research Paper</title>
+      <link>http://localhost:1313/tags/research-paper/</link>
       <pubDate>Sun, 19 Feb 2023 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/tags/research-paper/</guid>
+      <guid>http://localhost:1313/tags/research-paper/</guid>
       <description></description>
     </item>
     <item>
-      <title>data structure</title>
-      <link>http://www.viveksyngh.com/tags/data-structure/</link>
+      <title>Data Structure</title>
+      <link>http://localhost:1313/tags/data-structure/</link>
       <pubDate>Sun, 01 Jan 2023 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/tags/data-structure/</guid>
+      <guid>http://localhost:1313/tags/data-structure/</guid>
       <description></description>
     </item>
     <item>
-      <title>merkle tree</title>
-      <link>http://www.viveksyngh.com/tags/merkle-tree/</link>
+      <title>Merkle Tree</title>
+      <link>http://localhost:1313/tags/merkle-tree/</link>
       <pubDate>Sun, 01 Jan 2023 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/tags/merkle-tree/</guid>
+      <guid>http://localhost:1313/tags/merkle-tree/</guid>
       <description></description>
     </item>
     <item>
-      <title>golang</title>
-      <link>http://www.viveksyngh.com/tags/golang/</link>
+      <title>Golang</title>
+      <link>http://localhost:1313/tags/golang/</link>
       <pubDate>Mon, 07 Nov 2022 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/tags/golang/</guid>
+      <guid>http://localhost:1313/tags/golang/</guid>
       <description></description>
     </item>
     <item>
-      <title>kubernetes</title>
-      <link>http://www.viveksyngh.com/tags/kubernetes/</link>
+      <title>Kubernetes</title>
+      <link>http://localhost:1313/tags/kubernetes/</link>
       <pubDate>Mon, 07 Nov 2022 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/tags/kubernetes/</guid>
+      <guid>http://localhost:1313/tags/kubernetes/</guid>
       <description></description>
     </item>
     <item>
-      <title>yaml</title>
-      <link>http://www.viveksyngh.com/tags/yaml/</link>
+      <title>Yaml</title>
+      <link>http://localhost:1313/tags/yaml/</link>
       <pubDate>Mon, 07 Nov 2022 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/tags/yaml/</guid>
+      <guid>http://localhost:1313/tags/yaml/</guid>
       <description></description>
     </item>
     <item>
-      <title>crd</title>
-      <link>http://www.viveksyngh.com/tags/crd/</link>
+      <title>Crd</title>
+      <link>http://localhost:1313/tags/crd/</link>
       <pubDate>Sat, 08 Oct 2022 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/tags/crd/</guid>
+      <guid>http://localhost:1313/tags/crd/</guid>
       <description></description>
     </item>
     <item>
-      <title>customresourcedefinition</title>
-      <link>http://www.viveksyngh.com/tags/customresourcedefinition/</link>
+      <title>Customresourcedefinition</title>
+      <link>http://localhost:1313/tags/customresourcedefinition/</link>
       <pubDate>Sat, 08 Oct 2022 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/tags/customresourcedefinition/</guid>
+      <guid>http://localhost:1313/tags/customresourcedefinition/</guid>
       <description></description>
     </item>
     <item>
-      <title>operators</title>
-      <link>http://www.viveksyngh.com/tags/operators/</link>
+      <title>Operators</title>
+      <link>http://localhost:1313/tags/operators/</link>
       <pubDate>Sat, 08 Oct 2022 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/tags/operators/</guid>
+      <guid>http://localhost:1313/tags/operators/</guid>
       <description></description>
     </item>
     <item>
-      <title>cloud native</title>
-      <link>http://www.viveksyngh.com/tags/cloud-native/</link>
+      <title>Cloud-Native</title>
+      <link>http://localhost:1313/tags/cloud-native/</link>
       <pubDate>Fri, 01 Jul 2022 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/tags/cloud-native/</guid>
+      <guid>http://localhost:1313/tags/cloud-native/</guid>
       <description></description>
     </item>
     <item>
-      <title>containers</title>
-      <link>http://www.viveksyngh.com/tags/containers/</link>
+      <title>Containers</title>
+      <link>http://localhost:1313/tags/containers/</link>
       <pubDate>Fri, 01 Jul 2022 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/tags/containers/</guid>
+      <guid>http://localhost:1313/tags/containers/</guid>
       <description></description>
     </item>
     <item>
-      <title>software development</title>
-      <link>http://www.viveksyngh.com/tags/software-development/</link>
+      <title>Software Development</title>
+      <link>http://localhost:1313/tags/software-development/</link>
       <pubDate>Wed, 11 May 2022 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/tags/software-development/</guid>
+      <guid>http://localhost:1313/tags/software-development/</guid>
       <description></description>
     </item>
     <item>
-      <title>cli</title>
-      <link>http://www.viveksyngh.com/tags/cli/</link>
+      <title>Cli</title>
+      <link>http://localhost:1313/tags/cli/</link>
       <pubDate>Sun, 21 Nov 2021 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/tags/cli/</guid>
+      <guid>http://localhost:1313/tags/cli/</guid>
       <description></description>
     </item>
     <item>
-      <title>linux</title>
-      <link>http://www.viveksyngh.com/tags/linux/</link>
+      <title>Linux</title>
+      <link>http://localhost:1313/tags/linux/</link>
       <pubDate>Sat, 25 Sep 2021 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/tags/linux/</guid>
+      <guid>http://localhost:1313/tags/linux/</guid>
       <description></description>
     </item>
     <item>
-      <title>networking</title>
-      <link>http://www.viveksyngh.com/tags/networking/</link>
+      <title>Networking</title>
+      <link>http://localhost:1313/tags/networking/</link>
       <pubDate>Sat, 25 Sep 2021 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/tags/networking/</guid>
+      <guid>http://localhost:1313/tags/networking/</guid>
       <description></description>
     </item>
     <item>
-      <title>collections</title>
-      <link>http://www.viveksyngh.com/tags/collections/</link>
+      <title>Collections</title>
+      <link>http://localhost:1313/tags/collections/</link>
       <pubDate>Sun, 19 Apr 2020 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/tags/collections/</guid>
+      <guid>http://localhost:1313/tags/collections/</guid>
       <description></description>
     </item>
     <item>
-      <title>data structures</title>
-      <link>http://www.viveksyngh.com/tags/data-structures/</link>
+      <title>Data Structures</title>
+      <link>http://localhost:1313/tags/data-structures/</link>
       <pubDate>Sun, 19 Apr 2020 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/tags/data-structures/</guid>
+      <guid>http://localhost:1313/tags/data-structures/</guid>
       <description></description>
     </item>
     <item>
-      <title>python3</title>
-      <link>http://www.viveksyngh.com/tags/python3/</link>
+      <title>Python3</title>
+      <link>http://localhost:1313/tags/python3/</link>
       <pubDate>Sun, 19 Apr 2020 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/tags/python3/</guid>
+      <guid>http://localhost:1313/tags/python3/</guid>
       <description></description>
     </item>
     <item>
-      <title>mapreduce</title>
-      <link>http://www.viveksyngh.com/tags/mapreduce/</link>
+      <title>Mapreduce</title>
+      <link>http://localhost:1313/tags/mapreduce/</link>
       <pubDate>Wed, 23 Oct 2019 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/tags/mapreduce/</guid>
+      <guid>http://localhost:1313/tags/mapreduce/</guid>
       <description></description>
     </item>
     <item>
-      <title>system design</title>
-      <link>http://www.viveksyngh.com/tags/system-design/</link>
+      <title>System Design</title>
+      <link>http://localhost:1313/tags/system-design/</link>
       <pubDate>Wed, 23 Oct 2019 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/tags/system-design/</guid>
+      <guid>http://localhost:1313/tags/system-design/</guid>
       <description></description>
     </item>
     <item>
-      <title>database</title>
-      <link>http://www.viveksyngh.com/tags/database/</link>
+      <title>Database</title>
+      <link>http://localhost:1313/tags/database/</link>
       <pubDate>Mon, 22 Apr 2019 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/tags/database/</guid>
+      <guid>http://localhost:1313/tags/database/</guid>
       <description></description>
     </item>
     <item>
-      <title>scalability</title>
-      <link>http://www.viveksyngh.com/tags/scalability/</link>
+      <title>Scalability</title>
+      <link>http://localhost:1313/tags/scalability/</link>
       <pubDate>Mon, 22 Apr 2019 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/tags/scalability/</guid>
+      <guid>http://localhost:1313/tags/scalability/</guid>
       <description></description>
     </item>
     <item>
-      <title>Software engineering</title>
-      <link>http://www.viveksyngh.com/tags/software-engineering/</link>
+      <title>Software Engineering</title>
+      <link>http://localhost:1313/tags/software-engineering/</link>
       <pubDate>Mon, 22 Apr 2019 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/tags/software-engineering/</guid>
+      <guid>http://localhost:1313/tags/software-engineering/</guid>
       <description></description>
     </item>
     <item>
-      <title>microservices</title>
-      <link>http://www.viveksyngh.com/tags/microservices/</link>
+      <title>Microservices</title>
+      <link>http://localhost:1313/tags/microservices/</link>
       <pubDate>Mon, 15 Apr 2019 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/tags/microservices/</guid>
+      <guid>http://localhost:1313/tags/microservices/</guid>
       <description></description>
     </item>
     <item>
       <title>Web Development</title>
-      <link>http://www.viveksyngh.com/tags/web-development/</link>
+      <link>http://localhost:1313/tags/web-development/</link>
       <pubDate>Tue, 09 Apr 2019 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/tags/web-development/</guid>
+      <guid>http://localhost:1313/tags/web-development/</guid>
       <description></description>
     </item>
     <item>
-      <title>websocket</title>
-      <link>http://www.viveksyngh.com/tags/websocket/</link>
+      <title>Websocket</title>
+      <link>http://localhost:1313/tags/websocket/</link>
       <pubDate>Tue, 09 Apr 2019 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/tags/websocket/</guid>
+      <guid>http://localhost:1313/tags/websocket/</guid>
       <description></description>
     </item>
     <item>
-      <title>distributed system</title>
-      <link>http://www.viveksyngh.com/tags/distributed-system/</link>
+      <title>Distributed System</title>
+      <link>http://localhost:1313/tags/distributed-system/</link>
       <pubDate>Mon, 01 Apr 2019 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/tags/distributed-system/</guid>
+      <guid>http://localhost:1313/tags/distributed-system/</guid>
       <description></description>
     </item>
     <item>
-      <title>high availability</title>
-      <link>http://www.viveksyngh.com/tags/high-availability/</link>
+      <title>High Availability</title>
+      <link>http://localhost:1313/tags/high-availability/</link>
       <pubDate>Mon, 01 Apr 2019 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/tags/high-availability/</guid>
+      <guid>http://localhost:1313/tags/high-availability/</guid>
       <description></description>
     </item>
     <item>
-      <title>microservice</title>
-      <link>http://www.viveksyngh.com/tags/microservice/</link>
+      <title>Microservice</title>
+      <link>http://localhost:1313/tags/microservice/</link>
       <pubDate>Mon, 01 Apr 2019 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/tags/microservice/</guid>
+      <guid>http://localhost:1313/tags/microservice/</guid>
       <description></description>
     </item>
     <item>
-      <title>nosql</title>
-      <link>http://www.viveksyngh.com/tags/nosql/</link>
+      <title>Nosql</title>
+      <link>http://localhost:1313/tags/nosql/</link>
       <pubDate>Mon, 25 Mar 2019 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/tags/nosql/</guid>
+      <guid>http://localhost:1313/tags/nosql/</guid>
       <description></description>
     </item>
     <item>
-      <title>consistent hashing</title>
-      <link>http://www.viveksyngh.com/tags/consistent-hashing/</link>
+      <title>Consistent Hashing</title>
+      <link>http://localhost:1313/tags/consistent-hashing/</link>
       <pubDate>Fri, 22 Mar 2019 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/tags/consistent-hashing/</guid>
+      <guid>http://localhost:1313/tags/consistent-hashing/</guid>
       <description></description>
     </item>
     <item>
-      <title>consistency</title>
-      <link>http://www.viveksyngh.com/tags/consistency/</link>
+      <title>Consistency</title>
+      <link>http://localhost:1313/tags/consistency/</link>
       <pubDate>Mon, 11 Mar 2019 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/tags/consistency/</guid>
+      <guid>http://localhost:1313/tags/consistency/</guid>
       <description></description>
     </item>
     <item>
-      <title>api gateway</title>
-      <link>http://www.viveksyngh.com/tags/api-gateway/</link>
+      <title>Api Gateway</title>
+      <link>http://localhost:1313/tags/api-gateway/</link>
       <pubDate>Mon, 25 Feb 2019 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/tags/api-gateway/</guid>
+      <guid>http://localhost:1313/tags/api-gateway/</guid>
       <description></description>
     </item>
     <item>
-      <title>load balancer</title>
-      <link>http://www.viveksyngh.com/tags/load-balancer/</link>
+      <title>Load Balancer</title>
+      <link>http://localhost:1313/tags/load-balancer/</link>
       <pubDate>Mon, 18 Feb 2019 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/tags/load-balancer/</guid>
+      <guid>http://localhost:1313/tags/load-balancer/</guid>
       <description></description>
     </item>
     <item>
-      <title>proxy</title>
-      <link>http://www.viveksyngh.com/tags/proxy/</link>
+      <title>Proxy</title>
+      <link>http://localhost:1313/tags/proxy/</link>
       <pubDate>Wed, 06 Feb 2019 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/tags/proxy/</guid>
+      <guid>http://localhost:1313/tags/proxy/</guid>
       <description></description>
     </item>
     <item>
-      <title>interface</title>
-      <link>http://www.viveksyngh.com/tags/interface/</link>
+      <title>Interface</title>
+      <link>http://localhost:1313/tags/interface/</link>
       <pubDate>Mon, 15 Oct 2018 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/tags/interface/</guid>
+      <guid>http://localhost:1313/tags/interface/</guid>
       <description></description>
     </item>
     <item>
       <title>Polymorphism</title>
-      <link>http://www.viveksyngh.com/tags/polymorphism/</link>
+      <link>http://localhost:1313/tags/polymorphism/</link>
       <pubDate>Mon, 15 Oct 2018 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/tags/polymorphism/</guid>
+      <guid>http://localhost:1313/tags/polymorphism/</guid>
       <description></description>
     </item>
     <item>
-      <title>programming</title>
-      <link>http://www.viveksyngh.com/tags/programming/</link>
+      <title>Programming</title>
+      <link>http://localhost:1313/tags/programming/</link>
       <pubDate>Mon, 15 Oct 2018 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/tags/programming/</guid>
+      <guid>http://localhost:1313/tags/programming/</guid>
       <description></description>
     </item>
     <item>
-      <title>oops</title>
-      <link>http://www.viveksyngh.com/tags/oops/</link>
+      <title>Oops</title>
+      <link>http://localhost:1313/tags/oops/</link>
       <pubDate>Fri, 14 Sep 2018 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/tags/oops/</guid>
+      <guid>http://localhost:1313/tags/oops/</guid>
       <description></description>
     </item>
     <item>
-      <title>http</title>
-      <link>http://www.viveksyngh.com/tags/http/</link>
+      <title>Http</title>
+      <link>http://localhost:1313/tags/http/</link>
       <pubDate>Sat, 01 Sep 2018 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/tags/http/</guid>
+      <guid>http://localhost:1313/tags/http/</guid>
       <description></description>
     </item>
     <item>
-      <title>json</title>
-      <link>http://www.viveksyngh.com/tags/json/</link>
+      <title>Json</title>
+      <link>http://localhost:1313/tags/json/</link>
       <pubDate>Sat, 01 Sep 2018 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/tags/json/</guid>
+      <guid>http://localhost:1313/tags/json/</guid>
       <description></description>
     </item>
   </channel>

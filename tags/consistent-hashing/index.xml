@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>consistent hashing on Vivek Kumar Singh</title>
-    <link>http://www.viveksyngh.com/tags/consistent-hashing/</link>
-    <description>Recent content in consistent hashing on Vivek Kumar Singh</description>
+    <title>Consistent Hashing on Vivek Kumar Singh</title>
+    <link>http://localhost:1313/tags/consistent-hashing/</link>
+    <description>Recent content in Consistent Hashing on Vivek Kumar Singh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Fri, 22 Mar 2019 00:00:00 -0600</lastBuildDate>
-    <atom:link href="http://www.viveksyngh.com/tags/consistent-hashing/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/consistent-hashing/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Consistent Hashing</title>
-      <link>http://www.viveksyngh.com/system-design/consistent-hashing/</link>
+      <link>http://localhost:1313/system-design/consistent-hashing/</link>
       <pubDate>Fri, 22 Mar 2019 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/system-design/consistent-hashing/</guid>
+      <guid>http://localhost:1313/system-design/consistent-hashing/</guid>
       <description>Consistent hashing idea was introduced in paper Consistent Hashing and Random Trees: Distributed Caching Protocols for Relieving Hot Spots on the World Wide Web which was released in the year 1997. Akamai distributed content delivery network uses the approach described in the paper.&#xA;In 2007, consistent hashing was used in two published works&#xA;Dynamo: Amazon’s Highly Available Key-Value Datastore Last.fm Memcached client After that it has been used in many other distributed system like Cassandra, Riak etc.</description>
     </item>
   </channel>

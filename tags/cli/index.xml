@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>cli on Vivek Kumar Singh</title>
-    <link>http://www.viveksyngh.com/tags/cli/</link>
-    <description>Recent content in cli on Vivek Kumar Singh</description>
+    <title>Cli on Vivek Kumar Singh</title>
+    <link>http://localhost:1313/tags/cli/</link>
+    <description>Recent content in Cli on Vivek Kumar Singh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sun, 21 Nov 2021 00:00:00 -0600</lastBuildDate>
-    <atom:link href="http://www.viveksyngh.com/tags/cli/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/cli/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>What’s in Kubernetes client-go — Part 1</title>
-      <link>http://www.viveksyngh.com/posts/whats-in-kubernetes-client-go-part-1/</link>
+      <link>http://localhost:1313/posts/whats-in-kubernetes-client-go-part-1/</link>
       <pubDate>Sun, 21 Nov 2021 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/posts/whats-in-kubernetes-client-go-part-1/</guid>
+      <guid>http://localhost:1313/posts/whats-in-kubernetes-client-go-part-1/</guid>
       <description>Kubernetes project provides a number of the third-party consumable repository under kubernetes or kubernetes-sigs organization on Github. In the series of blog, I will go through such upstream k8s repositories and code, which are needed most frequently to write extensions for Kubernetes. Also provides some examples for using different k8s packages for developing Kubernetes applications in Golang. First covers famous kubernetes package called client-go.&#xA;client-go Link to heading client-go is one of the most useful packages for writing Golang based Kubernetes applications.</description>
     </item>
     <item>
       <title>Timeout commands in Golang</title>
-      <link>http://www.viveksyngh.com/posts/timeout-commands-in-golang/</link>
+      <link>http://localhost:1313/posts/timeout-commands-in-golang/</link>
       <pubDate>Tue, 28 Aug 2018 00:10:34 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/posts/timeout-commands-in-golang/</guid>
+      <guid>http://localhost:1313/posts/timeout-commands-in-golang/</guid>
       <description>Sometimes in our applications, we need to invoke external processes or commands (e.g CURL, Ping, SSH etc.) to perform some tasks. We can use os/exec Go package to invoke external processes. Most of the time we want to invoke these commands with timeouts.&#xA;In this blog post, I am going to talk about different ways in which we can invoke a command with a timeout.&#xA;Timeout with timer Link to heading In this method, we use a timer for the timeout.</description>
     </item>
   </channel>

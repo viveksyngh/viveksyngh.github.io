@@ -2,94 +2,94 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Vivek Kumar Singh</title>
-    <link>http://www.viveksyngh.com/posts/</link>
+    <link>http://localhost:1313/posts/</link>
     <description>Recent content in Posts on Vivek Kumar Singh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Mon, 07 Nov 2022 00:00:00 -0600</lastBuildDate>
-    <atom:link href="http://www.viveksyngh.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Converting Kubernetes Go Types to YAML and vice versa</title>
-      <link>http://www.viveksyngh.com/posts/converting-kubernetes-go-types-to-yaml-and-vice-versa/</link>
+      <link>http://localhost:1313/posts/converting-kubernetes-go-types-to-yaml-and-vice-versa/</link>
       <pubDate>Mon, 07 Nov 2022 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/posts/converting-kubernetes-go-types-to-yaml-and-vice-versa/</guid>
+      <guid>http://localhost:1313/posts/converting-kubernetes-go-types-to-yaml-and-vice-versa/</guid>
       <description>In this blog post, we will see how we can encode/decode Kubernetes Go API types to/from Kubernetes YAML.&#xA;When we work with Kubernetes Go API types (custom types or core types), we often need to convert the Go API types into YAML manifest or vice versa. For example, A CLI application&#xA;Which output Kubernetes objects in YAML&#xA;Which takes Kubernetes objects YAML as input&#xA;For demonstration purposes, we will be creating a simple application that creates a Kubernetes ConfigMap object and encodes/decodes it.</description>
     </item>
     <item>
       <title>Kubernetes Operators — Fundamental Concepts</title>
-      <link>http://www.viveksyngh.com/posts/kubernetes-operators-fundamental-concepts/</link>
+      <link>http://localhost:1313/posts/kubernetes-operators-fundamental-concepts/</link>
       <pubDate>Sat, 08 Oct 2022 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/posts/kubernetes-operators-fundamental-concepts/</guid>
+      <guid>http://localhost:1313/posts/kubernetes-operators-fundamental-concepts/</guid>
       <description>In this series of blog posts, I am going to talk about Kubernetes operator patterns, Kubernetes controllers, Custom resources, and many more related topics. We will also build a Kubernetes operator in Go and look at different tools available for building a Kubernetes operator.&#xA;What is Kubernetes? Link to heading From the official documentation of Kubernetes&#xA;Kubernetes is a portable, extensible, open-source platform for managing containerized workloads and services, that facilitates both declarative configuration and automation.</description>
     </item>
     <item>
       <title>Understanding Kubernetes Container Probes</title>
-      <link>http://www.viveksyngh.com/posts/understanding-kubernetes-container-probes/</link>
+      <link>http://localhost:1313/posts/understanding-kubernetes-container-probes/</link>
       <pubDate>Fri, 01 Jul 2022 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/posts/understanding-kubernetes-container-probes/</guid>
+      <guid>http://localhost:1313/posts/understanding-kubernetes-container-probes/</guid>
       <description>A probe is a diagnostic performed periodically by the kubelet on a container. To perform a diagnostic, the kubelet either executes code within the container or makes a network request.&#xA;There are three types of probes in Kubernetes&#xA;Liveness Probe indicates whether the container is running.&#xA;Readiness Probe indicates whether the container is ready to respond to requests.&#xA;Startup Probe indicates whether the container is started.&#xA;Liveness Probe Link to heading The kubelet uses a liveness probe to know when to restart the container.</description>
     </item>
     <item>
       <title>Running Highly Available Apps on Kubernetes</title>
-      <link>http://www.viveksyngh.com/posts/running-highly-available-apps-on-kubernetes/</link>
+      <link>http://localhost:1313/posts/running-highly-available-apps-on-kubernetes/</link>
       <pubDate>Wed, 11 May 2022 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/posts/running-highly-available-apps-on-kubernetes/</guid>
+      <guid>http://localhost:1313/posts/running-highly-available-apps-on-kubernetes/</guid>
       <description>As Kubernetes becomes the de-facto standard for deploying applications, many of us are either running our applications on Kubernetes or trying to migrate to Kubernetes. In this blog post, I will go through some tips for running highly available applications on Kubernetes.&#xA;Kubernetes: Link to heading Kubernetes, also known as K8s, is an open-source system for automating the deployment, scaling, and management of containerized applications. It is designed on the same principles that allow Google to run billions of containers a week, Kubernetes can scale without increasing your ops team.</description>
     </item>
     <item>
       <title>What’s in Kubernetes client-go — Part 1</title>
-      <link>http://www.viveksyngh.com/posts/whats-in-kubernetes-client-go-part-1/</link>
+      <link>http://localhost:1313/posts/whats-in-kubernetes-client-go-part-1/</link>
       <pubDate>Sun, 21 Nov 2021 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/posts/whats-in-kubernetes-client-go-part-1/</guid>
+      <guid>http://localhost:1313/posts/whats-in-kubernetes-client-go-part-1/</guid>
       <description>Kubernetes project provides a number of the third-party consumable repository under kubernetes or kubernetes-sigs organization on Github. In the series of blog, I will go through such upstream k8s repositories and code, which are needed most frequently to write extensions for Kubernetes. Also provides some examples for using different k8s packages for developing Kubernetes applications in Golang. First covers famous kubernetes package called client-go.&#xA;client-go Link to heading client-go is one of the most useful packages for writing Golang based Kubernetes applications.</description>
     </item>
     <item>
       <title>Linux Virtual Ethernet Devices</title>
-      <link>http://www.viveksyngh.com/posts/linux-virtual-ethernet-devices/</link>
+      <link>http://localhost:1313/posts/linux-virtual-ethernet-devices/</link>
       <pubDate>Sat, 25 Sep 2021 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/posts/linux-virtual-ethernet-devices/</guid>
+      <guid>http://localhost:1313/posts/linux-virtual-ethernet-devices/</guid>
       <description>Linux has rich virtual networking capabilities and in the series of posts, I am going to dig into these virtual networking interfaces, how to use them and what are their use cases.&#xA;In this post, we will be looking into VETH (Virtual Ethernet) virtual networking interface. VETH devices are virtual ethernet devices. They can act as tunnels between network namespaces to create a bridge to a physical network device in another namespace, but can also be used as standalone network devices.</description>
     </item>
     <item>
       <title>Python collections module</title>
-      <link>http://www.viveksyngh.com/posts/python-collections-module/</link>
+      <link>http://localhost:1313/posts/python-collections-module/</link>
       <pubDate>Sun, 19 Apr 2020 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/posts/python-collections-module/</guid>
+      <guid>http://localhost:1313/posts/python-collections-module/</guid>
       <description>Apart from built-in general purpose container data structures like list, dict, set and tuple . Python provides collections module which implements some specialized container data types.&#xA;Following container data types are present in collections module for python 3.6.&#xA;namedtuple() : factory function for creating tuple subclasses with named fields. deque : list-like container with fast appends and pops on either end. ChainMap : dict-like class for creating a single view of multiple mappings Counter: dict subclass for counting hashable objects OrderedDict : dict subclass that remembers the order entries were added defaultdict: dict subclass that calls a factory function to supply missing values.</description>
     </item>
     <item>
       <title>Getting Started With Golang Interfaces</title>
-      <link>http://www.viveksyngh.com/posts/getting-started-with-golang-interfaces/</link>
+      <link>http://localhost:1313/posts/getting-started-with-golang-interfaces/</link>
       <pubDate>Mon, 15 Oct 2018 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/posts/getting-started-with-golang-interfaces/</guid>
+      <guid>http://localhost:1313/posts/getting-started-with-golang-interfaces/</guid>
       <description>Interfaces in Go provides a way to specify the behavior of an object. Interfaces allow us to write more flexible and scalable code in Go. It is also a mechanism to achieve polymorphism in Go.&#xA;type Interface interface { Method1(int, string) (int, error) Method2(int) bool Method3(string) } Interfaces specify methods (or behavior) but do not provide an implementation for those methods. Types implementing the interface provide an implementation of methods.</description>
     </item>
     <item>
       <title>Object Oriented Programming and Golang</title>
-      <link>http://www.viveksyngh.com/posts/object-oriented-programming-and-golang/</link>
+      <link>http://localhost:1313/posts/object-oriented-programming-and-golang/</link>
       <pubDate>Fri, 14 Sep 2018 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/posts/object-oriented-programming-and-golang/</guid>
+      <guid>http://localhost:1313/posts/object-oriented-programming-and-golang/</guid>
       <description>Go has picked some good concepts from different kind of programming languages like procedural, functional and object-oriented programming language and combined them together to create a unique flavor programming language.&#xA;Go isn’t an object-oriented language like C++, Java, C# etc. but it supports some of the OOPs concepts like Encapsulation, Type Methods, Composition etc.&#xA;In this blog post, we will see how can we implement those concepts in Go&#xA;Type Methods Link to heading Go does not have classes but it has types.</description>
     </item>
     <item>
       <title>Pass by value and Pass by reference in Go</title>
-      <link>http://www.viveksyngh.com/posts/pass-by-value-and-pass-by-reference-in-go/</link>
+      <link>http://localhost:1313/posts/pass-by-value-and-pass-by-reference-in-go/</link>
       <pubDate>Fri, 07 Sep 2018 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/posts/pass-by-value-and-pass-by-reference-in-go/</guid>
+      <guid>http://localhost:1313/posts/pass-by-value-and-pass-by-reference-in-go/</guid>
       <description>In Go, everything is passed by value. When we pass arguments to a function, a function always gets the copy of the data passed. For example, passing an int value to function makes a copy of the int, passing a pointer value makes a copy of the pointer but not the data it points to.&#xA;When we pass a value to function it is called pass by value and when we pass a pointer to a function it is called pass by reference.</description>
     </item>
     <item>
       <title>HTTP Response in Golang</title>
-      <link>http://www.viveksyngh.com/posts/http-response-in-golang/</link>
+      <link>http://localhost:1313/posts/http-response-in-golang/</link>
       <pubDate>Sat, 01 Sep 2018 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/posts/http-response-in-golang/</guid>
+      <guid>http://localhost:1313/posts/http-response-in-golang/</guid>
       <description>In this blog post, I am going to talk about HTTP server and how to return different types of HTTP response(text, JSON, html) in Go.&#xA;Plain Text Response Link to heading Creating a web server in Go is very simple and we can do it by writing just a few lines of code.We need to use net/http package to create an HTTP server. This is how a simple HTTP server code looks like in Go.</description>
     </item>
     <item>
       <title>Timeout commands in Golang</title>
-      <link>http://www.viveksyngh.com/posts/timeout-commands-in-golang/</link>
+      <link>http://localhost:1313/posts/timeout-commands-in-golang/</link>
       <pubDate>Tue, 28 Aug 2018 00:10:34 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/posts/timeout-commands-in-golang/</guid>
+      <guid>http://localhost:1313/posts/timeout-commands-in-golang/</guid>
       <description>Sometimes in our applications, we need to invoke external processes or commands (e.g CURL, Ping, SSH etc.) to perform some tasks. We can use os/exec Go package to invoke external processes. Most of the time we want to invoke these commands with timeouts.&#xA;In this blog post, I am going to talk about different ways in which we can invoke a command with a timeout.&#xA;Timeout with timer Link to heading In this method, we use a timer for the timeout.</description>
     </item>
   </channel>

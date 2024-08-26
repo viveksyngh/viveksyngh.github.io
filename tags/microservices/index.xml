@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>microservices on Vivek Kumar Singh</title>
-    <link>http://www.viveksyngh.com/tags/microservices/</link>
-    <description>Recent content in microservices on Vivek Kumar Singh</description>
+    <title>Microservices on Vivek Kumar Singh</title>
+    <link>http://localhost:1313/tags/microservices/</link>
+    <description>Recent content in Microservices on Vivek Kumar Singh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Mon, 15 Apr 2019 00:00:00 -0600</lastBuildDate>
-    <atom:link href="http://www.viveksyngh.com/tags/microservices/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/microservices/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Event Driven Architecture</title>
-      <link>http://www.viveksyngh.com/system-design/event-driven-architecture/</link>
+      <link>http://localhost:1313/system-design/event-driven-architecture/</link>
       <pubDate>Mon, 15 Apr 2019 00:00:00 -0600</pubDate>
-      <guid>http://www.viveksyngh.com/system-design/event-driven-architecture/</guid>
+      <guid>http://localhost:1313/system-design/event-driven-architecture/</guid>
       <description>Event Driven Architecture Link to heading The event-driven architecture pattern is a popular distributed asynchronous architecture pattern used to produce highly scalable applications. It is also highly adaptable and can be used for small applications and as well as large, complex ones. The event-driven architecture is made up of highly decoupled, single-purpose event processing components that asynchronously receive and process events.&#xA;It is suitable for applications or systems that transmit events among loosely coupled software components and services.</description>
     </item>
   </channel>
