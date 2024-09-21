@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Websocket on Vivek Kumar Singh</title>
-    <link>http://localhost:1313/tags/websocket/</link>
+    <link>http://www.viveksyngh.com/tags/websocket/</link>
     <description>Recent content in Websocket on Vivek Kumar Singh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 09 Apr 2019 00:00:00 -0600</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/websocket/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://www.viveksyngh.com/tags/websocket/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Long Polling vs WebSockets vs Server-Sent Events</title>
-      <link>http://localhost:1313/system-design/long-polling-vs-websockets-vs-server-sent-events/</link>
+      <link>http://www.viveksyngh.com/system-design/long-polling-vs-websockets-vs-server-sent-events/</link>
       <pubDate>Tue, 09 Apr 2019 00:00:00 -0600</pubDate>
-      <guid>http://localhost:1313/system-design/long-polling-vs-websockets-vs-server-sent-events/</guid>
+      <guid>http://www.viveksyngh.com/system-design/long-polling-vs-websockets-vs-server-sent-events/</guid>
       <description>Web applications were originally designed as a simple client-server model where the web client initiates an HTTP request requesting some data from the server. For example, a basic web application with the client-server model flow will be as follows.&#xA;A client makes an HTTP request requesting a web page from a server.&#xA;The server calculates the response&#xA;The server sends the response to the client&#xA;As developers began to explore ways to implement more “real-time” applications.</description>
     </item>
   </channel>

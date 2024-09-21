@@ -2,258 +2,258 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/tags/cassandra/</loc>
+    <loc>http://www.viveksyngh.com/posts/</loc>
+    <lastmod>2024-09-21T00:00:00-06:00</lastmod>
+  </url><url>
+    <loc>http://www.viveksyngh.com/</loc>
+    <lastmod>2024-09-21T00:00:00-06:00</lastmod>
+  </url><url>
+    <loc>http://www.viveksyngh.com/tags/cassandra/</loc>
     <lastmod>2023-02-19T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>http://www.viveksyngh.com/categories/</loc>
     <lastmod>2023-02-19T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/distributed-systems/</loc>
+    <loc>http://www.viveksyngh.com/tags/distributed-systems/</loc>
     <lastmod>2023-02-19T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/distributed-systems/</loc>
+    <loc>http://www.viveksyngh.com/categories/distributed-systems/</loc>
     <lastmod>2023-02-19T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/paper-notes/diving-into-amazon-dynamo-paper/</loc>
+    <loc>http://www.viveksyngh.com/paper-notes/diving-into-amazon-dynamo-paper/</loc>
     <lastmod>2023-02-19T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/dynamo/</loc>
+    <loc>http://www.viveksyngh.com/tags/dynamo/</loc>
     <lastmod>2023-02-19T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/paper-notes/</loc>
+    <loc>http://www.viveksyngh.com/paper-notes/</loc>
     <lastmod>2023-02-19T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/research-paper/</loc>
+    <loc>http://www.viveksyngh.com/tags/research-paper/</loc>
     <lastmod>2023-02-19T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>http://www.viveksyngh.com/tags/</loc>
     <lastmod>2023-02-19T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2023-02-19T00:00:00-06:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/data-structure/</loc>
+    <loc>http://www.viveksyngh.com/tags/data-structure/</loc>
     <lastmod>2023-01-01T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/merkle-tree/</loc>
+    <loc>http://www.viveksyngh.com/tags/merkle-tree/</loc>
     <lastmod>2023-01-01T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/paper-notes/merkle-tree-and-its-applications/</loc>
+    <loc>http://www.viveksyngh.com/paper-notes/merkle-tree-and-its-applications/</loc>
     <lastmod>2023-01-01T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/converting-kubernetes-go-types-to-yaml-and-vice-versa/</loc>
+    <loc>http://www.viveksyngh.com/posts/converting-kubernetes-go-types-to-yaml-and-vice-versa/</loc>
     <lastmod>2022-11-07T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/golang/</loc>
+    <loc>http://www.viveksyngh.com/tags/golang/</loc>
     <lastmod>2022-11-07T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/kubernetes/</loc>
+    <loc>http://www.viveksyngh.com/tags/kubernetes/</loc>
     <lastmod>2022-11-07T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/kubernetes/</loc>
+    <loc>http://www.viveksyngh.com/categories/kubernetes/</loc>
     <lastmod>2022-11-07T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
+    <loc>http://www.viveksyngh.com/tags/yaml/</loc>
     <lastmod>2022-11-07T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/yaml/</loc>
-    <lastmod>2022-11-07T00:00:00-06:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/crd/</loc>
+    <loc>http://www.viveksyngh.com/tags/crd/</loc>
     <lastmod>2022-10-08T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/customresourcedefinition/</loc>
+    <loc>http://www.viveksyngh.com/tags/customresourcedefinition/</loc>
     <lastmod>2022-10-08T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/kubernetes-operators-fundamental-concepts/</loc>
+    <loc>http://www.viveksyngh.com/posts/kubernetes-operators-fundamental-concepts/</loc>
     <lastmod>2022-10-08T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/operators/</loc>
+    <loc>http://www.viveksyngh.com/tags/operators/</loc>
     <lastmod>2022-10-08T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/cloud-native/</loc>
+    <loc>http://www.viveksyngh.com/tags/cloud-native/</loc>
     <lastmod>2022-07-01T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/containers/</loc>
+    <loc>http://www.viveksyngh.com/tags/containers/</loc>
     <lastmod>2022-07-01T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/understanding-kubernetes-container-probes/</loc>
+    <loc>http://www.viveksyngh.com/posts/understanding-kubernetes-container-probes/</loc>
     <lastmod>2022-07-01T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/running-highly-available-apps-on-kubernetes/</loc>
+    <loc>http://www.viveksyngh.com/posts/running-highly-available-apps-on-kubernetes/</loc>
     <lastmod>2022-05-11T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/software-development/</loc>
+    <loc>http://www.viveksyngh.com/tags/software-development/</loc>
     <lastmod>2022-05-11T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/cli/</loc>
+    <loc>http://www.viveksyngh.com/tags/cli/</loc>
     <lastmod>2021-11-21T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/whats-in-kubernetes-client-go-part-1/</loc>
+    <loc>http://www.viveksyngh.com/posts/whats-in-kubernetes-client-go-part-1/</loc>
     <lastmod>2021-11-21T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/linux/</loc>
+    <loc>http://www.viveksyngh.com/tags/linux/</loc>
     <lastmod>2021-09-25T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/linux/</loc>
+    <loc>http://www.viveksyngh.com/categories/linux/</loc>
     <lastmod>2021-09-25T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/linux-virtual-ethernet-devices/</loc>
+    <loc>http://www.viveksyngh.com/posts/linux-virtual-ethernet-devices/</loc>
     <lastmod>2021-09-25T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/networking/</loc>
+    <loc>http://www.viveksyngh.com/tags/networking/</loc>
     <lastmod>2021-09-25T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/collections/</loc>
+    <loc>http://www.viveksyngh.com/tags/collections/</loc>
     <lastmod>2020-04-19T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/data-structures/</loc>
+    <loc>http://www.viveksyngh.com/tags/data-structures/</loc>
     <lastmod>2020-04-19T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/python/</loc>
+    <loc>http://www.viveksyngh.com/categories/python/</loc>
     <lastmod>2020-04-19T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/python-collections-module/</loc>
+    <loc>http://www.viveksyngh.com/posts/python-collections-module/</loc>
     <lastmod>2020-04-19T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/python3/</loc>
+    <loc>http://www.viveksyngh.com/tags/python3/</loc>
     <lastmod>2020-04-19T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/mapreduce/</loc>
+    <loc>http://www.viveksyngh.com/tags/mapreduce/</loc>
     <lastmod>2019-10-23T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/paper-notes/mapreduce-overview/</loc>
+    <loc>http://www.viveksyngh.com/paper-notes/mapreduce-overview/</loc>
     <lastmod>2019-10-23T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/system-design/</loc>
+    <loc>http://www.viveksyngh.com/tags/system-design/</loc>
     <lastmod>2019-10-23T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/database/</loc>
+    <loc>http://www.viveksyngh.com/tags/database/</loc>
     <lastmod>2019-04-22T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/system-design/database-sharding/</loc>
+    <loc>http://www.viveksyngh.com/system-design/database-sharding/</loc>
     <lastmod>2019-04-22T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/scalability/</loc>
+    <loc>http://www.viveksyngh.com/tags/scalability/</loc>
     <lastmod>2019-04-22T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/software-engineering/</loc>
+    <loc>http://www.viveksyngh.com/tags/software-engineering/</loc>
     <lastmod>2019-04-22T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/system-design/</loc>
+    <loc>http://www.viveksyngh.com/categories/system-design/</loc>
     <lastmod>2019-04-22T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/system-design/</loc>
+    <loc>http://www.viveksyngh.com/system-design/</loc>
     <lastmod>2019-04-22T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/system-design/event-driven-architecture/</loc>
+    <loc>http://www.viveksyngh.com/system-design/event-driven-architecture/</loc>
     <lastmod>2019-04-15T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/microservices/</loc>
+    <loc>http://www.viveksyngh.com/tags/microservices/</loc>
     <lastmod>2019-04-15T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/system-design/long-polling-vs-websockets-vs-server-sent-events/</loc>
+    <loc>http://www.viveksyngh.com/system-design/long-polling-vs-websockets-vs-server-sent-events/</loc>
     <lastmod>2019-04-09T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/web-development/</loc>
+    <loc>http://www.viveksyngh.com/tags/web-development/</loc>
     <lastmod>2019-04-09T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/websocket/</loc>
+    <loc>http://www.viveksyngh.com/tags/websocket/</loc>
     <lastmod>2019-04-09T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/distributed-system/</loc>
+    <loc>http://www.viveksyngh.com/tags/distributed-system/</loc>
     <lastmod>2019-04-01T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/high-availability/</loc>
+    <loc>http://www.viveksyngh.com/tags/high-availability/</loc>
     <lastmod>2019-04-01T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/microservice/</loc>
+    <loc>http://www.viveksyngh.com/tags/microservice/</loc>
     <lastmod>2019-04-01T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/system-design/microservices-architecture/</loc>
+    <loc>http://www.viveksyngh.com/system-design/microservices-architecture/</loc>
     <lastmod>2019-04-01T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/nosql/</loc>
+    <loc>http://www.viveksyngh.com/tags/nosql/</loc>
     <lastmod>2019-03-25T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/system-design/sql-vs-nosql-databases/</loc>
+    <loc>http://www.viveksyngh.com/system-design/sql-vs-nosql-databases/</loc>
     <lastmod>2019-03-25T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/consistent-hashing/</loc>
+    <loc>http://www.viveksyngh.com/tags/consistent-hashing/</loc>
     <lastmod>2019-03-22T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/system-design/consistent-hashing/</loc>
+    <loc>http://www.viveksyngh.com/system-design/consistent-hashing/</loc>
     <lastmod>2019-03-22T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/consistency/</loc>
+    <loc>http://www.viveksyngh.com/tags/consistency/</loc>
     <lastmod>2019-03-11T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/system-design/eventual-consistency-vs-strong-consistency/</loc>
+    <loc>http://www.viveksyngh.com/system-design/eventual-consistency-vs-strong-consistency/</loc>
     <lastmod>2019-03-11T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/system-design/cap-theorem/</loc>
+    <loc>http://www.viveksyngh.com/system-design/cap-theorem/</loc>
     <lastmod>2019-03-04T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/api-gateway/</loc>
+    <loc>http://www.viveksyngh.com/tags/api-gateway/</loc>
     <lastmod>2019-02-25T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/system-design/what-is-api-gateway/</loc>
+    <loc>http://www.viveksyngh.com/system-design/what-is-api-gateway/</loc>
     <lastmod>2019-02-25T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/load-balancer/</loc>
+    <loc>http://www.viveksyngh.com/tags/load-balancer/</loc>
     <lastmod>2019-02-18T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/system-design/load-balancing-and-load-balancer/</loc>
+    <loc>http://www.viveksyngh.com/system-design/load-balancing-and-load-balancer/</loc>
     <lastmod>2019-02-18T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/proxy/</loc>
+    <loc>http://www.viveksyngh.com/tags/proxy/</loc>
     <lastmod>2019-02-06T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/system-design/what-is-proxy-server/</loc>
+    <loc>http://www.viveksyngh.com/system-design/what-is-proxy-server/</loc>
     <lastmod>2019-02-06T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/getting-started-with-golang-interfaces/</loc>
+    <loc>http://www.viveksyngh.com/posts/getting-started-with-golang-interfaces/</loc>
     <lastmod>2018-10-15T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/golang/</loc>
+    <loc>http://www.viveksyngh.com/categories/golang/</loc>
     <lastmod>2018-10-15T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/interface/</loc>
+    <loc>http://www.viveksyngh.com/tags/interface/</loc>
     <lastmod>2018-10-15T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/polymorphism/</loc>
+    <loc>http://www.viveksyngh.com/tags/polymorphism/</loc>
     <lastmod>2018-10-15T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/programming/</loc>
+    <loc>http://www.viveksyngh.com/tags/programming/</loc>
     <lastmod>2018-10-15T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/object-oriented-programming-and-golang/</loc>
+    <loc>http://www.viveksyngh.com/posts/object-oriented-programming-and-golang/</loc>
     <lastmod>2018-09-14T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/oops/</loc>
+    <loc>http://www.viveksyngh.com/tags/oops/</loc>
     <lastmod>2018-09-14T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/pass-by-value-and-pass-by-reference-in-go/</loc>
+    <loc>http://www.viveksyngh.com/posts/pass-by-value-and-pass-by-reference-in-go/</loc>
     <lastmod>2018-09-07T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/http/</loc>
+    <loc>http://www.viveksyngh.com/tags/http/</loc>
     <lastmod>2018-09-01T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/http-response-in-golang/</loc>
+    <loc>http://www.viveksyngh.com/posts/http-response-in-golang/</loc>
     <lastmod>2018-09-01T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/json/</loc>
+    <loc>http://www.viveksyngh.com/tags/json/</loc>
     <lastmod>2018-09-01T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/timeout-commands-in-golang/</loc>
+    <loc>http://www.viveksyngh.com/posts/timeout-commands-in-golang/</loc>
     <lastmod>2018-08-28T00:10:34-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/about/</loc>
+    <loc>http://www.viveksyngh.com/about/</loc>
   </url><url>
-    <loc>http://localhost:1313/authors/</loc>
+    <loc>http://www.viveksyngh.com/authors/</loc>
   </url><url>
-    <loc>http://localhost:1313/resources/</loc>
+    <loc>http://www.viveksyngh.com/resources/</loc>
   </url><url>
-    <loc>http://localhost:1313/series/</loc>
+    <loc>http://www.viveksyngh.com/series/</loc>
   </url>
 </urlset>

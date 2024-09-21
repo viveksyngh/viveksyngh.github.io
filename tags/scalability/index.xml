@@ -2,52 +2,52 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Scalability on Vivek Kumar Singh</title>
-    <link>http://localhost:1313/tags/scalability/</link>
+    <link>http://www.viveksyngh.com/tags/scalability/</link>
     <description>Recent content in Scalability on Vivek Kumar Singh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Mon, 22 Apr 2019 00:00:00 -0600</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/scalability/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://www.viveksyngh.com/tags/scalability/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Database Sharding</title>
-      <link>http://localhost:1313/system-design/database-sharding/</link>
+      <link>http://www.viveksyngh.com/system-design/database-sharding/</link>
       <pubDate>Mon, 22 Apr 2019 00:00:00 -0600</pubDate>
-      <guid>http://localhost:1313/system-design/database-sharding/</guid>
+      <guid>http://www.viveksyngh.com/system-design/database-sharding/</guid>
       <description>Database sharding is the process of splitting up a database across multiple machines to improve the scalability of an application. In Sharding, one’s data is broken into two or more smaller chunks, called logical shards. The logical shards are then distributed across separate database nodes, referred to as physical shards.&#xA;Database shards are autonomous and they don’t share any of the same data or computing resources. In some cases, though, it makes sense to replicate certain tables into each shard to serve as referenced tables.</description>
     </item>
     <item>
       <title>Event Driven Architecture</title>
-      <link>http://localhost:1313/system-design/event-driven-architecture/</link>
+      <link>http://www.viveksyngh.com/system-design/event-driven-architecture/</link>
       <pubDate>Mon, 15 Apr 2019 00:00:00 -0600</pubDate>
-      <guid>http://localhost:1313/system-design/event-driven-architecture/</guid>
+      <guid>http://www.viveksyngh.com/system-design/event-driven-architecture/</guid>
       <description>Event Driven Architecture Link to heading The event-driven architecture pattern is a popular distributed asynchronous architecture pattern used to produce highly scalable applications. It is also highly adaptable and can be used for small applications and as well as large, complex ones. The event-driven architecture is made up of highly decoupled, single-purpose event processing components that asynchronously receive and process events.&#xA;It is suitable for applications or systems that transmit events among loosely coupled software components and services.</description>
     </item>
     <item>
       <title>Eventual Consistency vs Strong Consistency</title>
-      <link>http://localhost:1313/system-design/eventual-consistency-vs-strong-consistency/</link>
+      <link>http://www.viveksyngh.com/system-design/eventual-consistency-vs-strong-consistency/</link>
       <pubDate>Mon, 11 Mar 2019 00:00:00 -0600</pubDate>
-      <guid>http://localhost:1313/system-design/eventual-consistency-vs-strong-consistency/</guid>
+      <guid>http://www.viveksyngh.com/system-design/eventual-consistency-vs-strong-consistency/</guid>
       <description>Eventual Consistency Link to heading Eventual consistency is a theoretical guarantee that, provided no new updates to an entity are made, all reads of the entity will eventually return the last updated value. The Internet Domain Name System (DNS) is a well-known example of a system with an eventual consistency model. DNS servers do not necessarily reflect the latest values but, rather, the values are cached and replicated across many directories over the Internet.</description>
     </item>
     <item>
       <title>CAP Theorem</title>
-      <link>http://localhost:1313/system-design/cap-theorem/</link>
+      <link>http://www.viveksyngh.com/system-design/cap-theorem/</link>
       <pubDate>Mon, 04 Mar 2019 00:00:00 -0600</pubDate>
-      <guid>http://localhost:1313/system-design/cap-theorem/</guid>
+      <guid>http://www.viveksyngh.com/system-design/cap-theorem/</guid>
       <description>CAP theorem also known as Brewer’s theorem was introduced by computer scientist Eric Brewer at Symposium on Principles of Distributed computing in 2000. In CAP theorem, C stands for Consistency, A stands for Availability and P stands for Partition tolerance.&#xA;Consistency: Every read receives the most recent writes or an error. For consistency, any read operation that begins after a write operation completes must return that value, or the result of a later write operation.</description>
     </item>
     <item>
       <title>What is API Gateway?</title>
-      <link>http://localhost:1313/system-design/what-is-api-gateway/</link>
+      <link>http://www.viveksyngh.com/system-design/what-is-api-gateway/</link>
       <pubDate>Mon, 25 Feb 2019 00:00:00 -0600</pubDate>
-      <guid>http://localhost:1313/system-design/what-is-api-gateway/</guid>
+      <guid>http://www.viveksyngh.com/system-design/what-is-api-gateway/</guid>
       <description>In microservices architecture, there are several services running each designed for a very specific component of the system. When clients (Mobile Apps, Web Apps or Third party applications) communicates directly with these microservices then many problems arise.&#xA;The granularity of APIs provided by microservices is often different than what the client needs. Microservice API’s are very generic and granular in nature where each returns only a portion of data for functionality.</description>
     </item>
     <item>
       <title>Load Balancing and Load Balancer</title>
-      <link>http://localhost:1313/system-design/load-balancing-and-load-balancer/</link>
+      <link>http://www.viveksyngh.com/system-design/load-balancing-and-load-balancer/</link>
       <pubDate>Mon, 18 Feb 2019 00:00:00 -0600</pubDate>
-      <guid>http://localhost:1313/system-design/load-balancing-and-load-balancer/</guid>
+      <guid>http://www.viveksyngh.com/system-design/load-balancing-and-load-balancer/</guid>
       <description>[Source: https://medium.com/containers-on-aws/using-aws-application-load-balancer-and-network-load-balancer-with-ec2-container-service-d0cb0b1d5ae5]&#xA;Load Balancing Link to heading Load balancing is the process of efficiently distributing network traffic across multiple servers also known as a server farm or server pool. By distributing the load evenly load balancing improves responsiveness and increases the availability of applications. It has become a necessity as applications become more complex, user demand grows and traffic volume increases.&#xA;Load balancing is the most straightforward method of scaling out an application server infrastructure.</description>
     </item>
   </channel>

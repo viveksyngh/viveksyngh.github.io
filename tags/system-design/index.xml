@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>System Design on Vivek Kumar Singh</title>
-    <link>http://localhost:1313/tags/system-design/</link>
+    <link>http://www.viveksyngh.com/tags/system-design/</link>
     <description>Recent content in System Design on Vivek Kumar Singh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Wed, 23 Oct 2019 00:00:00 -0600</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/system-design/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://www.viveksyngh.com/tags/system-design/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>MapReduce Overview</title>
-      <link>http://localhost:1313/paper-notes/mapreduce-overview/</link>
+      <link>http://www.viveksyngh.com/paper-notes/mapreduce-overview/</link>
       <pubDate>Wed, 23 Oct 2019 00:00:00 -0600</pubDate>
-      <guid>http://localhost:1313/paper-notes/mapreduce-overview/</guid>
+      <guid>http://www.viveksyngh.com/paper-notes/mapreduce-overview/</guid>
       <description>In this blog, I will be discussing MapReduce programming model and how it works. This blog is based on the original MapReduce research paper MapReduce: Simplified Data Processing on Large Clusters from Google.&#xA;MapReduce is a programming model and an associated implementation for processing and generating large data sets. User specifies a map function that processes a key/value pair to generate a set for intermediate key/value pairs, and a reduce function that merges all intermediate values associated with the same intermediate key.</description>
     </item>
     <item>
       <title>Load Balancing and Load Balancer</title>
-      <link>http://localhost:1313/system-design/load-balancing-and-load-balancer/</link>
+      <link>http://www.viveksyngh.com/system-design/load-balancing-and-load-balancer/</link>
       <pubDate>Mon, 18 Feb 2019 00:00:00 -0600</pubDate>
-      <guid>http://localhost:1313/system-design/load-balancing-and-load-balancer/</guid>
+      <guid>http://www.viveksyngh.com/system-design/load-balancing-and-load-balancer/</guid>
       <description>[Source: https://medium.com/containers-on-aws/using-aws-application-load-balancer-and-network-load-balancer-with-ec2-container-service-d0cb0b1d5ae5]&#xA;Load Balancing Link to heading Load balancing is the process of efficiently distributing network traffic across multiple servers also known as a server farm or server pool. By distributing the load evenly load balancing improves responsiveness and increases the availability of applications. It has become a necessity as applications become more complex, user demand grows and traffic volume increases.&#xA;Load balancing is the most straightforward method of scaling out an application server infrastructure.</description>
     </item>
     <item>
       <title>What is proxy server?</title>
-      <link>http://localhost:1313/system-design/what-is-proxy-server/</link>
+      <link>http://www.viveksyngh.com/system-design/what-is-proxy-server/</link>
       <pubDate>Wed, 06 Feb 2019 00:00:00 -0600</pubDate>
-      <guid>http://localhost:1313/system-design/what-is-proxy-server/</guid>
+      <guid>http://www.viveksyngh.com/system-design/what-is-proxy-server/</guid>
       <description>Word proxy defines, someone or something acting on behalf of something else. In computer science proxy means one server acting on behalf of other servers. A proxy server is a server ( or computer system or an application) that acts as an intermediary for requests from clients seeking resources from other servers.&#xA;A client connects to the proxy server, requesting for some service (file, connection, web page) available from a different server and the proxy server evaluates the request as a way simplify and control it’s complexity.</description>
     </item>
   </channel>

@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Database on Vivek Kumar Singh</title>
-    <link>http://localhost:1313/tags/database/</link>
+    <link>http://www.viveksyngh.com/tags/database/</link>
     <description>Recent content in Database on Vivek Kumar Singh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Mon, 22 Apr 2019 00:00:00 -0600</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/database/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://www.viveksyngh.com/tags/database/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Database Sharding</title>
-      <link>http://localhost:1313/system-design/database-sharding/</link>
+      <link>http://www.viveksyngh.com/system-design/database-sharding/</link>
       <pubDate>Mon, 22 Apr 2019 00:00:00 -0600</pubDate>
-      <guid>http://localhost:1313/system-design/database-sharding/</guid>
+      <guid>http://www.viveksyngh.com/system-design/database-sharding/</guid>
       <description>Database sharding is the process of splitting up a database across multiple machines to improve the scalability of an application. In Sharding, one’s data is broken into two or more smaller chunks, called logical shards. The logical shards are then distributed across separate database nodes, referred to as physical shards.&#xA;Database shards are autonomous and they don’t share any of the same data or computing resources. In some cases, though, it makes sense to replicate certain tables into each shard to serve as referenced tables.</description>
     </item>
     <item>
       <title>SQL vs NoSQL Databases</title>
-      <link>http://localhost:1313/system-design/sql-vs-nosql-databases/</link>
+      <link>http://www.viveksyngh.com/system-design/sql-vs-nosql-databases/</link>
       <pubDate>Mon, 25 Mar 2019 00:00:00 -0600</pubDate>
-      <guid>http://localhost:1313/system-design/sql-vs-nosql-databases/</guid>
+      <guid>http://www.viveksyngh.com/system-design/sql-vs-nosql-databases/</guid>
       <description>SQL Database is also known as a relational database. It has the following properties.&#xA;It uses a table or relation to store the data. Table stores data in row and columns.&#xA;Relational databases are used to store structured data. Data are stored in the form of relationships.&#xA;Uses Structured Query Language ( SQL) for defining and manipulating data.&#xA;Define the schema before you add any data to the system. All your future data must follow the same structure.</description>
     </item>
   </channel>

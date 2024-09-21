@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Software Development on Vivek Kumar Singh</title>
-    <link>http://localhost:1313/tags/software-development/</link>
+    <link>http://www.viveksyngh.com/tags/software-development/</link>
     <description>Recent content in Software Development on Vivek Kumar Singh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Wed, 11 May 2022 00:00:00 -0600</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/software-development/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://www.viveksyngh.com/tags/software-development/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Running Highly Available Apps on Kubernetes</title>
-      <link>http://localhost:1313/posts/running-highly-available-apps-on-kubernetes/</link>
+      <link>http://www.viveksyngh.com/posts/running-highly-available-apps-on-kubernetes/</link>
       <pubDate>Wed, 11 May 2022 00:00:00 -0600</pubDate>
-      <guid>http://localhost:1313/posts/running-highly-available-apps-on-kubernetes/</guid>
+      <guid>http://www.viveksyngh.com/posts/running-highly-available-apps-on-kubernetes/</guid>
       <description>As Kubernetes becomes the de-facto standard for deploying applications, many of us are either running our applications on Kubernetes or trying to migrate to Kubernetes. In this blog post, I will go through some tips for running highly available applications on Kubernetes.&#xA;Kubernetes: Link to heading Kubernetes, also known as K8s, is an open-source system for automating the deployment, scaling, and management of containerized applications. It is designed on the same principles that allow Google to run billions of containers a week, Kubernetes can scale without increasing your ops team.</description>
     </item>
     <item>
       <title>What is proxy server?</title>
-      <link>http://localhost:1313/system-design/what-is-proxy-server/</link>
+      <link>http://www.viveksyngh.com/system-design/what-is-proxy-server/</link>
       <pubDate>Wed, 06 Feb 2019 00:00:00 -0600</pubDate>
-      <guid>http://localhost:1313/system-design/what-is-proxy-server/</guid>
+      <guid>http://www.viveksyngh.com/system-design/what-is-proxy-server/</guid>
       <description>Word proxy defines, someone or something acting on behalf of something else. In computer science proxy means one server acting on behalf of other servers. A proxy server is a server ( or computer system or an application) that acts as an intermediary for requests from clients seeking resources from other servers.&#xA;A client connects to the proxy server, requesting for some service (file, connection, web page) available from a different server and the proxy server evaluates the request as a way simplify and control it’s complexity.</description>
     </item>
   </channel>

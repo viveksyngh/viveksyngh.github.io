@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mapreduce on Vivek Kumar Singh</title>
-    <link>http://localhost:1313/tags/mapreduce/</link>
+    <link>http://www.viveksyngh.com/tags/mapreduce/</link>
     <description>Recent content in Mapreduce on Vivek Kumar Singh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Wed, 23 Oct 2019 00:00:00 -0600</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/mapreduce/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://www.viveksyngh.com/tags/mapreduce/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>MapReduce Overview</title>
-      <link>http://localhost:1313/paper-notes/mapreduce-overview/</link>
+      <link>http://www.viveksyngh.com/paper-notes/mapreduce-overview/</link>
       <pubDate>Wed, 23 Oct 2019 00:00:00 -0600</pubDate>
-      <guid>http://localhost:1313/paper-notes/mapreduce-overview/</guid>
+      <guid>http://www.viveksyngh.com/paper-notes/mapreduce-overview/</guid>
       <description>In this blog, I will be discussing MapReduce programming model and how it works. This blog is based on the original MapReduce research paper MapReduce: Simplified Data Processing on Large Clusters from Google.&#xA;MapReduce is a programming model and an associated implementation for processing and generating large data sets. User specifies a map function that processes a key/value pair to generate a set for intermediate key/value pairs, and a reduce function that merges all intermediate values associated with the same intermediate key.</description>
     </item>
   </channel>

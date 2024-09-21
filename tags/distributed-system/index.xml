@@ -2,45 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Distributed System on Vivek Kumar Singh</title>
-    <link>http://localhost:1313/tags/distributed-system/</link>
+    <link>http://www.viveksyngh.com/tags/distributed-system/</link>
     <description>Recent content in Distributed System on Vivek Kumar Singh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Mon, 01 Apr 2019 00:00:00 -0600</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/distributed-system/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://www.viveksyngh.com/tags/distributed-system/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Microservices Architecture</title>
-      <link>http://localhost:1313/system-design/microservices-architecture/</link>
+      <link>http://www.viveksyngh.com/system-design/microservices-architecture/</link>
       <pubDate>Mon, 01 Apr 2019 00:00:00 -0600</pubDate>
-      <guid>http://localhost:1313/system-design/microservices-architecture/</guid>
+      <guid>http://www.viveksyngh.com/system-design/microservices-architecture/</guid>
       <description>Microservices are small, focused on doing one thing well and autonomous services that work together. Microservices were not invented. They emerged as a trend, or a pattern from real-world use case.&#xA;The benefits of microservices are many and varied.&#xA;Technology Heterogeneity: Link to heading With a system composed of multiple, collaborating services, we can decide to use different technologies inside each one. This allows us to pick the right tool for each job, rather than having to select a more standardized, one-size-fits-all approach that often ends up being the lowest common denominator.</description>
     </item>
     <item>
       <title>SQL vs NoSQL Databases</title>
-      <link>http://localhost:1313/system-design/sql-vs-nosql-databases/</link>
+      <link>http://www.viveksyngh.com/system-design/sql-vs-nosql-databases/</link>
       <pubDate>Mon, 25 Mar 2019 00:00:00 -0600</pubDate>
-      <guid>http://localhost:1313/system-design/sql-vs-nosql-databases/</guid>
+      <guid>http://www.viveksyngh.com/system-design/sql-vs-nosql-databases/</guid>
       <description>SQL Database is also known as a relational database. It has the following properties.&#xA;It uses a table or relation to store the data. Table stores data in row and columns.&#xA;Relational databases are used to store structured data. Data are stored in the form of relationships.&#xA;Uses Structured Query Language ( SQL) for defining and manipulating data.&#xA;Define the schema before you add any data to the system. All your future data must follow the same structure.</description>
     </item>
     <item>
       <title>Consistent Hashing</title>
-      <link>http://localhost:1313/system-design/consistent-hashing/</link>
+      <link>http://www.viveksyngh.com/system-design/consistent-hashing/</link>
       <pubDate>Fri, 22 Mar 2019 00:00:00 -0600</pubDate>
-      <guid>http://localhost:1313/system-design/consistent-hashing/</guid>
+      <guid>http://www.viveksyngh.com/system-design/consistent-hashing/</guid>
       <description>Consistent hashing idea was introduced in paper Consistent Hashing and Random Trees: Distributed Caching Protocols for Relieving Hot Spots on the World Wide Web which was released in the year 1997. Akamai distributed content delivery network uses the approach described in the paper.&#xA;In 2007, consistent hashing was used in two published works&#xA;Dynamo: Amazon’s Highly Available Key-Value Datastore Last.fm Memcached client After that it has been used in many other distributed system like Cassandra, Riak etc.</description>
     </item>
     <item>
       <title>Eventual Consistency vs Strong Consistency</title>
-      <link>http://localhost:1313/system-design/eventual-consistency-vs-strong-consistency/</link>
+      <link>http://www.viveksyngh.com/system-design/eventual-consistency-vs-strong-consistency/</link>
       <pubDate>Mon, 11 Mar 2019 00:00:00 -0600</pubDate>
-      <guid>http://localhost:1313/system-design/eventual-consistency-vs-strong-consistency/</guid>
+      <guid>http://www.viveksyngh.com/system-design/eventual-consistency-vs-strong-consistency/</guid>
       <description>Eventual Consistency Link to heading Eventual consistency is a theoretical guarantee that, provided no new updates to an entity are made, all reads of the entity will eventually return the last updated value. The Internet Domain Name System (DNS) is a well-known example of a system with an eventual consistency model. DNS servers do not necessarily reflect the latest values but, rather, the values are cached and replicated across many directories over the Internet.</description>
     </item>
     <item>
       <title>CAP Theorem</title>
-      <link>http://localhost:1313/system-design/cap-theorem/</link>
+      <link>http://www.viveksyngh.com/system-design/cap-theorem/</link>
       <pubDate>Mon, 04 Mar 2019 00:00:00 -0600</pubDate>
-      <guid>http://localhost:1313/system-design/cap-theorem/</guid>
+      <guid>http://www.viveksyngh.com/system-design/cap-theorem/</guid>
       <description>CAP theorem also known as Brewer’s theorem was introduced by computer scientist Eric Brewer at Symposium on Principles of Distributed computing in 2000. In CAP theorem, C stands for Consistency, A stands for Availability and P stands for Partition tolerance.&#xA;Consistency: Every read receives the most recent writes or an error. For consistency, any read operation that begins after a write operation completes must return that value, or the result of a later write operation.</description>
     </item>
   </channel>

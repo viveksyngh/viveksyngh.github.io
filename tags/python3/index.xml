@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python3 on Vivek Kumar Singh</title>
-    <link>http://localhost:1313/tags/python3/</link>
+    <link>http://www.viveksyngh.com/tags/python3/</link>
     <description>Recent content in Python3 on Vivek Kumar Singh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sun, 19 Apr 2020 00:00:00 -0600</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/python3/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://www.viveksyngh.com/tags/python3/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Python collections module</title>
-      <link>http://localhost:1313/posts/python-collections-module/</link>
+      <link>http://www.viveksyngh.com/posts/python-collections-module/</link>
       <pubDate>Sun, 19 Apr 2020 00:00:00 -0600</pubDate>
-      <guid>http://localhost:1313/posts/python-collections-module/</guid>
+      <guid>http://www.viveksyngh.com/posts/python-collections-module/</guid>
       <description>Apart from built-in general purpose container data structures like list, dict, set and tuple . Python provides collections module which implements some specialized container data types.&#xA;Following container data types are present in collections module for python 3.6.&#xA;namedtuple() : factory function for creating tuple subclasses with named fields. deque : list-like container with fast appends and pops on either end. ChainMap : dict-like class for creating a single view of multiple mappings Counter: dict subclass for counting hashable objects OrderedDict : dict subclass that remembers the order entries were added defaultdict: dict subclass that calls a factory function to supply missing values.</description>
     </item>
   </channel>

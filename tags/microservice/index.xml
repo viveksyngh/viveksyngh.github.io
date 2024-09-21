@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Microservice on Vivek Kumar Singh</title>
-    <link>http://localhost:1313/tags/microservice/</link>
+    <link>http://www.viveksyngh.com/tags/microservice/</link>
     <description>Recent content in Microservice on Vivek Kumar Singh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Mon, 01 Apr 2019 00:00:00 -0600</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/microservice/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://www.viveksyngh.com/tags/microservice/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Microservices Architecture</title>
-      <link>http://localhost:1313/system-design/microservices-architecture/</link>
+      <link>http://www.viveksyngh.com/system-design/microservices-architecture/</link>
       <pubDate>Mon, 01 Apr 2019 00:00:00 -0600</pubDate>
-      <guid>http://localhost:1313/system-design/microservices-architecture/</guid>
+      <guid>http://www.viveksyngh.com/system-design/microservices-architecture/</guid>
       <description>Microservices are small, focused on doing one thing well and autonomous services that work together. Microservices were not invented. They emerged as a trend, or a pattern from real-world use case.&#xA;The benefits of microservices are many and varied.&#xA;Technology Heterogeneity: Link to heading With a system composed of multiple, collaborating services, we can decide to use different technologies inside each one. This allows us to pick the right tool for each job, rather than having to select a more standardized, one-size-fits-all approach that often ends up being the lowest common denominator.</description>
     </item>
   </channel>
