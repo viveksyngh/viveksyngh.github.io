@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  Controller Runtime Bytes #1 (Ownership) · Vivek Kumar Singh
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Vivek Kumar Singh">
+<meta name="description" content="This is a series of mini blogs for documenting some of the controller runtime features.
+In Kubernetes, some objects are owner of other objects. For example, a ReplicaSet is the owner of a set of Pods. These owned objects are dependents of their owners. The dependents objects has references to all owners objects under metadata.ownerReferences field.
+A kubernetes custom resources can set itself as owner of the other resources, it creates as part of it&rsquo;s reconciliation logic.">
+<meta name="keywords" content="blog,developer,personal">
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Controller Runtime Bytes #1 (Ownership)"/>
+<meta name="twitter:description" content="This is a series of mini blogs for documenting some of the controller runtime features.
+In Kubernetes, some objects are owner of other objects. For example, a ReplicaSet is the owner of a set of Pods. These owned objects are dependents of their owners. The dependents objects has references to all owners objects under metadata.ownerReferences field.
+A kubernetes custom resources can set itself as owner of the other resources, it creates as part of it&rsquo;s reconciliation logic."/>
+
+<meta property="og:title" content="Controller Runtime Bytes #1 (Ownership)" />
+<meta property="og:description" content="This is a series of mini blogs for documenting some of the controller runtime features.
+In Kubernetes, some objects are owner of other objects. For example, a ReplicaSet is the owner of a set of Pods. These owned objects are dependents of their owners. The dependents objects has references to all owners objects under metadata.ownerReferences field.
+A kubernetes custom resources can set itself as owner of the other resources, it creates as part of it&rsquo;s reconciliation logic." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.viveksyngh.com/posts/controller-runtime-bytes-1/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-09-20T00:00:00-06:00" />
+<meta property="article:modified_time" content="2024-09-20T00:00:00-06:00" />
+
+
+
+
+<link rel="canonical" href="http://www.viveksyngh.com/posts/controller-runtime-bytes-1/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.65236a6d834b26194eed04a2a3b45e44d9194ef9e620253705d4bef03bd7ef81.css" integrity="sha256-ZSNqbYNLJhlO7QSio7ReRNkZTvnmICU3BdS&#43;8DvX74E=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.f6534b0b446b75d9b6ad77a97d43ede2ddaeff1b6e2361fb7198d6f8fcb7f83f.css" integrity="sha256-9lNLC0Rrddm2rXepfUPt4t2u/xtuI2H7cZjW&#43;Py3&#43;D8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      Vivek Kumar Singh
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/paper-notes/">Paper Notes</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/resources/">Resources</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/system-design/">System Design</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Blogs</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="http://www.viveksyngh.com/posts/controller-runtime-bytes-1/">
+              Controller Runtime Bytes #1 (Ownership)
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime="2024-09-20T00:00:00-06:00">
+                September 20, 2024
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              2-minute read
+            </span>
+          </div>
+          
+          <div class="categories">
+  <i class="fa fa-folder" aria-hidden="true"></i>
+    <a href="/categories/kubernetes/">Kubernetes</a></div>
+
+          <div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/kubernetes/">Kubernetes</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/controller/">Controller</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/controller-runtime/">Controller-Runtime</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <p>This is a series of mini blogs for documenting some of the controller runtime features.</p>
+<p>In Kubernetes, some objects are owner of other objects. For example, a ReplicaSet is the owner of a set of Pods. These owned objects are dependents of their owners.
+The dependents objects has references to all owners objects under <code>metadata.ownerReferences</code> field.</p>
+<p>A kubernetes custom resources can set itself as owner of the other resources, it creates as part of it&rsquo;s reconciliation logic. <code>controller-runtime</code> has two utility methods to set owner references on an object.</p>
+<ul>
+<li><code>func SetControllerReference(owner, controlled metav1.Object, scheme *runtime.Scheme, ...) error</code></li>
+</ul>
+<p>SetControllerReference sets owner as a Controller OwnerReference on controlled. This is used for garbage collection of the controlled object and for reconciling the owner object on changes to controlled (with a Watch + EnqueueRequestForOwner). Since only one OwnerReference can be a controller, it returns an error if there is another OwnerReference with Controller flag set.</p>
+<ul>
+<li><code>func SetOwnerReference(owner, object metav1.Object, scheme *runtime.Scheme, ...) error</code></li>
+</ul>
+<p>SetOwnerReference is a helper method to make sure the given object contains an object references to the object provided. This allows you to declare that owner has a dependency on the object without specifying it as a controller.</p>
+<p>When you need to declare a dependency on an object without reconciling changes from the owner when the dependent changes, use <code>SetOwnerReference</code>. If you need to reconcile the owner for changes in the dependent object or to garbage collect the dependent when the owner is deleted, use <code>SetControllerReference</code>.</p>
+<p>To establish controller ownership on a <code>Deployment</code> object created by the custom resource <code>MyCustomApp</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Set the controller ownerRef for the Deployment
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>myApp <span style="color:#ff7b72;font-weight:bold">:=</span> MyCustomApp{<span style="color:#ff7b72;font-weight:bold">...</span>}
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">if</span> err <span style="color:#ff7b72;font-weight:bold">:=</span> ctrl.<span style="color:#d2a8ff;font-weight:bold">SetControllerReference</span>(myApp, dep, r.Scheme); err <span style="color:#ff7b72;font-weight:bold">!=</span> <span style="color:#79c0ff">nil</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">return</span> <span style="color:#79c0ff">nil</span>, err
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Setting the controller owner reference will automatically manage the garbage collection of the dependent resources, but it won’t trigger reconciliation of the owner object when the dependent resources change. To observe the changes on the dependent resource, we need add <code>Owns</code> when setting up conrtoller with the controller manager.</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// SetupWithManager sets up the controller with the Manager.
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Note that the Deployment will be also watched in order to ensure its
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// desirable state on the cluster
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">func</span> (r <span style="color:#ff7b72;font-weight:bold">*</span>MemcachedReconciler) <span style="color:#d2a8ff;font-weight:bold">SetupWithManager</span>(mgr ctrl.Manager) <span style="color:#ff7b72">error</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">return</span> ctrl.<span style="color:#d2a8ff;font-weight:bold">NewControllerManagedBy</span>(mgr).
+</span></span><span style="display:flex;"><span>    <span style="color:#d2a8ff;font-weight:bold">For</span>(<span style="color:#ff7b72;font-weight:bold">&amp;</span>examplecomv1alpha1.MyCustomApp{}). <span style="color:#f85149">##</span> Create watches <span style="color:#ff7b72">for</span> the MyCustomApp Kind
+</span></span><span style="display:flex;"><span>    <span style="color:#d2a8ff;font-weight:bold">Owns</span>(<span style="color:#ff7b72;font-weight:bold">&amp;</span>appsv1.Deployment{}). <span style="color:#f85149">##</span> Create watches <span style="color:#ff7b72">for</span> the Deployment which has its controller owned reference
+</span></span><span style="display:flex;"><span>    <span style="color:#d2a8ff;font-weight:bold">Complete</span>(r)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2023 -
+    
+    2024
+     Vivek Kumar Singh 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>
