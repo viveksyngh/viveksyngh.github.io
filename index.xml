@@ -13,7 +13,7 @@
       <link>http://www.viveksyngh.com/posts/controller-runtime-bytes-1/</link>
       <pubDate>Fri, 20 Sep 2024 00:00:00 -0600</pubDate>
       <guid>http://www.viveksyngh.com/posts/controller-runtime-bytes-1/</guid>
-      <description>This is a series of mini blogs for documenting some of the controller runtime features.&#xA;In Kubernetes, some objects are owner of other objects. For example, a ReplicaSet is the owner of a set of Pods. These owned objects are dependents of their owners. The dependents objects has references to all owners objects under metadata.ownerReferences field.&#xA;A kubernetes custom resources can set itself as owner of the other resources, it creates as part of it&amp;rsquo;s reconciliation logic.</description>
+      <description>This is a series of mini blogs for documenting some of the controller runtime features.&#xA;In Kubernetes, some objects are owner of other objects. For example, a ReplicaSet is the owner of a set of Pods. These owned objects are dependents of their owners. The dependents objects has references to all owners objects under metadata.ownerReferences field. Read more about owners and dependents&#xA;A kubernetes custom resources can set itself as owner of the other resources, it creates as part of it&amp;rsquo;s reconciliation logic.</description>
     </item>
     <item>
       <title>Diving into Amazon Dynamo Paper</title>

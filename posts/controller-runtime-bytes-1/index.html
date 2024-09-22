@@ -14,18 +14,18 @@
 
 <meta name="author" content="Vivek Kumar Singh">
 <meta name="description" content="This is a series of mini blogs for documenting some of the controller runtime features.
-In Kubernetes, some objects are owner of other objects. For example, a ReplicaSet is the owner of a set of Pods. These owned objects are dependents of their owners. The dependents objects has references to all owners objects under metadata.ownerReferences field.
+In Kubernetes, some objects are owner of other objects. For example, a ReplicaSet is the owner of a set of Pods. These owned objects are dependents of their owners. The dependents objects has references to all owners objects under metadata.ownerReferences field. Read more about owners and dependents
 A kubernetes custom resources can set itself as owner of the other resources, it creates as part of it&rsquo;s reconciliation logic.">
 <meta name="keywords" content="blog,developer,personal">
 
 <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Controller Runtime Bytes #1 (Ownership)"/>
 <meta name="twitter:description" content="This is a series of mini blogs for documenting some of the controller runtime features.
-In Kubernetes, some objects are owner of other objects. For example, a ReplicaSet is the owner of a set of Pods. These owned objects are dependents of their owners. The dependents objects has references to all owners objects under metadata.ownerReferences field.
+In Kubernetes, some objects are owner of other objects. For example, a ReplicaSet is the owner of a set of Pods. These owned objects are dependents of their owners. The dependents objects has references to all owners objects under metadata.ownerReferences field. Read more about owners and dependents
 A kubernetes custom resources can set itself as owner of the other resources, it creates as part of it&rsquo;s reconciliation logic."/>
 
 <meta property="og:title" content="Controller Runtime Bytes #1 (Ownership)" />
 <meta property="og:description" content="This is a series of mini blogs for documenting some of the controller runtime features.
-In Kubernetes, some objects are owner of other objects. For example, a ReplicaSet is the owner of a set of Pods. These owned objects are dependents of their owners. The dependents objects has references to all owners objects under metadata.ownerReferences field.
+In Kubernetes, some objects are owner of other objects. For example, a ReplicaSet is the owner of a set of Pods. These owned objects are dependents of their owners. The dependents objects has references to all owners objects under metadata.ownerReferences field. Read more about owners and dependents
 A kubernetes custom resources can set itself as owner of the other resources, it creates as part of it&rsquo;s reconciliation logic." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://www.viveksyngh.com/posts/controller-runtime-bytes-1/" /><meta property="article:section" content="posts" />
@@ -189,7 +189,7 @@ A kubernetes custom resources can set itself as owner of the other resources, it
         
         <p>This is a series of mini blogs for documenting some of the controller runtime features.</p>
 <p>In Kubernetes, some objects are owner of other objects. For example, a ReplicaSet is the owner of a set of Pods. These owned objects are dependents of their owners.
-The dependents objects has references to all owners objects under <code>metadata.ownerReferences</code> field.</p>
+The dependents objects has references to all owners objects under <code>metadata.ownerReferences</code> field. Read more about <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/owners-dependents/"  class="external-link" target="_blank" rel="noopener">owners and dependents</a></p>
 <p>A kubernetes custom resources can set itself as owner of the other resources, it creates as part of it&rsquo;s reconciliation logic. <code>controller-runtime</code> has two utility methods to set owner references on an object.</p>
 <ul>
 <li><code>func SetControllerReference(owner, controlled metav1.Object, scheme *runtime.Scheme, ...) error</code></li>
