@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  Key Characteristics of Distributed Systems · Vivek Kumar Singh
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Vivek Kumar Singh">
+<meta name="description" content="A distributed system is a system in which components are located on different networked computers, which can communicate and coordinate their actions by passing messages to one another. The components interact with one another in order to achieve a common goal.
+Key characteristics of distributed systems are
+Resource Sharing Link to heading Resource sharing means that the existing resources in a distributed system can be accessed or remotely accessed across multiple computers in the system.">
+<meta name="keywords" content="blog,developer,personal">
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Key Characteristics of Distributed Systems"/>
+<meta name="twitter:description" content="A distributed system is a system in which components are located on different networked computers, which can communicate and coordinate their actions by passing messages to one another. The components interact with one another in order to achieve a common goal.
+Key characteristics of distributed systems are
+Resource Sharing Link to heading Resource sharing means that the existing resources in a distributed system can be accessed or remotely accessed across multiple computers in the system."/>
+
+<meta property="og:title" content="Key Characteristics of Distributed Systems" />
+<meta property="og:description" content="A distributed system is a system in which components are located on different networked computers, which can communicate and coordinate their actions by passing messages to one another. The components interact with one another in order to achieve a common goal.
+Key characteristics of distributed systems are
+Resource Sharing Link to heading Resource sharing means that the existing resources in a distributed system can be accessed or remotely accessed across multiple computers in the system." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.viveksyngh.com/system-design/key-characteristics-of-distributed-systems/" /><meta property="article:section" content="system-design" />
+<meta property="article:published_time" content="2019-04-29T00:00:00-06:00" />
+<meta property="article:modified_time" content="2019-04-29T00:00:00-06:00" />
+
+
+
+
+<link rel="canonical" href="http://www.viveksyngh.com/system-design/key-characteristics-of-distributed-systems/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.65236a6d834b26194eed04a2a3b45e44d9194ef9e620253705d4bef03bd7ef81.css" integrity="sha256-ZSNqbYNLJhlO7QSio7ReRNkZTvnmICU3BdS&#43;8DvX74E=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.f6534b0b446b75d9b6ad77a97d43ede2ddaeff1b6e2361fb7198d6f8fcb7f83f.css" integrity="sha256-9lNLC0Rrddm2rXepfUPt4t2u/xtuI2H7cZjW&#43;Py3&#43;D8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      Vivek Kumar Singh
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/paper-notes/">Paper Notes</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/resources/">Resources</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/system-design/">System Design</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Blogs</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container page">
+  <article>
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="http://www.viveksyngh.com/system-design/key-characteristics-of-distributed-systems/">
+          Key Characteristics of Distributed Systems
+        </a>
+      </h1>
+    </header>
+
+    <p>A <em>distributed system</em> is a system in which components are located on different <em>networked computers</em>, which can <em>communicate</em> and <em>coordinate</em> their actions by passing messages to one another. The components interact with one another in order to achieve a common goal.</p>
+<p>Key characteristics of distributed systems are</p>
+<h3 id="resource-sharing">
+  Resource Sharing
+  <a class="heading-link" href="#resource-sharing">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Resource sharing means that the existing <em>resources</em> in a distributed system can be accessed or remotely accessed across multiple computers in the system. Computers in distributed systems shares resources like <em>hardware</em> (disks and printers), <em>software</em> (files, windows and data objects) and <em>data</em>. Hardware resources are shared for reductions in cost and convenience. Data is shared for consistency and exchange of information.</p>
+<blockquote>
+<p>Resources are managed by a software module known as a resource manager. Every resource has its own management policies and methods.</p>
+</blockquote>
+<h3 id="heterogeneity">
+  Heterogeneity
+  <a class="heading-link" href="#heterogeneity">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>In distributed systems components can have variety and differences in Networks, Computer hardware, Operating systems, Programming languages and implementations by different developers.</p>
+<h3 id="openness">
+  Openness
+  <a class="heading-link" href="#openness">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Openness is concerned with extensions and improvements of distributed systems. The distributed system must be open in terms of <em>Hardware</em> and <em>Softwares</em>. In order to make a distributed system open,</p>
+<ol>
+<li>
+<p>A detailed and well-defined interface of components must be published.</p>
+</li>
+<li>
+<p>Should standardize the interfaces of components</p>
+</li>
+<li>
+<p>The new component must be easily integrated with existing components</p>
+</li>
+</ol>
+<h3 id="concurrency">
+  Concurrency
+  <a class="heading-link" href="#concurrency">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Concurrency is a property of a system representing the fact that multiple activities are executed at the same time. The concurrent execution of activities takes place in different components running on multiple machines as part of a distributed system. In addition, these activities may perform some kind of interactions among them. Concurrency <em>reduces the latency</em> and <em>increases the throughput</em> of the distributed system.</p>
+<h3 id="scalability">
+  Scalability
+  <a class="heading-link" href="#scalability">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Scalability is mainly concerned about how the distributed system handles the <em>growth</em> as the number of users for the system increases. Mostly we scale the distributed system by adding more computers in the network. Components should not need to be changed when we scale the system. Components should be designed in such a way that it is scalable.</p>
+<h3 id="fault-tolerance">
+  Fault Tolerance
+  <a class="heading-link" href="#fault-tolerance">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>In a distributed system hardware, software, network anything can fail. The system must be designed in such a way that it is available all the time even after something has failed.</p>
+<h3 id="transparency">
+  Transparency
+  <a class="heading-link" href="#transparency">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Distributed systems should be perceived by users and application programmers as a whole rather than as a collection of cooperating components. Transparency can be of various types like access, location, concurrency, replication, etc.</p>
+
+  </article>
+</section>
+
+  
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2023 -
+    
+    2024
+     Vivek Kumar Singh 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

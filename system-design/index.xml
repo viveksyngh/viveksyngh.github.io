@@ -6,8 +6,15 @@
     <description>Recent content in System-Designs on Vivek Kumar Singh</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 22 Apr 2019 00:00:00 -0600</lastBuildDate>
+    <lastBuildDate>Mon, 29 Apr 2019 00:00:00 -0600</lastBuildDate>
     <atom:link href="http://www.viveksyngh.com/system-design/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Key Characteristics of Distributed Systems</title>
+      <link>http://www.viveksyngh.com/system-design/key-characteristics-of-distributed-systems/</link>
+      <pubDate>Mon, 29 Apr 2019 00:00:00 -0600</pubDate>
+      <guid>http://www.viveksyngh.com/system-design/key-characteristics-of-distributed-systems/</guid>
+      <description>A distributed system is a system in which components are located on different networked computers, which can communicate and coordinate their actions by passing messages to one another. The components interact with one another in order to achieve a common goal.&#xA;Key characteristics of distributed systems are&#xA;Resource Sharing Link to heading Resource sharing means that the existing resources in a distributed system can be accessed or remotely accessed across multiple computers in the system.</description>
+    </item>
     <item>
       <title>Database Sharding</title>
       <link>http://www.viveksyngh.com/system-design/database-sharding/</link>

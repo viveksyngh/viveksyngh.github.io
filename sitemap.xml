@@ -32,10 +32,10 @@
     <loc>http://www.viveksyngh.com/tags/cassandra/</loc>
     <lastmod>2023-02-19T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://www.viveksyngh.com/tags/distributed-systems/</loc>
+    <loc>http://www.viveksyngh.com/categories/distributed-systems/</loc>
     <lastmod>2023-02-19T00:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://www.viveksyngh.com/categories/distributed-systems/</loc>
+    <loc>http://www.viveksyngh.com/tags/distributed-systems/</loc>
     <lastmod>2023-02-19T00:00:00-06:00</lastmod>
   </url><url>
     <loc>http://www.viveksyngh.com/paper-notes/diving-into-amazon-dynamo-paper/</loc>
@@ -137,6 +137,18 @@
     <loc>http://www.viveksyngh.com/tags/system-design/</loc>
     <lastmod>2019-10-23T00:00:00-06:00</lastmod>
   </url><url>
+    <loc>http://www.viveksyngh.com/system-design/key-characteristics-of-distributed-systems/</loc>
+    <lastmod>2019-04-29T00:00:00-06:00</lastmod>
+  </url><url>
+    <loc>http://www.viveksyngh.com/tags/software-engineering/</loc>
+    <lastmod>2019-04-29T00:00:00-06:00</lastmod>
+  </url><url>
+    <loc>http://www.viveksyngh.com/categories/system-design/</loc>
+    <lastmod>2019-04-29T00:00:00-06:00</lastmod>
+  </url><url>
+    <loc>http://www.viveksyngh.com/system-design/</loc>
+    <lastmod>2019-04-29T00:00:00-06:00</lastmod>
+  </url><url>
     <loc>http://www.viveksyngh.com/tags/database/</loc>
     <lastmod>2019-04-22T00:00:00-06:00</lastmod>
   </url><url>
@@ -144,15 +156,6 @@
     <lastmod>2019-04-22T00:00:00-06:00</lastmod>
   </url><url>
     <loc>http://www.viveksyngh.com/tags/scalability/</loc>
-    <lastmod>2019-04-22T00:00:00-06:00</lastmod>
-  </url><url>
-    <loc>http://www.viveksyngh.com/tags/software-engineering/</loc>
-    <lastmod>2019-04-22T00:00:00-06:00</lastmod>
-  </url><url>
-    <loc>http://www.viveksyngh.com/categories/system-design/</loc>
-    <lastmod>2019-04-22T00:00:00-06:00</lastmod>
-  </url><url>
-    <loc>http://www.viveksyngh.com/system-design/</loc>
     <lastmod>2019-04-22T00:00:00-06:00</lastmod>
   </url><url>
     <loc>http://www.viveksyngh.com/system-design/event-driven-architecture/</loc>

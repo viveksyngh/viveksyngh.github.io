@@ -86,6 +86,13 @@
       <description>In this blog, I will be discussing MapReduce programming model and how it works. This blog is based on the original MapReduce research paper MapReduce: Simplified Data Processing on Large Clusters from Google.&#xA;MapReduce is a programming model and an associated implementation for processing and generating large data sets. User specifies a map function that processes a key/value pair to generate a set for intermediate key/value pairs, and a reduce function that merges all intermediate values associated with the same intermediate key.</description>
     </item>
     <item>
+      <title>Key Characteristics of Distributed Systems</title>
+      <link>http://www.viveksyngh.com/system-design/key-characteristics-of-distributed-systems/</link>
+      <pubDate>Mon, 29 Apr 2019 00:00:00 -0600</pubDate>
+      <guid>http://www.viveksyngh.com/system-design/key-characteristics-of-distributed-systems/</guid>
+      <description>A distributed system is a system in which components are located on different networked computers, which can communicate and coordinate their actions by passing messages to one another. The components interact with one another in order to achieve a common goal.&#xA;Key characteristics of distributed systems are&#xA;Resource Sharing Link to heading Resource sharing means that the existing resources in a distributed system can be accessed or remotely accessed across multiple computers in the system.</description>
+    </item>
+    <item>
       <title>Database Sharding</title>
       <link>http://www.viveksyngh.com/system-design/database-sharding/</link>
       <pubDate>Mon, 22 Apr 2019 00:00:00 -0600</pubDate>
